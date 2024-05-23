@@ -1,0 +1,9 @@
+{
+    "name": "decision",
+    "workflow": "decision-workflow",
+    "customFields": [
+        {
+            "name": "base/owner"
+        }
+    ]
+}
