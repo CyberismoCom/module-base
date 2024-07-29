@@ -1,5 +1,5 @@
 {
-    "summary": "Approve document",
+    "title": "Approve document",
     "cardtype": "task",
     "workflowState": "",
     "base/owner": null
