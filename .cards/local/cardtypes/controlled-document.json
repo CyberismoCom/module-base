@@ -1,6 +1,6 @@
 {
-    "name": "controlled-document",
-    "workflow": "controlled-document-workflow",
+    "name": "base/controlled-document",
+    "workflow": "base/controlled-document-workflow",
     "customFields": [
         {
             "name": "base/owner"

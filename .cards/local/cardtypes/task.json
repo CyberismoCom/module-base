@@ -1,6 +1,6 @@
 {
-    "name": "task",
-    "workflow": "task-workflow",
+    "name": "base/task",
+    "workflow": "base/task-workflow",
     "customFields": [
         {
             "name": "base/owner"

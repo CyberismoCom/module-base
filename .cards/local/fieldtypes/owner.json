@@ -1,5 +1,5 @@
 {
-    "name": "owner",
+    "name": "base/owner",
     "displayName": "Owner",
     "dataType": "person"
 }

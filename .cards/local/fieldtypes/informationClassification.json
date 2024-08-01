@@ -1,5 +1,5 @@
 {
-    "name": "informationClassification",
+    "name": "base/informationClassification",
     "displayName": "Information classification",
     "dataType": "shorttext"
 }
