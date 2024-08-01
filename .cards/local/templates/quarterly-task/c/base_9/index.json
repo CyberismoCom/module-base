@@ -3,5 +3,7 @@
     "cardtype": "task",
     "workflowState": "",
     "base/owner": null,
-    "base/reviewPeriod": 90
+    "base/reviewPeriod": 90,
+    "rank": "0|a",
+    "lastUpdated": "2024-08-01T14:25:19.243Z"
 }
