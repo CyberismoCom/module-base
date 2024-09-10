@@ -1,5 +1,5 @@
 {
-    "name": "task-workflow",
+    "name": "base/workflows/task-workflow",
     "states": [
         {
             "name": "Open",
