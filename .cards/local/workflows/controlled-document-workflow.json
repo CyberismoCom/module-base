@@ -1,5 +1,5 @@
 {
-    "name": "controlled-document-workflow",
+    "name": "base/workflows/controlled-document-workflow",
     "states": [
         { "name": "Draft", "category": "initial" },
         { "name": "Approved", "category": "closed" },

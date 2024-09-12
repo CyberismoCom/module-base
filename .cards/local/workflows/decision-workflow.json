@@ -1,5 +1,5 @@
 {
-    "name": "decision-workflow",
+    "name": "base/workflows/decision-workflow",
     "states": [
         {
             "name": "Draft",
