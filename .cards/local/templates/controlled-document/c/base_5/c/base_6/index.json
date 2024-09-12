@@ -1,8 +1,8 @@
 {
     "title": "Approve document",
-    "cardtype":  "base/cardtypes/task",
+    "cardType":  "base/cardTypes/task",
     "workflowState": "",
-    "base/fieldtypes/owner": null,
+    "base/fieldTypes/owner": null,
     "rank": "0|a",
     "lastUpdated": "2024-08-01T14:25:19.227Z"
 }

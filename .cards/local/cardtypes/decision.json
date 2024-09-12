@@ -1,9 +1,0 @@
-{
-    "name": "base/cardtypes/decision",
-    "workflow": "base/workflows/decision-workflow",
-    "customFields": [
-        {
-            "name": "base/fieldtypes/owner"
-        }
-    ]
-}

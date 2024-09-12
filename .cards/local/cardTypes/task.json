@@ -1,0 +1,11 @@
+{
+    "workflow": "base/workflows/task",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner"
+        },
+        {
+            "name": "base/fieldTypes/reviewPeriod"
+        }
+    ]
+}

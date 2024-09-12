@@ -1,29 +1,25 @@
 {
-    "name": "base/workflows/decision-workflow",
     "states": [
         {
-            "name": "Draft",
-            "category": "initial"
+            "name": "Draft", "category": "initial"
         },
         {
-            "name": "Approved",
-            "category": "closed"
+            "name": "Ready", "category": "closed"
         },
         {
-            "name": "Deprecated",
-            "category": "hidden"
+            "name": "Deprecated", "category": "hidden"
         }
     ],
     "transitions": [
         {
             "name": "Create",
-            "fromState": [""],
+            "fromState": [],
             "toState": "Draft"
         },
         {
-            "name": "Approve",
+            "name": "Content ready",
             "fromState": ["Draft"],
-            "toState": "Approved"
+            "toState": "Ready"
         },
         {
             "name": "Archive",

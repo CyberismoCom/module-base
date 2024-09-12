@@ -1,0 +1,11 @@
+{
+    "workflow": "base/workflows/controlledDocumentWorkflow",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner"
+        },
+        {
+            "name": "base/fieldTypes/informationClassification"
+        }
+    ]
+}
