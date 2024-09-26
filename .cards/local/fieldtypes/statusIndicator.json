@@ -1,0 +1,27 @@
+{
+    "name": "base/fieldtypes/statusIndicator",
+    "displayName": "Status indicator",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "initial",
+            "enumDisplayValue": "Initial",
+            "enumDescription": "Work has not been started"
+        },
+        {
+            "enumValue": "active",
+            "enumDisplayValue": "Active",
+            "enumDescription": "Work is in progress"
+        },
+        {
+            "enumValue": "closed",
+            "enumDisplayValue": "Closed",
+            "enumDescription": "The issue has been tracked to closure"
+        },
+        {
+            "enumValue": "error",
+            "enumDisplayValue": "Error",
+            "enumDescription": "There is a policy check error"
+        }
+    ]
+}
