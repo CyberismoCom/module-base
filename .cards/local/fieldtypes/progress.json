@@ -1,6 +1,0 @@
-{
-    "name": "base/fieldtypes/progress",
-    "displayName": "Progress",
-    "fieldDescription": "A progress metric",
-    "dataType": "integer"
-}
