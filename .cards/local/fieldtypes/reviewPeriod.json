@@ -1,5 +1,0 @@
-{
-    "name": "base/fieldtypes/reviewPeriod",
-    "displayName": "Review period (days)",
-    "dataType": "integer"
-}
