@@ -1,0 +1,39 @@
+= Cyberismo base module
+
+== Shhh... We are letting you in on a secret
+
+Cyberismo is an open security-as-code solution. We are busy making Cyberismo ready for your use.  Right now, the project is running in stealth mode as we're adding some remaining essentials such as certain important features, documentation and examples. So let's keep this between you and us for now. It won't take long, so stay tuned!
+
+== License and contributions
+
+See separate files LICENSE and CONTRIBUTING.
+
+Notice that while Cyberismo Ltd enforces the license of this software, the license does not affect the content produced by Cyberismo tool users. Users can be confident that the resulting documents and resources produced with Cyberismo tools and software are not affected by the licenses that Cyberismo Ltd uses to distribute the software.
+
+== Cyberismo Open Source Trademark Policy
+
+See separate file TRADEMARK.adoc
+
+== About the Cyberismo base module
+
+The Cyberismo base module contains the basic building blocks common to many Cyberismo project types. This includes card types such as
+
+* controlled document
+* decision
+* page
+* task
+
+along with their fundamental field types, link types, templates and workflows.
+
+== Using the Cyberismo base module
+
+In order to use the base module content in your Cyberismo project, take the following steps:
+
+* Clone this repository alongside your Cyberismo project
+* Change to your project directory
+* Import the base module content with
+
+    cyberismo import module ../module-base
+
+For more details, see https://docs.cyberismo.com[Cyberismo documentation].
+
