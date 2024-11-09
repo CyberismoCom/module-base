@@ -6,3 +6,14 @@
 == Goals
 
 == Notes
+
+== Action points
+
+{{{createCards '{
+    "template": "base/templates/oneTimeTask",
+    "buttonLabel": "Add new task"
+}'}}}
+
+{{{report '{
+    "name": "base/reports/childrenList"
+}'}}}

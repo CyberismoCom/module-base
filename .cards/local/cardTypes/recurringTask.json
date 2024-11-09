@@ -1,6 +1,6 @@
 {
-    "name": "base/cardTypes/decision",
-    "workflow": "base/workflows/decision",
+    "name": "base/cardTypes/recurringTask",
+    "workflow": "base/workflows/recurringTask",
     "customFields": [
         {
             "name": "base/fieldTypes/owner"
@@ -9,12 +9,11 @@
             "name": "base/fieldTypes/informationClassification"
         },
         {
-            "name": "base/fieldTypes/decisionDate"
+            "name": "base/fieldTypes/reviewPeriod"
         }
     ],
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
-        "base/fieldTypes/informationClassification",
-        "base/fieldTypes/desicionDate"
+        "base/fieldTypes/informationClassification"
     ]
 }

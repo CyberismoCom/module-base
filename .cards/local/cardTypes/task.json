@@ -6,7 +6,12 @@
             "name": "base/fieldTypes/owner"
         },
         {
-            "name": "base/fieldTypes/reviewPeriod"
+            "name": "base/fieldTypes/dueDate"
         }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "base/fieldTypes/informationClassification",
+        "base/fieldTypes/dueDate"
     ]
 }
