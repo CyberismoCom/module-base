@@ -9,11 +9,16 @@
             "name": "base/fieldTypes/informationClassification"
         },
         {
-            "name": "base/fieldTypes/reviewPeriod"
+            "name": "base/fieldTypes/reviewPeriod",
+            "isEditable": false
         }
     ],
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
         "base/fieldTypes/informationClassification"
+    ],
+    "optionallyVisibleFields": [
+            "base/fieldTypes/reviewPeriod"
     ]
+
 }

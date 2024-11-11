@@ -15,6 +15,6 @@
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
         "base/fieldTypes/informationClassification",
-        "base/fieldTypes/desicionDate"
+        "base/fieldTypes/decisionDate"
     ]
 }

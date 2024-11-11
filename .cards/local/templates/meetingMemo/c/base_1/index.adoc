@@ -1,7 +1,9 @@
-== Participants
+== Meeting details
 
-* Participant 1
-* Participant 2
+* **Date**: 
+* **Time**: 
+* **Location**:
+* **Participants**: 
 
 == Goals
 
@@ -15,5 +17,5 @@
 }'}}}
 
 {{{report '{
-    "name": "base/reports/childrenList"
+    "name": "base/reports/childrenTable"
 }'}}}
