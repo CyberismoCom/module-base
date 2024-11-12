@@ -32,9 +32,6 @@ a|
 
 == References
 
-[1] DIRECTIVE (EU) 2022/2555 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 14 December 2022 on measures for a high common level of cybersecurity across the Union 
-
-[2] SFS-EN ISO/IEC 27001:2022 Information security, cybersecurity and privacy protection. Information security management systems. Requirements. 
 
 == Version history
 
