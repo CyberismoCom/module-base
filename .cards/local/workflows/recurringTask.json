@@ -1,5 +1,5 @@
 {
-    "name": "base/workflows/task",
+    "name": "base/workflows/recurringTask",
     "states": [
         {
             "name": "Open",
@@ -40,8 +40,13 @@
             "toState": "Closed as done"
         },
         {
+            "name": "Review as OK",
+            "fromState": ["Closed as done"],
+            "toState": "Closed as done"
+        },
+        {
             "name": "Review as not applicable",
-            "fromState": ["Open", "In progress"],
+            "fromState": ["*"],
             "toState": "Closed as not applicable"
         }
     ]
