@@ -1,3 +1,3 @@
-select("title";"rank").
+select("title";"rank";"base/fieldTypes/owner";"workflowState").
 result(Card) :- card(Card), parent(Card, {{cardKey}}).
 orderBy("rank", "ASC").
