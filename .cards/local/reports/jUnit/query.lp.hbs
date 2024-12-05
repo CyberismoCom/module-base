@@ -1,21 +1,35 @@
-select("base/fieldTypes/className";"base/fieldTypes/failureMessage").
+select("base/fieldTypes/className";"base/fieldTypes/failureMessage";"base/fieldTypes/caseName";"base/fieldTypes/cardTitle").
 
 result(Category) :- policyCheckFailure(_, Category, _, _).
 
-childResult(Category, Title) :-
-    policyCheckFailure(_, Category, Title,  _).
-
-field(Title, "base/fieldTypes/className", Card) :-
+childResult(Category, (Card, Title)) :-
     policyCheckFailure(Card, Category, Title,  _).
+
+field((Card, Title), "base/fieldTypes/caseName", Title) :-
+    policyCheckFailure(Card, Category, Title,  _).
+
+field((Card, Title), "base/fieldTypes/className", Card) :-
+    policyCheckFailure(Card, Category, Title,  _).
+
+field((Card, Title), "base/fieldTypes/failureMessage", Message) :-
+    policyCheckFailure(Card, Category, Title,  Message).
+
+field((Card, Title), "base/fieldTypes/cardTitle", CardTitle) :-
+    policyCheckFailure(Card, _, Title,  _),
+    field(Card, "title", CardTitle).
 
 result(Category) :- policyCheckSuccess(_, Category, _).
 
-childResult(Category, Title) :-
-    policyCheckSuccess(_, Category, Title).
-
-field(Title, "base/fieldTypes/className", Card) :-
+childResult(Category, (Card, Title)) :-
     policyCheckSuccess(Card, Category, Title).
 
-field(Title, "base/fieldTypes/failureMessage", Message) :-
-    policyCheckFailure(Card, Category, Title,  Message).
+field((Card, Title), "base/fieldTypes/caseName", Title) :-
+    policyCheckSuccess(Card, Category, Title).
+
+field((Card, Title), "base/fieldTypes/className", Card) :-
+    policyCheckSuccess(Card, Category, Title).
+
+field((Card, Title), "base/fieldTypes/cardTitle", CardTitle) :-
+    policyCheckSuccess(Card, _, Title),
+    field(Card, "title", CardTitle).
 

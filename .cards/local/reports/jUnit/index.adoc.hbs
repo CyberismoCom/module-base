@@ -4,7 +4,7 @@
 {{#each results }}
     <testsuite name="{{this.key}}">
 {{#each results }}
-        <testcase name="{{this.key}}" classname="{{this.[base/fieldTypes/className]}}" />
+        <testcase name="{{this.[base/fieldTypes/caseName]}}" classname="{{this.[base/fieldTypes/className]}} - {{this.[base/fieldTypes/cardTitle]}}" />
 {{#if this.[base/fieldTypes/failureMessage]}}
             <failure message="{{this.[base/fieldTypes/failureMessage]}}">
             </failure>
