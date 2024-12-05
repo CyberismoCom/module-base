@@ -1,0 +1,16 @@
+----
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+{{#each results }}
+    <testsuite name="{{this.key}}">
+{{#each results }}
+        <testcase name="{{this.key}}" classname="{{this.[base/fieldTypes/className]}}" />
+{{#if this.[base/fieldTypes/failureMessage]}}
+            <failure message="{{this.[base/fieldTypes/failureMessage]}}">
+            </failure>
+{{/if}}
+{{/each}}
+    </testsuite>
+{{/each}}
+</testsuites>
+----

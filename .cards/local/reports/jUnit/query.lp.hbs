@@ -1,0 +1,21 @@
+select("base/fieldTypes/className";"base/fieldTypes/failureMessage").
+
+result(Category) :- policyCheckFailure(_, Category, _, _).
+
+childResult(Category, Title) :-
+    policyCheckFailure(_, Category, Title,  _).
+
+field(Title, "base/fieldTypes/className", Card) :-
+    policyCheckFailure(Card, Category, Title,  _).
+
+result(Category) :- policyCheckSuccess(_, Category, _).
+
+childResult(Category, Title) :-
+    policyCheckSuccess(_, Category, Title).
+
+field(Title, "base/fieldTypes/className", Card) :-
+    policyCheckSuccess(Card, Category, Title).
+
+field(Title, "base/fieldTypes/failureMessage", Message) :-
+    policyCheckFailure(Card, Category, Title,  Message).
+

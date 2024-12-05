@@ -1,0 +1,5 @@
+{
+  "displayName": "JUnit report of all policy checks",
+  "description": "The results of all policy checks in the JUnit XML format",
+  "category": "General"
+}
