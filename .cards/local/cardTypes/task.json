@@ -6,6 +6,9 @@
             "name": "base/fieldTypes/owner"
         },
         {
+            "name": "base/fieldTypes/informationClassification"
+        },
+        {
             "name": "base/fieldTypes/dueDate"
         }
     ],
