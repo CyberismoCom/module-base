@@ -1,0 +1,30 @@
+{
+    "name": "base/cardTypes/quarterlyTask",
+    "workflow": "base/workflows/recurringTask",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner"
+        },
+        {
+            "name": "base/fieldTypes/informationClassification"
+        },
+        {
+            "name": "base/fieldTypes/reviewPeriod"
+        },
+        {
+            "name": "base/fieldTypes/justification"
+        },
+        {
+            "name": "base/fieldTypes/quarterlyReviewMonth"
+        }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "base/fieldTypes/informationClassification"
+    ],
+    "optionallyVisibleFields": [
+        "base/fieldTypes/justification",
+        "base/fieldTypes/reviewPeriod",
+        "base/fieldTypes/quarterlyReviewMonth"
+    ]
+}

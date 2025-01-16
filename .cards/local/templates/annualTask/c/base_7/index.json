@@ -1,6 +1,6 @@
 {
     "title": "Untitled annual task",
-    "cardType": "base/cardTypes/recurringTask",
+    "cardType": "base/cardTypes/annualTask",
     "workflowState": "",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
