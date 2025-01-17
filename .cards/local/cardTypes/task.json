@@ -27,7 +27,6 @@
         "base/fieldTypes/dueDate"
     ],
     "optionallyVisibleFields": [
-        "base/fieldTypes/justification",
-        "base/fieldTypes/adoptionStep"
+        "base/fieldTypes/justification"
     ]
 }

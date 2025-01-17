@@ -26,7 +26,6 @@
         "base/fieldTypes/informationClassification"
     ],
     "optionallyVisibleFields": [
-        "base/fieldTypes/justification",
-        "base/fieldTypes/adoptionStep"
+        "base/fieldTypes/justification"
     ]
 }
