@@ -16,6 +16,12 @@
         },
         {
             "name": "base/fieldTypes/reviewMonth"
+        },
+        {
+            "name": "base/fieldTypes/adoptionStep"
+        },
+        {
+            "name": "base/fieldTypes/identifier"
         }
     ],
     "alwaysVisibleFields": [
@@ -24,7 +30,7 @@
     ],
     "optionallyVisibleFields": [
         "base/fieldTypes/justification",
-        "base/fieldTypes/reviewPeriod",
-        "base/fieldTypes/reviewMonth"
+        "base/fieldTypes/reviewMonth",
+        "base/fieldTypes/adoptionStep"
     ]
 }

@@ -13,6 +13,12 @@
         },
         {
             "name": "base/fieldTypes/dueDate"
+        },
+        {
+            "name": "base/fieldTypes/adoptionStep"
+        },
+        {
+            "name": "base/fieldTypes/identifier"
         }
     ],
     "alwaysVisibleFields": [
@@ -21,6 +27,7 @@
         "base/fieldTypes/dueDate"
     ],
     "optionallyVisibleFields": [
-        "base/fieldTypes/justification"
+        "base/fieldTypes/justification",
+        "base/fieldTypes/adoptionStep"
     ]
 }
