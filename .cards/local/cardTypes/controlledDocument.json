@@ -13,9 +13,6 @@
         },
         {
             "name": "base/fieldTypes/approvalDate"
-        },
-        {
-            "name": "base/fieldTypes/reviewPeriod"
         }
     ],
     "alwaysVisibleFields": [
@@ -24,7 +21,5 @@
         "base/fieldTypes/approver",
         "base/fieldTypes/approvalDate"
     ],
-    "optionallyVisibleFields": [
-        "base/fieldTypes/reviewPeriod"
-    ]
+    "optionallyVisibleFields": []
 }

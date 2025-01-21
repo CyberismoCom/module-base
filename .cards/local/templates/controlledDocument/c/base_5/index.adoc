@@ -9,11 +9,6 @@
     "buttonLabel": "Add a new review task"
 {{/createCards}}
 
-{{#createCards}}
-  "template": "base/templates/oneTimeTask",
-  "buttonLabel": "Add a new task"
-{{/createCards}}
-
 {{#report}}
   "name": "base/reports/childrenTable"
 {{/report}}
