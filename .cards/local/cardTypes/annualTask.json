@@ -18,6 +18,9 @@
             "name": "base/fieldTypes/reviewMonth"
         },
         {
+            "name": "base/fieldTypes/lastReviewed"
+        },
+        {
             "name": "base/fieldTypes/adoptionStep"
         },
         {
@@ -26,7 +29,8 @@
     ],
     "alwaysVisibleFields": [
         "base/fieldTypes/owner",
-        "base/fieldTypes/informationClassification"
+        "base/fieldTypes/informationClassification",
+        "base/fieldTypes/lastReviewed"
     ],
     "optionallyVisibleFields": [
         "base/fieldTypes/justification",

@@ -1,5 +1,5 @@
 {
-    "name": "base/cardTypes/monthlyTask",
+    "name": "base/cardTypes/reviewTask",
     "workflow": "base/workflows/recurringTask",
     "customFields": [
         {
@@ -30,6 +30,7 @@
         "base/fieldTypes/lastReviewed"
     ],
     "optionallyVisibleFields": [
-        "base/fieldTypes/justification"
+        "base/fieldTypes/justification",
+        "base/fieldTypes/reviewPeriod"
     ]
 }
