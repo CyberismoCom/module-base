@@ -5,8 +5,13 @@
 == Reviews and approvals
 
 {{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add a new review task"
+{{/createCards}}
+
+{{#createCards}}
   "template": "base/templates/oneTimeTask",
-  "buttonLabel": "Add new task"
+  "buttonLabel": "Add a new task"
 {{/createCards}}
 
 {{#report}}

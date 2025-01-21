@@ -1,4 +1,4 @@
-This document describes __TODO: addshort description___ 
+This document describes __TODO: addshort description___
 
 == Introduction
 
@@ -9,18 +9,18 @@ This document describes __TODO: addshort description___
 | Role {set:cellbgcolor:lightblue} | Person | Responsibilities
 
 | {set:cellbgcolor:white}
-| 
+|
 a|
 
 |===============
 
 == Relevant requirements/controls
 
-== Definitions 
+== Definitions
 
 == Process description
 
-=== STEP 1: 
+=== STEP 1:
 
 === STEP 2:
 
@@ -48,8 +48,13 @@ a|
 == Reviews and approvals
 
 {{#createCards}}
+    "template": "base/templates/reviewTask",
+    "buttonLabel": "Add new review task"
+{{/createCards}}
+
+{{#createCards}}
   "template": "base/templates/oneTimeTask",
-  "buttonLabel": "Add new task"
+  "buttonLabel": "Add a new task"
 {{/createCards}}
 
 {{#report}}
