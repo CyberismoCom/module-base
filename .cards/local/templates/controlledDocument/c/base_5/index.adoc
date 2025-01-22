@@ -2,7 +2,7 @@
 
 #TODO# Add content
 
-== Reviews and approvals
+== Reviews
 
 {{#createCards}}
     "template": "base/templates/reviewTask",

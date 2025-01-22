@@ -45,16 +45,11 @@ a|
 
 |===============
 
-== Reviews and approvals
+== Reviews
 
 {{#createCards}}
     "template": "base/templates/reviewTask",
     "buttonLabel": "Add new review task"
-{{/createCards}}
-
-{{#createCards}}
-  "template": "base/templates/oneTimeTask",
-  "buttonLabel": "Add a new task"
 {{/createCards}}
 
 {{#report}}
