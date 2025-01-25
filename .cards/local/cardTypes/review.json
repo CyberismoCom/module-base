@@ -10,6 +10,9 @@
         },
         {
             "name": "base/fieldTypes/lastReviewed"
+        },
+        {
+            "name": "base/fieldTypes/reviewPeriod"
         }
     ],
     "alwaysVisibleFields": [
@@ -17,5 +20,7 @@
         "base/fieldTypes/informationClassification",
         "base/fieldTypes/lastReviewed"
     ],
-    "optionallyVisibleFields": []
+    "optionallyVisibleFields": [
+        "base/fieldTypes/reviewPeriod"
+    ]
 }
