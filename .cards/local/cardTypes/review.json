@@ -1,0 +1,21 @@
+{
+    "name": "base/cardTypes/review",
+    "workflow": "base/workflows/review",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner"
+        },
+        {
+            "name": "base/fieldTypes/informationClassification"
+        },
+        {
+            "name": "base/fieldTypes/lastReviewed"
+        }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "base/fieldTypes/informationClassification",
+        "base/fieldTypes/lastReviewed"
+    ],
+    "optionallyVisibleFields": []
+}
