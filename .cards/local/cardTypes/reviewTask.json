@@ -1,6 +1,6 @@
 {
     "name": "base/cardTypes/reviewTask",
-    "workflow": "base/workflows/recurringTask",
+    "workflow": "base/workflows/reviewTask",
     "customFields": [
         {
             "name": "base/fieldTypes/owner"
