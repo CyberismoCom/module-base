@@ -6,6 +6,10 @@
             "category": "initial"
         },
         {
+            "name": "To do",
+            "category": "initial"
+        },
+        {
             "name": "In progress",
             "category": "active"
         },
@@ -30,8 +34,13 @@
             "toState": "Open"
         },
         {
+            "name": "Review as applicable",
+            "fromState": ["Open", "Closed as not applicable"],
+            "toState": "To do"
+        },
+        {
             "name": "Start progress",
-            "fromState": ["Open"],
+            "fromState": ["To do"],
             "toState": "In progress"
         },
         {
