@@ -1,0 +1,9 @@
+----
+{{#each results}}
+title;workflowState;owner
+{{#each dataRows}}
+{{this.title}};{{this.workflowState}};{{this.[base/fieldTypes/owner]}}
+{{/each}}
+
+{{/each}}
+----

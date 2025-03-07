@@ -1,0 +1,6 @@
+{
+    "name": "base/reports/csv",
+    "displayName": "CSV table",
+    "description": "Produces a Comma Separated Values (CSV) representation of cards",
+    "category": "General"
+}
