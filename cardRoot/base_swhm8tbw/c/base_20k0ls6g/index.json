@@ -1,0 +1,10 @@
+{
+    "title": "Untitled page 2",
+    "cardType": "base/cardTypes/page",
+    "workflowState": "Draft",
+    "base/fieldTypes/owner": "a@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "rank": "0|b",
+    "lastUpdated": "2025-03-07T08:13:28.338Z",
+    "links": []
+}

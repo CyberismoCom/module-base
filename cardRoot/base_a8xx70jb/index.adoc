@@ -1,0 +1,5 @@
+{{#report}}
+  "name": "base/reports/csv",
+  "cardKey": "base_swhm8tbw",
+  "cardType": "base/cardTypes/page"
+{{/report}}

@@ -1,0 +1,11 @@
+{
+    "title": "Untitled page 3",
+    "cardType": "base/cardTypes/page",
+    "workflowState": "Deprecated",
+    "base/fieldTypes/owner": "b@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "rank": "0|c",
+    "lastUpdated": "2025-03-07T08:13:35.193Z",
+    "links": [],
+    "lastTransitioned": "2025-03-07T07:54:47.730Z"
+}
