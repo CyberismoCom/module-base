@@ -1,9 +1,9 @@
 field(Card, "statusIndicator", "error") :-
-    policyCheckFailure(Card, _, _, _),
+    policyCheckFailure(Card),
     not base_disableDefaultStatusIndicator.
 
 field(Card, "statusIndicator", StatusIndicator) :-
-    not policyCheckFailure(Card, _, _, _),
+    not policyCheckFailure(Card),
     not field(Card, "progress", _),
     workflowState(Workflow, State, StatusIndicator),
     field(Card, "cardType", CardType),
