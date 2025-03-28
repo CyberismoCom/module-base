@@ -1,0 +1,16 @@
+{
+    "title": "Document review",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "Changes required",
+    "rank": "0|b",
+    "base/fieldTypes/owner": "a@example.com",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/lastReviewed": "2025-03-13",
+    "base/fieldTypes/justification": null,
+    "base/fieldTypes/adoptionStep": "step1",
+    "base/fieldTypes/identifier": null,
+    "links": [],
+    "lastUpdated": "2025-03-13T12:00:02.259Z",
+    "lastTransitioned": "2025-03-13T12:00:02.212Z"
+}

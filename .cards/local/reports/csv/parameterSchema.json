@@ -8,15 +8,27 @@
       "description": "The name of the report",
       "type": "string"
     },
+    "delimiter": {
+      "description": "The delimiter character such as , or ;",
+      "type": "string"
+    },
     "cardKey": {
-      "description": "Used to override the default cardKey, which is the cardKey of the card, in which the report macro is used",
+      "description": "Ancestor of the cards that will be exported as CSV. Used to override the default cardKey, which is the cardKey of the card, in which the report macro is used",
       "type": "string"
     },
     "cardType": {
       "description": "The card key of the cards that will be included in the CSV data",
       "type": "string"
+    },
+    "fields": {
+      "description": "An array of field names that will be included in the CSV data",
+      "type": "array",
+      "items": {
+        "description": "a field name",
+        "type": "string"
+      }
     }
   },
   "additionalProperties": false,
-  "required": ["name", "cardType"]
+  "required": ["name", "delimiter", "fields"]
 }

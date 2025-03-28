@@ -1,5 +1,11 @@
 {{#report}}
   "name": "base/reports/csv",
+  "delimiter": ";",
   "cardKey": "base_swhm8tbw",
-  "cardType": "base/cardTypes/page"
+  "cardType": "base/cardTypes/page",
+  "fields": [
+    "title",
+    "workflowState",
+    "base/fieldTypes/owner"
+  ]
 {{/report}}

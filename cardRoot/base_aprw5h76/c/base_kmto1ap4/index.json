@@ -1,0 +1,17 @@
+{
+    "title": "Untitled annual task",
+    "cardType": "base/cardTypes/annualTask",
+    "workflowState": "Closed as not applicable",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/justification": "asdf",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/reviewMonth": null,
+    "base/fieldTypes/lastReviewed": "2025-03-13",
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/adoptionStep": null,
+    "rank": "0|b",
+    "lastUpdated": "2025-03-13T12:11:26.450Z",
+    "links": [],
+    "lastTransitioned": "2025-03-13T12:11:26.400Z"
+}

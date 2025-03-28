@@ -1,9 +1,35 @@
-
 selectAll.
 
 result(csv).
 
-childResult(csv, Card, "dataRows") :- ancestor(Card, {{cardKey}}), field(Card, "cardType", "{{cardType}}").
+childResult(csv, Card, "rows") :-
+{{#if cardType}}
+    field(Card, "cardType", "{{cardType}}"),
+{{/if}}
+    ancestor(Card, {{cardKey}}).
+
+{{#each fields}}
+childResult(csv, "{{this}}" , "headerColumns").
+field("{{this}}", "header", "{{this}}").
+field("{{this}}", "index", {{@index}}).
+
+childResult(Card, (Card, "{{this}}") , "columns") :-
+    childResult(csv, Card, "rows").
+
+field((Card, "{{this}}"), "value", Value) :-
+    childResult(csv, Card, "rows"),
+    field(Card, "{{this}}", Value).
+
+field((Card, "{{this}}"), "value", "") :-
+    childResult(csv, Card, "rows"),
+    not field(Card, "{{this}}", _).
+
+field((Card, "{{this}}"), "index", {{@index}}) :-
+    childResult(csv, Card, "rows").
+{{/each}}
+
+order(3, "headerColumns", 1, "index", "ASC").
+order(3, "columns", 1, "index", "ASC").
 
 field(Card, "compoundRank", Rank) :-
     card(Card),
