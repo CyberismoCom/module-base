@@ -1,0 +1,6 @@
+{
+    "name": "base/reports/percentage",
+    "displayName": "Percentage",
+    "description": "A doughnut that shows a percentage",
+    "category": "Dashboard widgets"
+}

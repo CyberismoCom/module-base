@@ -1,0 +1,11 @@
+{
+    "title": "Untitled page",
+    "cardType": "base/cardTypes/page",
+    "workflowState": "Draft",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "rank": "0|b",
+    "lastUpdated": "2025-03-28T14:27:13.136Z",
+    "links": [],
+    "templateCardKey": "base_2"
+}

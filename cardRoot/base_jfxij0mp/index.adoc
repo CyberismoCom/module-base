@@ -1,0 +1,4 @@
+{{#report}}
+  "name": "base/reports/percentage",
+  "percentage": 33
+{{/report}}
