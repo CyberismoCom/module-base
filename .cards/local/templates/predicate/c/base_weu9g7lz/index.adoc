@@ -1,8 +1,8 @@
-## Parameters
+== Parameters
 
 * `Parameter1`: description of Parameter1
 * `Parameter2`: description of Parameter1
 
-## Description
+== Description
 
 #TODO: Add a description#
