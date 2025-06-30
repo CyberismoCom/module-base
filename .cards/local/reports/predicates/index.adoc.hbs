@@ -1,0 +1,15 @@
+{{#if results}}
+
+[cols="5,3,4"]
+|===
+| Predicate | Category | Description
+
+{{#each results}}
+|`xref:{{this.key}}.adoc[{{this.title}}]`
+|{{this.[base/fieldTypes/category]}}
+|{{this.[base/fieldTypes/briefDescription]}}
+{{/each}}
+
+|===
+
+{{/if}}
