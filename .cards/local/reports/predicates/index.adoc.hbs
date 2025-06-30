@@ -1,12 +1,21 @@
 {{#if results}}
+{{log this}}
 
+{{#unless category}}
 [cols="5,3,4"]
 |===
 | Predicate | Category | Description
+{{else}}
+[cols="5,4"]
+|===
+| Predicate | Description
+{{/unless}}
 
 {{#each results}}
 |`xref:{{this.key}}.adoc[{{this.title}}]`
+{{#unless ../category}}
 |{{this.[base/fieldTypes/category]}}
+{{/unless}}
 |{{this.[base/fieldTypes/briefDescription]}}
 {{/each}}
 
