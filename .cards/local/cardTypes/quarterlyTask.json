@@ -35,6 +35,7 @@
         "base/fieldTypes/justification",
         "base/fieldTypes/quarterlyReviewMonth",
         "base/fieldTypes/informationClassification",
+        "base/fieldTypes/adoptionStep",
         "base/fieldTypes/identifier"
     ],
     "displayName": "Quarterly task"
