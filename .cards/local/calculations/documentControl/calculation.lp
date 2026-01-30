@@ -1,4 +1,4 @@
-transitionDenied(Document, "Approve", "Fix policy failures before approving" ):-
+transitionDenied(Document, "Approve", "Fix policy failures before approving") :-
     field(Document, "cardType", "base/cardTypes/controlledDocument"),
     policyCheckFailure(Document, _, _, _).
 
@@ -8,23 +8,23 @@ transitionDenied(Document, "Approve", "Fix policy failures in at least one of th
     field(ReviewTask, "cardType", "base/cardTypes/reviewTask"),
     parent(ReviewTask, Document).
 
-transitionDenied(Document, "Approve", "Fill in the owner field before approving" ):-
+transitionDenied(Document, "Approve", "Fill in the owner field before approving") :-
     field(Document, "cardType", "base/cardTypes/controlledDocument"),
     not field(Document, "base/fieldTypes/owner", _).
 
-transitionDenied(Document, "Approve", "Fill in the approver field before approving" ):-
+transitionDenied(Document, "Approve", "Fill in the approver field before approving") :-
     field(Document, "cardType", "base/cardTypes/controlledDocument"),
     not field(Document, "base/fieldTypes/approver", _).
 
-transitionDenied(Document, "Approve", "Fill in the information classification field before approving" ):-
+transitionDenied(Document, "Approve", "Fill in the information classification field before approving") :-
     field(Document, "cardType", "base/cardTypes/controlledDocument"),
     not field(Document, "base/fieldTypes/informationClassification", _).
 
-transitionDenied(Document, "Approve", "Fill in the approval date field before approving" ):-
+transitionDenied(Document, "Approve", "Fill in the approval date field before approving") :-
     field(Document, "cardType", "base/cardTypes/controlledDocument"),
     not field(Document, "base/fieldTypes/approvalDate", _).
 
-transitionDenied(Document, "Approve", "Complete the review task(s) before approving" ):-
+transitionDenied(Document, "Approve", "Complete the review task(s) before approving") :-
     field(Document, "cardType", "base/cardTypes/controlledDocument"),
     parent(ReviewTask, Document),
     field(ReviewTask, "cardType", "base/cardTypes/reviewTask"),
