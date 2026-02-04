@@ -90,19 +90,3 @@ policyCheckFailure(ReviewTask, "Document control", "Reviewer cannot be the same 
     field(Document, "base/fieldTypes/owner", DocumentOwner),
     field(ReviewTask, "base/fieldTypes/owner", Reviewer),
     DocumentOwner = Reviewer.
-
-policyCheckFailure(Document, "Document control", "Reviewer cannot be the same as document approver", "The owner of a review task is also the approver for this document. Change the owner of the review task or the approver of this document.") :-
-    field(Document, "cardType", "base/cardTypes/controlledDocument"),
-    parent(ReviewTask, Document),
-    field(ReviewTask, "cardType", "base/cardTypes/reviewTask"),
-    field(Document, "base/fieldTypes/approver", DocumentApprover),
-    field(ReviewTask, "base/fieldTypes/owner", Reviewer),
-    DocumentApprover = Reviewer.
-
-policyCheckFailure(ReviewTask, "Document control", "Reviewer cannot be the same as document approver", "The owner of this review task is also the approver of the document. Change the owner of this review task or the approver of the document.") :-
-    field(Document, "cardType", "base/cardTypes/controlledDocument"),
-    parent(ReviewTask, Document),
-    field(ReviewTask, "cardType", "base/cardTypes/reviewTask"),
-    field(Document, "base/fieldTypes/approver", DocumentApprover),
-    field(ReviewTask, "base/fieldTypes/owner", Reviewer),
-    DocumentApprover = Reviewer.
