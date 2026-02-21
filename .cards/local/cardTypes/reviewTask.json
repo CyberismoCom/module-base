@@ -42,5 +42,6 @@
         "base/fieldTypes/adoptionStep",
         "base/fieldTypes/identifier"
     ],
-    "displayName": "Review task"
+    "displayName": "Review task",
+    "description": "A task that tracks the review of a document"
 }
