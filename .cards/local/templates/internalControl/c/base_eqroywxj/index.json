@@ -1,0 +1,14 @@
+{
+    "title": "Untitled internal control",
+    "cardType": "base/cardTypes/internalControl",
+    "workflowState": "",
+    "rank": "0|b",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": null,
+    "base/fieldTypes/justification": null,
+    "base/fieldTypes/adoptionStep": null,
+    "base/fieldTypes/identifier": null,
+    "base/fieldTypes/internalControlReviewPeriod": null,
+    "base/fieldTypes/internalControlReviewMonth": null,
+    "lastUpdated": "2026-05-11T17:55:12.261Z"
+}

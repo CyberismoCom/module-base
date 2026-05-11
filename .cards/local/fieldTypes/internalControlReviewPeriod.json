@@ -1,0 +1,23 @@
+{
+    "name": "base/fieldTypes/internalControlReviewPeriod",
+    "displayName": "Review period",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "month",
+            "enumDisplayValue": "1 month",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "quarter",
+            "enumDisplayValue": "3 months",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "year",
+            "enumDisplayValue": "12 months",
+            "enumDescription": ""
+        }
+    ],
+    "description": "How often the internal control should be reviewed"
+}

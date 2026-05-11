@@ -1,0 +1,63 @@
+{
+    "name": "base/cardTypes/internalControl",
+    "displayName": "Internal control",
+    "workflow": "base/workflows/internalControl",
+    "customFields": [
+        {
+            "name": "base/fieldTypes/owner",
+            "displayName": "",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/informationClassification",
+            "displayName": "",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/justification",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/adoptionStep",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/identifier",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/internalControlReviewPeriod",
+            "displayName": "",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/internalControlReviewMonth",
+            "displayName": "",
+            "isCalculated": false
+        },
+        {
+            "name": "base/fieldTypes/assessment",
+            "displayName": "",
+            "isCalculated": true
+        },
+        {
+            "name": "base/fieldTypes/assessmentExplanation",
+            "displayName": "",
+            "isCalculated": true
+        }
+    ],
+    "alwaysVisibleFields": [
+        "base/fieldTypes/owner",
+        "base/fieldTypes/assessment",
+        "base/fieldTypes/assessmentExplanation"
+    ],
+    "optionallyVisibleFields": [
+        "base/fieldTypes/informationClassification",
+        "base/fieldTypes/justification",
+        "base/fieldTypes/adoptionStep",
+        "base/fieldTypes/internalControlReviewPeriod",
+        "base/fieldTypes/internalControlReviewMonth",
+        "base/fieldTypes/identifier"
+    ],
+    "description": "A recurring task that implements a cybersecurity process"
+}

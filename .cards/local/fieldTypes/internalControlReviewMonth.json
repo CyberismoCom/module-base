@@ -1,0 +1,68 @@
+{
+    "name": "base/fieldTypes/internalControlReviewMonth",
+    "displayName": "Review month",
+    "dataType": "enum",
+    "enumValues": [
+        {
+            "enumValue": "1",
+            "enumDisplayValue": "1",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "2",
+            "enumDisplayValue": "2",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "3",
+            "enumDisplayValue": "3",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "4",
+            "enumDisplayValue": "4",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "5",
+            "enumDisplayValue": "5",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "6",
+            "enumDisplayValue": "6",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "7",
+            "enumDisplayValue": "7",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "8",
+            "enumDisplayValue": "8",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "9",
+            "enumDisplayValue": "9",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "10",
+            "enumDisplayValue": "10",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "11",
+            "enumDisplayValue": "11",
+            "enumDescription": ""
+        },
+        {
+            "enumValue": "12",
+            "enumDisplayValue": "12",
+            "enumDescription": ""
+        }
+    ],
+    "description": "The month of the review period when the control should be reviewed"
+}

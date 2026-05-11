@@ -1,0 +1,6 @@
+{
+    "name": "base/fieldTypes/ownerOverride",
+    "displayName": "Owner override",
+    "dataType": "person",
+    "description": "Override the value in the Owner field manually"
+}
