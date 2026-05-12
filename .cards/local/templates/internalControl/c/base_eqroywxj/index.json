@@ -4,7 +4,7 @@
     "workflowState": "",
     "rank": "0|b",
     "base/fieldTypes/owner": null,
-    "base/fieldTypes/informationClassification": null,
+    "base/fieldTypes/informationClassification": "internal",
     "base/fieldTypes/justification": null,
     "base/fieldTypes/adoptionStep": null,
     "base/fieldTypes/identifier": null,
