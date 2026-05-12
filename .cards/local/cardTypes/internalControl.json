@@ -5,12 +5,10 @@
     "customFields": [
         {
             "name": "base/fieldTypes/owner",
-            "displayName": "",
             "isCalculated": false
         },
         {
             "name": "base/fieldTypes/informationClassification",
-            "displayName": "",
             "isCalculated": false
         },
         {
@@ -27,22 +25,18 @@
         },
         {
             "name": "base/fieldTypes/internalControlReviewPeriod",
-            "displayName": "",
             "isCalculated": false
         },
         {
             "name": "base/fieldTypes/internalControlReviewMonth",
-            "displayName": "",
             "isCalculated": false
         },
         {
             "name": "base/fieldTypes/assessment",
-            "displayName": "",
             "isCalculated": true
         },
         {
             "name": "base/fieldTypes/assessmentExplanation",
-            "displayName": "",
             "isCalculated": true
         }
     ],
