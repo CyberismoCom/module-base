@@ -1,12 +1,12 @@
 {
-    "title": "Draft role A",
+    "title": "Draft role B",
     "cardType": "base/cardTypes/roleAssignment",
     "workflowState": "Draft",
-    "rank": "0|b",
+    "rank": "0|an",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "links": [],
     "templateCardKey": "base_jdmufj2n",
-    "createdAt": "2026-07-31T09:50:40.662Z",
-    "lastUpdated": "2026-07-31T10:46:24.067Z"
+    "createdAt": "2026-07-31T10:46:30.860Z",
+    "lastUpdated": "2026-07-31T10:46:57.668Z"
 }

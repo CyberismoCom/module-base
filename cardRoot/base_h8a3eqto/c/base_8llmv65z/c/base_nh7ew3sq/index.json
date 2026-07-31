@@ -1,13 +1,13 @@
 {
-    "title": "Archived role A",
+    "title": "Archived role B",
     "cardType": "base/cardTypes/roleAssignment",
     "workflowState": "Archived",
-    "rank": "0|c",
+    "rank": "0|a",
     "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "links": [],
     "templateCardKey": "base_jdmufj2n",
-    "createdAt": "2026-07-31T09:50:47.536Z",
-    "lastUpdated": "2026-07-31T10:49:52.729Z",
-    "lastTransitioned": "2026-07-31T09:50:49.849Z"
+    "createdAt": "2026-07-31T10:49:59.133Z",
+    "lastUpdated": "2026-07-31T10:50:15.563Z",
+    "lastTransitioned": "2026-07-31T10:50:08.446Z"
 }
