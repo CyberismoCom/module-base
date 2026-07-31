@@ -1,0 +1,12 @@
+{
+    "title": "Test role assignments report",
+    "cardType": "base/cardTypes/page",
+    "workflowState": "Draft",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "rank": "0|a",
+    "lastUpdated": "2026-07-31T10:39:47.217Z",
+    "links": [],
+    "templateCardKey": "base_2",
+    "createdAt": "2026-07-31T09:50:34.832Z"
+}

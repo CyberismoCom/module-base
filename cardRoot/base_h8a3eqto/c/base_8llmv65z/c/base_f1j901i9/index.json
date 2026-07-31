@@ -1,0 +1,13 @@
+{
+    "title": "Assigned role",
+    "cardType": "base/cardTypes/roleAssignment",
+    "workflowState": "Assigned",
+    "rank": "0|d",
+    "base/fieldTypes/owner": null,
+    "base/fieldTypes/informationClassification": "internal",
+    "links": [],
+    "templateCardKey": "base_jdmufj2n",
+    "createdAt": "2026-07-31T09:51:53.366Z",
+    "lastUpdated": "2026-07-31T09:51:59.360Z",
+    "lastTransitioned": "2026-07-31T09:51:59.360Z"
+}
