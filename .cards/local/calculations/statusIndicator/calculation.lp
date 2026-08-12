@@ -1,6 +1,7 @@
 field(Card, "statusIndicator", "error") :-
     base_policyCheckFailure(Card, _, _, _),
-    not base_disableDefaultStatusIndicator.
+    not base_disableDefaultStatusIndicator,
+    not base_disableDefaultStatusIndicator(Card).
 
 field(Card, "statusIndicator", StatusIndicator) :-
     not base_policyCheckFailure(Card, _, _, _),
@@ -9,4 +10,5 @@ field(Card, "statusIndicator", StatusIndicator) :-
     field(Card, "cardType", CardType),
     field(Card, "workflowState", State),
     field(CardType, "workflow", Workflow),
-    not base_disableDefaultStatusIndicator.
+    not base_disableDefaultStatusIndicator,
+    not base_disableDefaultStatusIndicator(Card).
