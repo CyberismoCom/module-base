@@ -1,0 +1,16 @@
+{
+    "title": "Controlled document",
+    "cardType": "base/cardTypes/controlledDocument",
+    "workflowState": "Approved",
+    "base/fieldTypes/informationClassification": "internal",
+    "rank": "0|a",
+    "lastUpdated": "2026-08-16T17:54:24.036Z",
+    "links": [],
+    "templateCardKey": "base_5",
+    "createdAt": "2026-08-14T06:19:54.662Z",
+    "lastTransitioned": "2026-08-14T06:23:47.472Z",
+    "base/fieldTypes/approvalDate": "2026-08-14",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "base/fieldTypes/reviewPeriod": 365
+}

@@ -1,3 +1,1 @@
-## <Insert title here>
-
-<Insert page content>
+The cards under this card are test content for the Base module.

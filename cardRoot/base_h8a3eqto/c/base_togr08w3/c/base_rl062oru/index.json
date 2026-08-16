@@ -1,0 +1,16 @@
+{
+    "title": "Document review",
+    "cardType": "base/cardTypes/reviewTask",
+    "workflowState": "Closed as done",
+    "rank": "0|c",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/adoptionStep": "step1",
+    "links": [],
+    "lastUpdated": "2026-08-16T17:54:01.945Z",
+    "templateCardKey": "base_wp19dy3m",
+    "createdAt": "2026-08-16T17:53:47.744Z",
+    "base/fieldTypes/owner": "reviewer@example.com",
+    "lastTransitioned": "2026-08-16T17:54:01.918Z",
+    "base/fieldTypes/lastReviewed": "2026-08-16"
+}
