@@ -3,11 +3,10 @@
     "cardType": "base/cardTypes/roleAssignment",
     "workflowState": "Archived",
     "rank": "0|c",
-    "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "links": [],
     "templateCardKey": "base_jdmufj2n",
     "createdAt": "2026-07-31T09:50:47.536Z",
-    "lastUpdated": "2026-07-31T10:49:52.729Z",
+    "lastUpdated": "2026-08-16T20:12:38.406Z",
     "lastTransitioned": "2026-07-31T09:50:49.849Z"
 }

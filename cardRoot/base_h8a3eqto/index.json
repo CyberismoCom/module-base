@@ -2,10 +2,9 @@
     "title": "Test content",
     "cardType": "base/cardTypes/page",
     "workflowState": "Draft",
-    "base/fieldTypes/owner": null,
     "base/fieldTypes/informationClassification": "internal",
     "rank": "0|c",
-    "lastUpdated": "2026-08-16T17:55:40.394Z",
+    "lastUpdated": "2026-08-16T20:12:38.403Z",
     "links": [],
     "templateCardKey": "base_2",
     "createdAt": "2026-07-31T10:39:31.013Z"
