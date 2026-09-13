@@ -15,7 +15,7 @@
     "data": {
       "values": [
         {{#each points}}
-        {"label": "{{{jsonEscape this.label}}}", "value": {{this.value}}, "index": {{@index}} }{{#unless @last}},{{/unless}}
+        {"index": {{@index}}, "value": {{#if (eq this.value null)}}null{{else}}{{this.value}}{{/if}}, {{#if (eq ../scale "time")}}"date": "{{{jsonEscape this.date}}}"{{else}}{{#if (eq ../scale "number")}}"x": {{this.x}}{{else}}"label": "{{{jsonEscape this.label}}}"{{/if}}{{/if}} }{{#unless @last}},{{/unless}}
         {{/each}}
       ]
     },
@@ -30,9 +30,7 @@
         "mark": {"type": "line", "strokeWidth": 2},
         "encoding": {
           "x": {
-            "field": "label",
-            "type": "nominal",
-            "sort": null,
+            {{#if (eq scale "time")}}"field": "date", "type": "temporal",{{else}}{{#if (eq scale "number")}}"field": "x", "type": "quantitative",{{else}}"field": "label", "type": "nominal", "sort": null,{{/if}}{{/if}}
             "axis": {
               "title": null,
               "domain": false,
@@ -68,9 +66,7 @@
         "mark": {"type": "point", "filled": true, "size": 60},
         "encoding": {
           "x": {
-            "field": "label",
-            "type": "nominal",
-            "sort": null,
+            {{#if (eq scale "time")}}"field": "date", "type": "temporal",{{else}}{{#if (eq scale "number")}}"field": "x", "type": "quantitative",{{else}}"field": "label", "type": "nominal", "sort": null,{{/if}}{{/if}}
             "axis": {
               "title": null,
               "domain": false,
@@ -104,6 +100,7 @@
       },
       {
         "transform": [
+          {"filter": "datum.value != null"},
           {"joinaggregate": [{"op": "max", "field": "index", "as": "lastIndex"}]},
           {"filter": "datum.index === datum.lastIndex"}
         ],
@@ -118,9 +115,7 @@
         },
         "encoding": {
           "x": {
-            "field": "label",
-            "type": "nominal",
-            "sort": null,
+            {{#if (eq scale "time")}}"field": "date", "type": "temporal",{{else}}{{#if (eq scale "number")}}"field": "x", "type": "quantitative",{{else}}"field": "label", "type": "nominal", "sort": null,{{/if}}{{/if}}
             "axis": {
               "title": null,
               "domain": false,

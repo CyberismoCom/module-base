@@ -20,8 +20,13 @@
       "type": "string",
       "enum": ["blue", "green", "yellow", "red", "orange", "purple"]
     },
+    "scale": {
+      "description": "How the horizontal axis is laid out, and which field each point carries. 'category' spaces the points evenly and takes a 'label'; 'time' places them by date and takes a 'date'; 'number' places them on a numeric axis and takes an 'x'. Use 'time' or 'number' whenever the gaps between points are uneven, because 'category' would space them evenly and misstate the shape of the trend.",
+      "type": "string",
+      "enum": ["category", "time", "number"]
+    },
     "points": {
-      "description": "The value at each period, oldest first. Only the last value is labelled; period names that do not fit are dropped rather than overlapped, so keep them short.",
+      "description": "The value at each period, oldest first. Only the last value is labelled. With the 'category' scale the period names that do not fit are dropped rather than overlapped, so keep them short; the other two scales generate their own axis labels.",
       "type": "array",
       "minItems": 2,
       "items": {
@@ -29,15 +34,28 @@
         "type": "object",
         "properties": {
           "label": {
-            "description": "Name of this period, shown on the horizontal axis",
+            "description": "Name of this period, for the 'category' scale",
             "type": "string"
           },
-          "value": {
-            "description": "Value at this period",
+          "date": {
+            "description": "Date of this point, for the 'time' scale, as YYYY-MM-DD or a full ISO timestamp",
+            "type": "string"
+          },
+          "x": {
+            "description": "Position of this point, for the 'number' scale",
             "type": "number"
+          },
+          "value": {
+            "description": "Value at this point. Use null where no measurement was taken; the line is broken at that point rather than drawn straight across the gap.",
+            "type": ["number", "null"]
           }
         },
-        "required": ["label", "value"]
+        "required": ["value"],
+        "oneOf": [
+          {"required": ["label"]},
+          {"required": ["date"]},
+          {"required": ["x"]}
+        ]
       }
     }
   },

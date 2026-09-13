@@ -1,7 +1,10 @@
 = Trend widget
 
-Only the last value is labelled, since that is the one a reader wants. Period names that
-do not fit are dropped rather than overlapped.
+Only the last value is labelled, since that is the one a reader wants.
+
+The `scale` parameter decides how the horizontal axis is laid out. Use `time` or
+`number` whenever the gaps between points are uneven: `category` spaces points evenly
+and would misstate the shape of the trend.
 
 == Four quarters
 
@@ -36,6 +39,83 @@ do not fit are dropped rather than overlapped.
       {"label": "Oct", "value": 47},
       {"label": "Nov", "value": 44},
       {"label": "Dec", "value": 42}
+  ]
+{{/report}}
+
+== Sparse dates on a category scale
+
+The wrong way round. These five measurements are two weeks, six weeks and then five
+months apart, but an evenly spaced axis draws them as a steady decline.
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "dates used as category labels",
+  "points": [
+      {"label": "2026-01-06", "value": 71},
+      {"label": "2026-01-20", "value": 66},
+      {"label": "2026-03-02", "value": 55},
+      {"label": "2026-03-09", "value": 52},
+      {"label": "2026-08-17", "value": 42}
+  ]
+{{/report}}
+
+== The same dates on a time scale
+
+Positioned by date. The cluster of activity early in the year and the long quiet
+stretch afterwards are both visible, and the axis labels are generated rather than
+taken from the points.
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "positioned by date",
+  "scale": "time",
+  "points": [
+      {"date": "2026-01-06", "value": 71},
+      {"date": "2026-01-20", "value": 66},
+      {"date": "2026-03-02", "value": 55},
+      {"date": "2026-03-09", "value": 52},
+      {"date": "2026-08-17", "value": 42}
+  ]
+{{/report}}
+
+== A gap where nothing was measured
+
+A null value breaks the line instead of drawing straight across, so a missing
+measurement does not look like a measured trend.
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "March was not measured",
+  "colour": "purple",
+  "scale": "time",
+  "points": [
+      {"date": "2026-01-06", "value": 71},
+      {"date": "2026-02-03", "value": 66},
+      {"date": "2026-03-03", "value": null},
+      {"date": "2026-05-05", "value": 48},
+      {"date": "2026-06-02", "value": 42}
+  ]
+{{/report}}
+
+== A numeric scale
+
+Dates are not the only case. Here the horizontal axis counts days since a release,
+starting at zero.
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "days since release",
+  "colour": "orange",
+  "scale": "number",
+  "points": [
+      {"x": 0, "value": 71},
+      {"x": 7, "value": 66},
+      {"x": 45, "value": 55},
+      {"x": 190, "value": 42}
   ]
 {{/report}}
 
