@@ -1,0 +1,112 @@
+= Trend widget
+
+Only the last value is labelled, since that is the one a reader wants. Period names that
+do not fit are dropped rather than overlapped.
+
+== Four quarters
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "over the last four quarters",
+  "points": [
+      {"label": "Q1", "value": 71},
+      {"label": "Q2", "value": 63},
+      {"label": "Q3", "value": 55},
+      {"label": "Q4", "value": 42}
+  ]
+{{/report}}
+
+== Twelve months
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "by month",
+  "points": [
+      {"label": "Jan", "value": 71},
+      {"label": "Feb", "value": 68},
+      {"label": "Mar", "value": 72},
+      {"label": "Apr", "value": 65},
+      {"label": "May", "value": 60},
+      {"label": "Jun", "value": 58},
+      {"label": "Jul", "value": 55},
+      {"label": "Aug", "value": 51},
+      {"label": "Sep", "value": 49},
+      {"label": "Oct", "value": 47},
+      {"label": "Nov", "value": 44},
+      {"label": "Dec", "value": 42}
+  ]
+{{/report}}
+
+== A trend going the wrong way
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Overdue reviews",
+  "legend": "reviews past their due date",
+  "colour": "red",
+  "points": [
+      {"label": "W1", "value": 2},
+      {"label": "W2", "value": 4},
+      {"label": "W3", "value": 5},
+      {"label": "W4", "value": 9},
+      {"label": "W5", "value": 14}
+  ]
+{{/report}}
+
+== Two points only
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Findings before and after remediation",
+  "colour": "green",
+  "points": [
+      {"label": "Before", "value": 31},
+      {"label": "After", "value": 12}
+  ]
+{{/report}}
+
+== A flat trend
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Approved policies",
+  "legend": "no change over the year",
+  "points": [
+      {"label": "Q1", "value": 24},
+      {"label": "Q2", "value": 24},
+      {"label": "Q3", "value": 24},
+      {"label": "Q4", "value": 24}
+  ]
+{{/report}}
+
+== Decimals and a zero
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Mean time to remediate",
+  "legend": "days, quarterly average",
+  "colour": "purple",
+  "points": [
+      {"label": "Q1", "value": 12.5},
+      {"label": "Q2", "value": 9.25},
+      {"label": "Q3", "value": 4.75},
+      {"label": "Q4", "value": 0}
+  ]
+{{/report}}
+
+== Long legend and quotes
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open \"critical\" findings",
+  "legend": "of all identified security development lifecycle controls across every active project",
+  "colour": "orange",
+  "points": [
+      {"label": "Q1", "value": 8},
+      {"label": "Q2", "value": 6},
+      {"label": "Q3", "value": 7},
+      {"label": "Q4", "value": 3}
+  ]
+{{/report}}
