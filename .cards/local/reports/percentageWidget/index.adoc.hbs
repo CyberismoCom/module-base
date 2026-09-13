@@ -30,7 +30,7 @@
             "type": "nominal",
             "scale": {
               "domain": ["completed", "remaining"],
-              "range": ["{{#if (eq colour "red")}}#b22217{{else}}{{#if colour}}{{colour}}{{else}}blue{{/if}}{{/if}}", "currentColor"]
+              "range": ["{{#if (eq colour "green")}}light-dark(#008300,#008300){{else}}{{#if (eq colour "yellow")}}light-dark(#eda100,#c98500){{else}}{{#if (eq colour "red")}}light-dark(#e34948,#e66767){{else}}{{#if (eq colour "orange")}}light-dark(#eb6834,#d95926){{else}}{{#if (eq colour "purple")}}light-dark(#4a3aa7,#9085e9){{else}}light-dark(#2a78d6,#3987e5){{/if}}{{/if}}{{/if}}{{/if}}{{/if}}", "currentColor"]
             },
             "legend": null
           },

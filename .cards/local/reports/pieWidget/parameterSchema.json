@@ -1,0 +1,48 @@
+{
+  "$id": "pieWidgetReportSchema",
+  "additionalProperties": false,
+  "description": "A donut chart showing how a total splits into parts, with a title and a legend",
+  "properties": {
+    "name": {
+      "description": "The name of the report",
+      "type": "string"
+    },
+    "title": {
+      "description": "Title text on top of the widget",
+      "type": "string"
+    },
+    "legend": {
+      "description": "Description text shown below the chart",
+      "type": "string"
+    },
+    "slices": {
+      "description": "The parts that make up the whole. Up to six slices are drawn as a donut chart; beyond that the report renders a table instead, because more than six colour classes cannot be told apart reliably.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "additionalProperties": false,
+        "type": "object",
+        "properties": {
+          "label": {
+            "description": "Name of this part, shown next to its slice",
+            "type": "string"
+          },
+          "value": {
+            "description": "Value of this part, in any unit; shares are computed from the total",
+            "type": "number",
+            "minimum": 0
+          },
+          "colour": {
+            "description": "Colour of this slice (optional). When omitted, slices are coloured from a validated categorical palette in order.",
+            "type": "string",
+            "enum": ["blue", "green", "yellow", "red", "orange", "purple"]
+          }
+        },
+        "required": ["label", "value"]
+      }
+    }
+  },
+  "required": ["name", "title", "legend", "slices"],
+  "title": "Report",
+  "type": "object"
+}
