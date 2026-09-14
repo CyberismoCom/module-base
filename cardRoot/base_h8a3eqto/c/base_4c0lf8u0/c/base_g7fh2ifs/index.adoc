@@ -1,0 +1,24 @@
+= Comparison with the percentage macro
+
+Both widgets below use the same parameters. The first one is rendered by the
+built-in `percentage` macro, the second one by the `base/reports/percentageWidget`
+report.
+
+== Built-in percentage macro
+
+{{#percentage}}
+  "title": "Adoption step 1 status",
+  "value": 42,
+  "legend": "of SDL Controls",
+  "colour": "green"
+{{/percentage}}
+
+== percentageWidget report
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Adoption step 1 status",
+  "value": 42,
+  "legend": "of SDL Controls",
+  "colour": "green"
+{{/report}}

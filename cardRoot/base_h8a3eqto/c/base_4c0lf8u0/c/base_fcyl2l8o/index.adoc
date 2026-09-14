@@ -1,0 +1,59 @@
+= Slice counts
+
+== Two slices
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Coverage",
+  "legend": "of all requirements",
+  "slices": [
+      {"label": "Covered", "value": 62},
+      {"label": "Not covered", "value": 38}
+  ]
+{{/report}}
+
+== Four slices, default palette
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Findings by severity",
+  "legend": "across all active projects",
+  "slices": [
+      {"label": "Critical", "value": 3},
+      {"label": "High", "value": 11},
+      {"label": "Medium", "value": 24},
+      {"label": "Low", "value": 42}
+  ]
+{{/report}}
+
+== Six slices, default palette
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Cards by state",
+  "legend": "in the base module",
+  "slices": [
+      {"label": "Draft", "value": 18},
+      {"label": "In review", "value": 9},
+      {"label": "Approved", "value": 31},
+      {"label": "Deprecated", "value": 4},
+      {"label": "Rejected", "value": 6},
+      {"label": "Archived", "value": 12}
+  ]
+{{/report}}
+
+== Six slices, even split
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Even split",
+  "legend": "equal parts",
+  "slices": [
+      {"label": "Alpha", "value": 16},
+      {"label": "Bravo", "value": 17},
+      {"label": "Charlie", "value": 16},
+      {"label": "Delta", "value": 17},
+      {"label": "Echo", "value": 16},
+      {"label": "Foxtrot", "value": 18}
+  ]
+{{/report}}

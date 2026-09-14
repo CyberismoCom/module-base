@@ -1,0 +1,11 @@
+{
+    "rank": "0|i",
+    "workflowState": "Draft",
+    "createdAt": "2026-09-13T20:22:51.570Z",
+    "links": [],
+    "cardType": "base/cardTypes/page",
+    "title": "Risk matrix widget",
+    "templateCardKey": "base_2",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-09-13T20:23:09.543Z"
+}

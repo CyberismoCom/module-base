@@ -1,0 +1,100 @@
+= Bar widget
+
+== A handful of categories
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Open tasks by owner",
+  "legend": "across all active projects",
+  "bars": [
+      {"label": "Alice", "value": 12},
+      {"label": "Bruno", "value": 9},
+      {"label": "Chandra", "value": 7},
+      {"label": "Dmitri", "value": 4},
+      {"label": "Eva", "value": 2}
+  ]
+{{/report}}
+
+== Many categories, long names
+
+Where `pieWidget` would fall back to a table, a bar chart still reads. Bar length carries
+the magnitude, so one hue is enough and there is no six-category ceiling.
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Findings by control family",
+  "legend": "open findings only",
+  "bars": [
+      {"label": "Access control", "value": 31},
+      {"label": "Cryptography", "value": 22},
+      {"label": "Physical and environmental security", "value": 18},
+      {"label": "Operations security", "value": 15},
+      {"label": "Communications security", "value": 12},
+      {"label": "Supplier relationships", "value": 9},
+      {"label": "Incident management", "value": 7},
+      {"label": "Business continuity", "value": 5},
+      {"label": "Compliance", "value": 4},
+      {"label": "Asset management", "value": 2}
+  ]
+{{/report}}
+
+== Picking out one bar
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Documents by state",
+  "legend": "in the base module",
+  "bars": [
+      {"label": "Approved", "value": 31},
+      {"label": "Draft", "value": 12},
+      {"label": "Overdue review", "value": 8, "colour": "red"},
+      {"label": "Deprecated", "value": 3}
+  ]
+{{/report}}
+
+== Without a legend
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Review outcome",
+  "bars": [
+      {"label": "Passed", "value": 18},
+      {"label": "Failed", "value": 3, "colour": "red"}
+  ]
+{{/report}}
+
+== Long legend, wrapped
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Adoption",
+  "legend": "of all identified security development lifecycle controls across every active project",
+  "bars": [
+      {"label": "Adopted", "value": 58, "colour": "green"},
+      {"label": "Pending", "value": 42, "colour": "yellow"}
+  ]
+{{/report}}
+
+== A single bar
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Only one category",
+  "legend": "one bar is usually a score card instead",
+  "bars": [
+      {"label": "Everything", "value": 100}
+  ]
+{{/report}}
+
+== Zero values and quotes
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Status of the \"critical\" controls",
+  "legend": "of \"must fix\" items",
+  "bars": [
+      {"label": "\"Done\"", "value": 45, "colour": "green"},
+      {"label": "Outstanding", "value": 0},
+      {"label": "Blocked", "value": 7, "colour": "orange"}
+  ]
+{{/report}}

@@ -1,0 +1,51 @@
+= Edge cases
+
+== Zero percent
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Nothing done yet",
+  "value": 0,
+  "legend": "of controls",
+  "colour": "red"
+{{/report}}
+
+== Full hundred percent
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "All done",
+  "value": 100,
+  "legend": "of controls",
+  "colour": "green"
+{{/report}}
+
+== Fractional value
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Partial progress",
+  "value": 33.3,
+  "legend": "of controls",
+  "colour": "orange"
+{{/report}}
+
+== Long title and legend
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Implementation of the security development lifecycle controls",
+  "value": 72,
+  "legend": "of all identified security development lifecycle controls",
+  "colour": "purple"
+{{/report}}
+
+== Quotes and special characters
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Status of the \"critical\" controls",
+  "value": 55,
+  "legend": "of \"must have\" items",
+  "colour": "blue"
+{{/report}}

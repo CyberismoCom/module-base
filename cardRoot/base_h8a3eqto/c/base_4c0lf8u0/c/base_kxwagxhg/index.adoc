@@ -1,0 +1,99 @@
+= Risk matrix widget
+
+Cell colour is the risk level, derived from the position in the two scales, using the
+fixed status palette. The number in a cell is how many risks sit there. Cells with no
+risks still show their risk colour.
+
+== Five by five
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "open risks by likelihood and impact",
+  "likelihood": ["Rare", "Unlikely", "Possible", "Likely", "Almost certain"],
+  "impact": ["Negligible", "Minor", "Moderate", "Major", "Severe"],
+  "cells": [
+      {"likelihood": 5, "impact": 5, "count": 1},
+      {"likelihood": 4, "impact": 5, "count": 2},
+      {"likelihood": 3, "impact": 3, "count": 6},
+      {"likelihood": 2, "impact": 2, "count": 4},
+      {"likelihood": 1, "impact": 1, "count": 9},
+      {"likelihood": 3, "impact": 5, "count": 2},
+      {"likelihood": 5, "impact": 1, "count": 1},
+      {"likelihood": 2, "impact": 4, "count": 3}
+  ]
+{{/report}}
+
+== Four by four
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "open risks",
+  "likelihood": ["Rare", "Unlikely", "Possible", "Likely"],
+  "impact": ["Negligible", "Minor", "Moderate", "Major"],
+  "cells": [
+      {"likelihood": 4, "impact": 4, "count": 2},
+      {"likelihood": 3, "impact": 3, "count": 5},
+      {"likelihood": 2, "impact": 2, "count": 7},
+      {"likelihood": 1, "impact": 1, "count": 3},
+      {"likelihood": 1, "impact": 4, "count": 1}
+  ]
+{{/report}}
+
+== Three by three
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "open risks",
+  "likelihood": ["Low", "Medium", "High"],
+  "impact": ["Low", "Medium", "High"],
+  "cells": [
+      {"likelihood": 3, "impact": 3, "count": 2},
+      {"likelihood": 2, "impact": 2, "count": 6},
+      {"likelihood": 1, "impact": 1, "count": 11},
+      {"likelihood": 1, "impact": 3, "count": 1},
+      {"likelihood": 3, "impact": 1, "count": 1}
+  ]
+{{/report}}
+
+== Scales of different sizes
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Three likelihood levels, five impact levels",
+  "likelihood": ["Low", "Medium", "High"],
+  "impact": ["Negligible", "Minor", "Moderate", "Major", "Severe"],
+  "cells": [
+      {"likelihood": 3, "impact": 5, "count": 3},
+      {"likelihood": 2, "impact": 3, "count": 4},
+      {"likelihood": 1, "impact": 1, "count": 8}
+  ]
+{{/report}}
+
+== Custom axis titles
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Riskimatriisi",
+  "likelihood": ["Harvinainen", "Mahdollinen", "Todennakoinen"],
+  "impact": ["Vahainen", "Kohtalainen", "Vakava"],
+  "likelihoodTitle": "Todennakoisyys",
+  "impactTitle": "Vaikutus",
+  "cells": [
+      {"likelihood": 3, "impact": 3, "count": 2},
+      {"likelihood": 2, "impact": 2, "count": 5},
+      {"likelihood": 1, "impact": 1, "count": 7}
+  ]
+{{/report}}
+
+== An empty matrix
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "No risks recorded yet",
+  "legend": "the bands are shown even with no data",
+  "likelihood": ["Low", "Medium", "High"],
+  "impact": ["Low", "Medium", "High"]
+{{/report}}

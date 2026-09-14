@@ -1,0 +1,69 @@
+= Colours, overflow and edge cases
+
+== Explicit colours
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Explicit colours",
+  "legend": "one of each name",
+  "slices": [
+      {"label": "Blue", "value": 10, "colour": "blue"},
+      {"label": "Green", "value": 10, "colour": "green"},
+      {"label": "Yellow", "value": 10, "colour": "yellow"},
+      {"label": "Red", "value": 10, "colour": "red"},
+      {"label": "Orange", "value": 10, "colour": "orange"},
+      {"label": "Purple", "value": 10, "colour": "purple"}
+  ]
+{{/report}}
+
+== Seven slices, falls back to a table
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Cards by card type",
+  "legend": "more than six categories",
+  "slices": [
+      {"label": "Page", "value": 31},
+      {"label": "Controlled document", "value": 12},
+      {"label": "Decision", "value": 8},
+      {"label": "Meeting memo", "value": 5},
+      {"label": "Annual task", "value": 4},
+      {"label": "Monthly task", "value": 6},
+      {"label": "Review task", "value": 9}
+  ]
+{{/report}}
+
+== Long legend, wrapped
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Adoption",
+  "legend": "of all identified security development lifecycle controls",
+  "slices": [
+      {"label": "Adopted", "value": 58, "colour": "green"},
+      {"label": "Pending", "value": 42, "colour": "yellow"}
+  ]
+{{/report}}
+
+== A single slice
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Everything",
+  "legend": "in one bucket",
+  "slices": [
+      {"label": "Only category", "value": 100}
+  ]
+{{/report}}
+
+== Quotes in labels
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Status of the \"critical\" controls",
+  "legend": "of \"must have\" items",
+  "slices": [
+      {"label": "\"Done\"", "value": 45},
+      {"label": "Outstanding", "value": 55}
+  ]
+{{/report}}

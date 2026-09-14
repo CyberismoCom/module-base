@@ -1,0 +1,70 @@
+= Colours
+
+== blue
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Blue",
+  "value": 65,
+  "legend": "of controls",
+  "colour": "blue"
+{{/report}}
+
+== green
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Green",
+  "value": 65,
+  "legend": "of controls",
+  "colour": "green"
+{{/report}}
+
+== yellow
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Yellow",
+  "value": 65,
+  "legend": "of controls",
+  "colour": "yellow"
+{{/report}}
+
+== red
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Red",
+  "value": 65,
+  "legend": "of controls",
+  "colour": "red"
+{{/report}}
+
+== orange
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Orange",
+  "value": 65,
+  "legend": "of controls",
+  "colour": "orange"
+{{/report}}
+
+== purple
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Purple",
+  "value": 65,
+  "legend": "of controls",
+  "colour": "purple"
+{{/report}}
+
+== no colour given (defaults to blue)
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Default colour",
+  "value": 65,
+  "legend": "of controls"
+{{/report}}
