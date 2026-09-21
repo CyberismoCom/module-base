@@ -1,0 +1,81 @@
+= Score card widget
+
+== Built-in score card macro, for comparison
+
+{{#scoreCard}}
+  "title": "Open findings",
+  "value": 42,
+  "legend": "across all projects"
+{{/scoreCard}}
+
+== scoreCardWidget report
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "Open findings",
+  "value": 42,
+  "legend": "across all projects"
+{{/report}}
+
+== With a unit
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "Mean time to remediate",
+  "value": 12.5,
+  "unit": "days",
+  "legend": "over the last quarter"
+{{/report}}
+
+== Percent unit, no space
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "Control coverage",
+  "value": 93,
+  "unit": "%",
+  "legend": "of all controls"
+{{/report}}
+
+== Title only
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "Open findings",
+  "value": 42
+{{/report}}
+
+== Legend only
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "value": 93,
+  "unit": "%",
+  "legend": "of controls passing"
+{{/report}}
+
+== Value only
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "value": 1284
+{{/report}}
+
+== Long title and legend, both wrapped
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "A considerably longer score card title than usual",
+  "value": 7,
+  "legend": "of all identified security development lifecycle controls"
+{{/report}}
+
+== Quotes and a negative value
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "Change in \"critical\" findings",
+  "value": -12,
+  "unit": "since Q1",
+  "legend": "in the \"must fix\" category"
+{{/report}}

@@ -1,0 +1,108 @@
+= Colours and edge cases
+
+== Explicit colours
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Explicit colours",
+  "legend": "one of each name",
+  "slices": [
+      {"label": "Blue", "value": 10, "colour": "blue"},
+      {"label": "Green", "value": 10, "colour": "green"},
+      {"label": "Yellow", "value": 10, "colour": "yellow"},
+      {"label": "Red", "value": 10, "colour": "red"},
+      {"label": "Orange", "value": 10, "colour": "orange"},
+      {"label": "Purple", "value": 10, "colour": "purple"}
+  ]
+{{/report}}
+
+== More than six slices
+
+Six is the practical limit. The palette has six slots, so a seventh slice repeats the
+first colour, and the slices keep getting thinner. Every slice is still labelled, so
+nothing is lost, but this is the point to reach for `barWidget` instead: bar length
+carries magnitude, so it has no such limit.
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Cards by card type",
+  "legend": "seven categories, colours repeat",
+  "slices": [
+      {"label": "Page", "value": 31},
+      {"label": "Controlled document", "value": 12},
+      {"label": "Decision", "value": 8},
+      {"label": "Meeting memo", "value": 5},
+      {"label": "Annual task", "value": 4},
+      {"label": "Monthly task", "value": 6},
+      {"label": "Review task", "value": 9}
+  ]
+{{/report}}
+
+== Every slice zero
+
+A total of zero has no shares to draw. Rather than collapsing to nothing, the widget
+shows the empty ring and a total of zero, so a category set with no data yet still
+reads as a widget rather than as a broken one.
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "No risks recorded yet",
+  "legend": "every category is empty",
+  "slices": [
+      {"label": "Critical", "value": 0, "colour": "red"},
+      {"label": "High", "value": 0, "colour": "orange"},
+      {"label": "Medium", "value": 0, "colour": "yellow"},
+      {"label": "Low", "value": 0, "colour": "green"}
+  ]
+{{/report}}
+
+== One slice at zero
+
+A slice with no value gets no label, since there is no wedge to point at.
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Findings by severity",
+  "legend": "nothing critical so far",
+  "slices": [
+      {"label": "Critical", "value": 0, "colour": "red"},
+      {"label": "High", "value": 11, "colour": "orange"},
+      {"label": "Medium", "value": 24, "colour": "yellow"},
+      {"label": "Low", "value": 42, "colour": "green"}
+  ]
+{{/report}}
+
+== Long legend, wrapped
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Adoption",
+  "legend": "of all identified security development lifecycle controls",
+  "slices": [
+      {"label": "Adopted", "value": 58, "colour": "green"},
+      {"label": "Pending", "value": 42, "colour": "yellow"}
+  ]
+{{/report}}
+
+== A single slice
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Everything",
+  "legend": "in one bucket",
+  "slices": [
+      {"label": "Only category", "value": 100}
+  ]
+{{/report}}
+
+== Quotes in labels
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Status of the \"critical\" controls",
+  "legend": "of \"must have\" items",
+  "slices": [
+      {"label": "\"Done\"", "value": 45},
+      {"label": "Outstanding", "value": 55}
+  ]
+{{/report}}

@@ -1,0 +1,5 @@
+Test cards for widget reports.
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}
