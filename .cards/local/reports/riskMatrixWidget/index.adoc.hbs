@@ -1,4 +1,7 @@
-{{#vegaLite}}
+{{#each cells}}{{#if (ne (add (max this.likelihood ../likelihood.length) (max this.impact ../impact.length)) (add ../likelihood.length ../impact.length))}}
+WARNING: A cell at likelihood {{this.likelihood}}, impact {{this.impact}} falls outside this matrix, which has {{../likelihood.length}} likelihood levels and {{../impact.length}} impact levels. Its count of {{this.count}} is not shown.
+
+{{/if}}{{/each}}{{#vegaLite}}
   "spec": {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
     "width": {"step": 58},

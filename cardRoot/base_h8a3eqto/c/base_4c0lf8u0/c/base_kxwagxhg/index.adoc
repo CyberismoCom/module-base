@@ -88,6 +88,25 @@ risks still show their risk colour.
   ]
 {{/report}}
 
+== A cell outside the matrix
+
+The schema cannot tie a cell position to the length of the two scales, so a cell can
+name a level this matrix does not have. Such a cell has nowhere to be drawn, and its
+count would otherwise be dropped without a word. The widget says so instead.
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "two cells fall outside a three by three matrix",
+  "likelihood": ["Low", "Medium", "High"],
+  "impact": ["Low", "Medium", "High"],
+  "cells": [
+      {"likelihood": 1, "impact": 1, "count": 4},
+      {"likelihood": 5, "impact": 5, "count": 99},
+      {"likelihood": 1, "impact": 4, "count": 7}
+  ]
+{{/report}}
+
 == An empty matrix
 
 {{#report}}

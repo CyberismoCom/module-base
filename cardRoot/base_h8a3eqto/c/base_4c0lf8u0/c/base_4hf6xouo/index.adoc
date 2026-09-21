@@ -38,6 +38,40 @@ carries magnitude, so it has no such limit.
   ]
 {{/report}}
 
+== Every slice zero
+
+A total of zero has no shares to draw. Rather than collapsing to nothing, the widget
+shows the empty ring and a total of zero, so a category set with no data yet still
+reads as a widget rather than as a broken one.
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "No risks recorded yet",
+  "legend": "every category is empty",
+  "slices": [
+      {"label": "Critical", "value": 0, "colour": "red"},
+      {"label": "High", "value": 0, "colour": "orange"},
+      {"label": "Medium", "value": 0, "colour": "yellow"},
+      {"label": "Low", "value": 0, "colour": "green"}
+  ]
+{{/report}}
+
+== One slice at zero
+
+A slice with no value gets no label, since there is no wedge to point at.
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Findings by severity",
+  "legend": "nothing critical so far",
+  "slices": [
+      {"label": "Critical", "value": 0, "colour": "red"},
+      {"label": "High", "value": 11, "colour": "orange"},
+      {"label": "Medium", "value": 24, "colour": "yellow"},
+      {"label": "Low", "value": 42, "colour": "green"}
+  ]
+{{/report}}
+
 == Long legend, wrapped
 
 {{#report}}
