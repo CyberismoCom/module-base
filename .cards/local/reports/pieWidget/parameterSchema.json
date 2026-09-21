@@ -16,7 +16,7 @@
       "type": "string"
     },
     "slices": {
-      "description": "The parts that make up the whole. Up to six slices are drawn as a donut chart; beyond that the report renders a table instead, because more than six colour classes cannot be told apart reliably.",
+      "description": "The parts that make up the whole. Six is the practical limit: the palette has six slots, and past that colours repeat and the slices get too thin to label cleanly. For more categories than that, use base/reports/barWidget, which carries magnitude by bar length and so has no such limit.",
       "type": "array",
       "minItems": 1,
       "items": {
@@ -35,14 +35,29 @@
           "colour": {
             "description": "Colour of this slice (optional). When omitted, slices are coloured from a validated categorical palette in order.",
             "type": "string",
-            "enum": ["blue", "green", "yellow", "red", "orange", "purple"]
+            "enum": [
+              "blue",
+              "green",
+              "yellow",
+              "red",
+              "orange",
+              "purple"
+            ]
           }
         },
-        "required": ["label", "value"]
+        "required": [
+          "label",
+          "value"
+        ]
       }
     }
   },
-  "required": ["name", "title", "legend", "slices"],
+  "required": [
+    "name",
+    "title",
+    "legend",
+    "slices"
+  ],
   "title": "Report",
   "type": "object"
 }

@@ -1,4 +1,4 @@
-= Colours, overflow and edge cases
+= Colours and edge cases
 
 == Explicit colours
 
@@ -16,12 +16,17 @@
   ]
 {{/report}}
 
-== Seven slices, falls back to a table
+== More than six slices
+
+Six is the practical limit. The palette has six slots, so a seventh slice repeats the
+first colour, and the slices keep getting thinner. Every slice is still labelled, so
+nothing is lost, but this is the point to reach for `barWidget` instead: bar length
+carries magnitude, so it has no such limit.
 
 {{#report}}
   "name": "base/reports/pieWidget",
   "title": "Cards by card type",
-  "legend": "more than six categories",
+  "legend": "seven categories, colours repeat",
   "slices": [
       {"label": "Page", "value": 31},
       {"label": "Controlled document", "value": 12},
