@@ -1,7 +1,7 @@
 = Risk matrix widget
 
-Cell colour is the risk level, derived from the position in the two scales, using the
-fixed status palette. The number in a cell is how many risks sit there. Cells with no
+By default, cell colour is the risk level, derived from the position in the two scales,
+using the fixed status palette. Your own risk levels can replace it; see the last sections. The number in a cell is how many risks sit there. Cells with no
 risks still show their risk colour.
 
 == Five by five
@@ -115,4 +115,95 @@ count would otherwise be dropped without a word. The widget says so instead.
   "legend": "the bands are shown even with no data",
   "likelihood": ["Low", "Medium", "High"],
   "impact": ["Low", "Medium", "High"]
+{{/report}}
+
+== Custom risk levels
+
+When your risk method defines its own risk level for every cell, give the levels and a
+level grid. The cells are then coloured by your method instead of their position, and
+the levels are listed in a legend. Each level picks one of five colour steps: 1 green,
+2 light green, 3 amber, 4 red, 5 dark red.
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "open risks by likelihood and impact",
+  "likelihood": ["Very Low", "Low", "Moderate", "High", "Very High"],
+  "impact": ["Very Low", "Low", "Moderate", "High", "Very High"],
+  "levels": [
+    {"name": "Very Low", "colour": 1},
+    {"name": "Low", "colour": 2},
+    {"name": "Moderate", "colour": 3},
+    {"name": "High", "colour": 4},
+    {"name": "Very High", "colour": 5}
+  ],
+  "levelGrid": [
+    [1, 1, 2, 2, 3],
+    [1, 2, 3, 3, 3],
+    [2, 3, 3, 4, 4],
+    [2, 3, 4, 4, 5],
+    [3, 3, 4, 5, 5]
+  ],
+  "cells": [
+      {"likelihood": 5, "impact": 5, "count": 1},
+      {"likelihood": 4, "impact": 5, "count": 2},
+      {"likelihood": 3, "impact": 4, "count": 4},
+      {"likelihood": 3, "impact": 3, "count": 6},
+      {"likelihood": 2, "impact": 3, "count": 11},
+      {"likelihood": 2, "impact": 2, "count": 5},
+      {"likelihood": 1, "impact": 1, "count": 3}
+  ]
+{{/report}}
+
+== Custom risk levels, three levels
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "likelihood": ["Rare", "Unlikely", "Possible", "Likely"],
+  "impact": ["Minor", "Moderate", "Major", "Severe"],
+  "levels": [
+    {"name": "Acceptable", "colour": 1},
+    {"name": "Tolerable", "colour": 3},
+    {"name": "Unacceptable", "colour": 4}
+  ],
+  "levelGrid": [
+    [1, 1, 1, 2],
+    [1, 1, 2, 3],
+    [1, 2, 3, 3],
+    [2, 3, 3, 3]
+  ],
+  "cells": [
+      {"likelihood": 4, "impact": 4, "count": 1},
+      {"likelihood": 2, "impact": 3, "count": 3},
+      {"likelihood": 1, "impact": 1, "count": 5}
+  ]
+{{/report}}
+
+== A level grid that does not fit
+
+The schema cannot tie the size of the level grid to the two scales, or its entries to the
+number of levels. Cells without a valid level are drawn in grey, and the widget says why.
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "one row is short and one cell names a missing level",
+  "likelihood": ["Rare", "Unlikely", "Possible", "Likely"],
+  "impact": ["Minor", "Moderate", "Major", "Severe"],
+  "levels": [
+    {"name": "Low", "colour": 1},
+    {"name": "Medium", "colour": 3},
+    {"name": "High", "colour": 4}
+  ],
+  "levelGrid": [
+    [1, 1, 2, 2],
+    [1, 2, 2],
+    [2, 2, 3, 3],
+    [2, 3, 3, 4]
+  ],
+  "cells": [
+      {"likelihood": 2, "impact": 4, "count": 2},
+      {"likelihood": 4, "impact": 4, "count": 1}
+  ]
 {{/report}}
