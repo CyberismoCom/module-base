@@ -6,6 +6,5 @@
     "cardType": "base/cardTypes/page",
     "title": "Risk matrix widget",
     "templateCardKey": "base_2",
-    "base/fieldTypes/informationClassification": "internal",
-    "lastUpdated": "2026-09-21T18:30:43.765Z"
+    "lastUpdated": "2026-10-07T16:08:49.770Z"
 }
