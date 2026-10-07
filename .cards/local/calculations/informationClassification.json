@@ -1,0 +1,5 @@
+{
+    "name": "base/calculations/informationClassification",
+    "displayName": "Information classification",
+    "description": "Inherits the information classification of a card from its parent card"
+}
