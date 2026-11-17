@@ -22,12 +22,31 @@ See separate file CONTRIBUTING.
 
 The Cyberismo base module contains the basic building blocks common to many Cyberismo project types. This includes card types such as
 
+* checklist item
 * controlled document
 * decision
 * page
 * task
 
 along with their fundamental field types, link types, templates and workflows.
+
+== Checklists
+
+A checklist is a card that has checklist items as its children. Any card can be a checklist, for example a review or a delivery.
+
+* Each checklist item has a result (Open, OK, Deviation, or Not applicable), a comment, and an evidence reference.
+* A Deviation or Not applicable result needs a comment. Without a comment, the item has a policy check failure.
+* The `base/reports/checklist` report shows the items as a table. In the application, you can edit the result, the comment, and the evidence reference in the table.
+* The `base/templates/checklist` template is a checklist page with example items. The `base/templates/checklistItem` template is one item.
+* Other modules can use the result of a checklist in their own rules. The predicates, for example `base_checklistResult(Checklist, Result)` and `base_checklistComplete(Checklist)`, are described in `base/calculations/checklist`.
+
+== Tests
+
+The test content is under the "Test content" card. To run the assertion tests for checklists, go to the project root and run:
+
+    cyberismo calc run tests/checklist.lp
+
+The tests pass when the "results" array is empty.
 
 == Using the Cyberismo base module
 
