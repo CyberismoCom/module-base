@@ -1,0 +1,12 @@
+{
+    "rank": "0|b",
+    "workflowState": "Active",
+    "createdAt": "2026-11-17T20:31:25.101Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "Item with a deviation and no comment",
+    "templateCardKey": "base_ue4gfkxj",
+    "base/fieldTypes/checklistResult": "deviation",
+    "lastUpdated": "2026-11-17T20:31:25.103Z",
+    "base/fieldTypes/identifier": "base_test_cl_devnc_1"
+}

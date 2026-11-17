@@ -1,0 +1,11 @@
+{
+    "rank": "0|d",
+    "workflowState": "Active",
+    "createdAt": "2026-11-17T20:31:33.920Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "The known issues are recorded",
+    "templateCardKey": "base_wvgbb7tg",
+    "base/fieldTypes/checklistResult": "open",
+    "lastUpdated": "2026-11-17T20:31:33.924Z"
+}

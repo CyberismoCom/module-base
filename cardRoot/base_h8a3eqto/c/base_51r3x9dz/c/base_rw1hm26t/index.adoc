@@ -1,0 +1,5 @@
+Expected: result Deviation, not complete. The item without a comment has a policy check failure.
+
+{{#report}}
+  "name": "base/reports/checklist"
+{{/report}}
