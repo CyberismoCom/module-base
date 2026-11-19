@@ -1,0 +1,7 @@
+== Parameters
+
+* `Document`: the key of a controlled document
+
+== Description
+
+`Document` has at least one review task. Rules about "all review tasks" of a document need this predicate, or they would also be true for a document without review tasks.

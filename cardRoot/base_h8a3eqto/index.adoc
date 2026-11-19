@@ -1,1 +1,18 @@
-The cards under this card are test content for the Base module.
+The cards under this card are the test content of the base module. Exported sites and documents leave them out, because this card has the label `test-content`. The documentation of base is under the card "Base".
+
+* "Widgets": pages that show the widget reports with edge cases. Check them by eye.
+* "Checklist tests": the fixtures of `tests/checklist.lp`.
+* "Test role assignments report": role assignments in each workflow state, for the report "Role assignments".
+* "Controlled document": a controlled document with two review tasks.
+* "Task tests": the fixtures of `tests/tasks.lp`.
+* "Document control tests": the fixtures of `tests/document-control.lp`.
+
+The tests in `tests/module-documentation.lp` use this card and the documentation tree.
+
+To run a test, go to the root of the repository and run, for example:
+
+----
+cyberismo calc run tests/checklist.lp
+----
+
+The tests pass when the "results" array is empty. Do not change the fixtures to try things. Use a separate project for that.

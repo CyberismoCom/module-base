@@ -1,0 +1,7 @@
+== Parameters
+
+* `Card`: the key of a card
+
+== Description
+
+`Card` has the label `test-content`. Exported sites and documents leave out the card and its descendants. The app shows them.

@@ -1,0 +1,13 @@
+{
+    "rank": "0|r",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:14.423Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_disableDefaultStatusIndicator(Card)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.044Z",
+    "base/fieldTypes/category": "Status",
+    "base/fieldTypes/briefDescription": "Turns off the default status indicator of one card",
+    "lastTransitioned": "2026-11-19T22:36:09.044Z"
+}

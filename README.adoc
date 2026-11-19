@@ -18,35 +18,12 @@ See the Creative Commons Attribution-ShareAlike 4.0 International Public License
 
 See separate file CONTRIBUTING.
 
-== About the Cyberismo base module
+== Install
 
-The Cyberismo base module contains the basic building blocks common to many Cyberismo project types. This includes card types such as
+To use the base module in your Cyberismo project, go to the project folder and run:
 
-* checklist item
-* controlled document
-* decision
-* page
-* task
+    cyberismo module install https://github.com/CyberismoCom/module-base.git
 
-along with their fundamental field types, link types, templates and workflows.
+Most projects get the base module as a dependency of another module, for example the ISMS essentials module or the secure development essentials module.
 
-== Tests
-
-The test content is under the "Test content" card. The assertion tests are in the `tests` folder: `checklist.lp`, `tasks.lp`, and `document-control.lp`. To run one, go to the project root and run, for example:
-
-    cyberismo calc run tests/checklist.lp
-
-The tests pass when the "results" array is empty.
-
-== Using the Cyberismo base module
-
-In order to use the base module content in your Cyberismo project, take the following steps:
-
-* Clone this repository alongside your Cyberismo project
-* Change to your project directory
-* Import the base module content with
-
-    cyberismo import module ../module-base
-
-For more details, see https://docs.cyberismo.com[Cyberismo documentation].
-
+The documentation of the base module is in the card root of this repository, under the card "Base". Open this repository as a project in the Cyberismo app to read it. For more about Cyberismo, see the https://docs.cyberismo.com[Cyberismo documentation].

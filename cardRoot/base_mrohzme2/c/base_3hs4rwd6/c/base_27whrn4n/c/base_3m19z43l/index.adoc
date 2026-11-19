@@ -1,0 +1,7 @@
+== Parameters
+
+* `Card`: the key of a card
+
+== Description
+
+Base does not set the default status indicator for `Card`. The module that adds this fact must set `field(Card, "statusIndicator", ...)` itself. Base adds this fact for checklist items and for cards whose card type has the field "Assessment".

@@ -1,0 +1,13 @@
+{
+    "rank": "0|l",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:12.064Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_recurringTask(Task)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.222Z",
+    "base/fieldTypes/category": "Tasks",
+    "base/fieldTypes/briefDescription": "A card is a recurring task",
+    "lastTransitioned": "2026-11-19T22:36:09.222Z"
+}

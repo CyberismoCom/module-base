@@ -1,20 +1,5 @@
 = Bar widget
 
-== A handful of categories
-
-{{#report}}
-  "name": "base/reports/barWidget",
-  "title": "Open tasks by owner",
-  "legend": "across all active projects",
-  "bars": [
-      {"label": "Alice", "value": 12},
-      {"label": "Bruno", "value": 9},
-      {"label": "Chandra", "value": 7},
-      {"label": "Dmitri", "value": 4},
-      {"label": "Eva", "value": 2}
-  ]
-{{/report}}
-
 == Many categories, long names
 
 Where `pieWidget` would fall back to a table, a bar chart still reads. Bar length carries

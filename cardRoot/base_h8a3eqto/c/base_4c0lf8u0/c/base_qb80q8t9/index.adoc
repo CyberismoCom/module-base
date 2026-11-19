@@ -17,16 +17,6 @@
   "legend": "across all projects"
 {{/report}}
 
-== With a unit
-
-{{#report}}
-  "name": "base/reports/scoreCardWidget",
-  "title": "Mean time to remediate",
-  "value": 12.5,
-  "unit": "days",
-  "legend": "over the last quarter"
-{{/report}}
-
 == Percent unit, no space
 
 {{#report}}

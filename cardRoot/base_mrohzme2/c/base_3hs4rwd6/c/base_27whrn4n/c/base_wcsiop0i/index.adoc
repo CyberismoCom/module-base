@@ -1,0 +1,10 @@
+== Parameters
+
+* `Card`: the key of a card in the project
+* `CardType`: the name of its card type
+
+== Description
+
+Use this predicate and not `field(Card, "cardType", CardType)` in rules about the cards of a project. Template cards do not get this predicate. The templates of the installed modules can have many more cards than the project, so a rule that starts from `field(Card, "cardType", ...)` gets slow.
+
+Policy checks, denied operations, notifications, status indicators, calculated fields, and the side effects of transitions are only used for the cards of a project. If a rule must reason about template cards, use `field/3` there.

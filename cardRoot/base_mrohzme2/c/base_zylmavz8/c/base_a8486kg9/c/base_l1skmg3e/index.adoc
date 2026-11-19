@@ -1,0 +1,35 @@
+A likelihood by impact risk matrix. By default, the colour of a cell is its risk level, from its position in the two scales: green, amber, or red. The number in a cell is the number of risks in it. Cells without risks also show their colour.
+
+{{#report}}
+  "name": "base/reports/riskMatrixWidget",
+  "title": "Risk matrix",
+  "legend": "open risks by likelihood and impact",
+  "likelihood": ["Rare", "Unlikely", "Possible", "Likely", "Almost certain"],
+  "impact": ["Negligible", "Minor", "Moderate", "Major", "Severe"],
+  "cells": [
+      {"likelihood": 5, "impact": 5, "count": 1},
+      {"likelihood": 4, "impact": 5, "count": 2},
+      {"likelihood": 3, "impact": 3, "count": 6},
+      {"likelihood": 2, "impact": 2, "count": 4},
+      {"likelihood": 1, "impact": 1, "count": 9},
+      {"likelihood": 3, "impact": 5, "count": 2},
+      {"likelihood": 5, "impact": 1, "count": 1},
+      {"likelihood": 2, "impact": 4, "count": 3}
+  ]
+{{/report}}
+
+== Parameters
+
+* `title` (required): the title above the matrix.
+* `legend`: the text below the matrix.
+* `likelihood` (required): the names of the likelihood levels, lowest first. Three to five levels. The number of levels sets the height of the matrix.
+* `impact` (required): the names of the impact levels, lowest first. Three to five levels. The number of levels sets the width of the matrix.
+* `likelihoodTitle` and `impactTitle`: the titles of the axes. The defaults are "Likelihood" and "Impact".
+* `cells`: the number of risks in each cell. Each cell has a `likelihood` and an `impact`, as positions in the scales (1 is the lowest), and a `count`.
+
+== Risk levels of your own method
+
+If your risk method gives a risk level to each cell, give `levels` and `levelGrid` together. The colours of the matrix then follow your method, and a legend lists the levels.
+
+* `levels`: the risk levels, lowest first, two to five. Each level has a `name` and a `colour`, a step of the colour scale: 1 green, 2 light green, 3 amber, 4 red, or 5 dark red.
+* `levelGrid`: the risk level of each cell. One row for each likelihood level, lowest first. Each row has one entry for each impact level, lowest first. Each entry is a position in `levels`, where 1 is the first level.

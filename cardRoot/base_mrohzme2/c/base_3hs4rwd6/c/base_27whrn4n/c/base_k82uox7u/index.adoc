@@ -1,0 +1,10 @@
+== Parameters
+
+* `Card`: the key of a card
+* `Category`: the category of the policy check
+* `Title`: the title of the failure
+* `Message`: the message of the failure
+
+== Description
+
+Core has two forms of policy check failures: `policyCheckFailure/4`, and `policyCheckFailure/5` with the field that fails. This predicate is true for both forms. Use it to find all failures of a card.

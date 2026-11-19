@@ -1,0 +1,8 @@
+The predicates that other modules can use in their calculations and reports. Each predicate has its own card under this page.
+
+The checklist, task, and document control predicates are only for cards in a project. Template cards do not get them.
+
+{{#report}}
+  "name": "base/reports/predicates",
+  "orderBy": "base/fieldTypes/category"
+{{/report}}

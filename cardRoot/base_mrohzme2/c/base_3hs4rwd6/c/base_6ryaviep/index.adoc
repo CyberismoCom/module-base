@@ -1,0 +1,28 @@
+== Run the tests
+
+The assertion tests are in the folder `tests` of the module repository:
+
+* `tests/checklist.lp`: checklists, and reviews with a checklist.
+* `tests/tasks.lp`: tasks and adoption steps.
+* `tests/document-control.lp`: controlled documents and review tasks.
+* `tests/module-documentation.lp`: the rule that hides the test content in exports.
+
+Go to the root of the repository and run a test, for example:
+
+----
+cyberismo calc run tests/checklist.lp
+----
+
+The tests pass when the "results" array is empty. Each result is one failed assertion.
+
+Run `tests/module-documentation.lp` in the contexts of the app and of the exports too:
+
+----
+cyberismo calc run tests/module-documentation.lp -c localApp
+cyberismo calc run tests/module-documentation.lp -c exportedSite
+cyberismo calc run tests/module-documentation.lp -c exportedDocument
+----
+
+== Test content
+
+The test content is under the top-level card "Test content", which has the label `test-content`. It has the fixtures of the assertion tests, and pages that show the widgets with unusual values. Exported sites and documents leave out the test content, so this documentation does not link to it. Open the module as a project in the app to see the test content.

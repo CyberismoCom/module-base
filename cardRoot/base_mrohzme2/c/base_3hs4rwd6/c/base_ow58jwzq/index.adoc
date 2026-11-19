@@ -1,0 +1,4 @@
+* In rules about the cards of a project, use `base_projectCardType(Card, CardType)` and not `field(Card, "cardType", CardType)`. The second form also matches every card in every template. The templates of the installed modules can have many more cards than the project, so the rules get slow.
+* Use the built-in field `progress`. The field type `base/fieldTypes/progress` is deprecated.
+* Start the name of each predicate that a module adds with the prefix of the module, for example `base_checklist`.
+* Write the names of labels in kebab case, for example `test-content`.

@@ -1,0 +1,11 @@
+{
+    "rank": "0|c",
+    "workflowState": "Active",
+    "createdAt": "2026-11-19T22:34:02.718Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "Each requirement has a test",
+    "templateCardKey": "base_3ms56nww",
+    "base/fieldTypes/checklistResult": "ok",
+    "lastUpdated": "2026-11-19T22:34:06.579Z"
+}

@@ -1,0 +1,16 @@
+A donut chart of one percentage, with a title and a legend.
+
+{{#report}}
+  "name": "base/reports/percentageWidget",
+  "title": "Adoption step 1 status",
+  "value": 42,
+  "legend": "of SDL controls",
+  "colour": "green"
+{{/report}}
+
+== Parameters
+
+* `title` (required): the title above the chart.
+* `value` (required): the percentage, from 0 to 100.
+* `legend` (required): the text below the value.
+* `colour`: the colour of the arc: blue (the default), green, yellow, red, orange, or purple.

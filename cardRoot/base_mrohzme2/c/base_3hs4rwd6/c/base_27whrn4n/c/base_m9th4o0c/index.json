@@ -1,0 +1,13 @@
+{
+    "rank": "0|i",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:10.896Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_checklistItemCount(Checklist, Result, Count)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:08.954Z",
+    "base/fieldTypes/category": "Checklists",
+    "base/fieldTypes/briefDescription": "The number of checklist items that have a result",
+    "lastTransitioned": "2026-11-19T22:36:08.954Z"
+}
