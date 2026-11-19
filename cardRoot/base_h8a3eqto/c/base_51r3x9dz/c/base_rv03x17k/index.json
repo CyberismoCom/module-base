@@ -1,0 +1,13 @@
+{
+    "rank": "0|m",
+    "workflowState": "Passed",
+    "createdAt": "2026-11-19T17:58:27.256Z",
+    "links": [],
+    "cardType": "base/cardTypes/review",
+    "title": "Passed, then an item reopened",
+    "templateCardKey": "base_2",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-19T17:58:43.268Z",
+    "lastTransitioned": "2026-11-19T17:58:43.259Z",
+    "base/fieldTypes/lastReviewed": "2026-11-19"
+}

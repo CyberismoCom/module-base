@@ -1,0 +1,13 @@
+{
+    "rank": "0|l",
+    "workflowState": "Passed",
+    "createdAt": "2026-11-19T17:58:26.859Z",
+    "links": [],
+    "cardType": "base/cardTypes/review",
+    "title": "Passed with a deviation",
+    "templateCardKey": "base_2",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-19T17:58:43.229Z",
+    "lastTransitioned": "2026-11-19T17:58:43.220Z",
+    "base/fieldTypes/lastReviewed": "2026-11-19"
+}

@@ -1,6 +1,6 @@
 The child cards of this page are test fixtures for the checklist pattern: the checklist item card type, the `base/reports/checklist` report, and the shared predicates in `base/calculations/checklist`.
 
-Each child card is a checklist. Its content tells the expected result. The checklist named "Checklist" is an instance of the `base/templates/checklist` template. "All items OK", "Open items", and "Deviation without a comment" are reviews (`base/cardTypes/review`): a review shows the policy check failures of its items and a progress percentage. The other checklists are pages, and do not.
+Each child card is a checklist. Its content tells the expected result. The checklist named "Checklist" is an instance of the `base/templates/checklist` template. "All items OK", "Open items", "Deviation without a comment", "Passed with a deviation", and "Passed, then an item reopened" are reviews (`base/cardTypes/review`): a review shows the policy check failures of its items and a progress percentage. It can pass only with a complete checklist. It can pass with deviations, and then shows a notification. The other checklists are pages, and do not get these rules.
 
 The checklist items are hidden in the navigation tree. Open them from the table.
 

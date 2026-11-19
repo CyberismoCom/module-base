@@ -1,0 +1,5 @@
+Expected: result Deviation, complete. This checklist is a review that passed with a deviation: progress 100%, the notification "Passed with deviations", and no policy check failure.
+
+{{#report}}
+  "name": "base/reports/checklist"
+{{/report}}

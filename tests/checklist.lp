@@ -19,6 +19,9 @@ base_test_expectChecklist("Deviation and an open item", "deviation", "no").
 base_test_expectChecklist("Complete with a deviation", "deviation", "yes").
 base_test_expectChecklist("Deviation without a comment", "deviation", "no").
 base_test_expectChecklist("Archived item", "ok", "yes").
+% Reviews that passed
+base_test_expectChecklist("Passed with a deviation", "deviation", "yes").
+base_test_expectChecklist("Passed, then an item reopened", "open", "no").
 % An instance of base/templates/checklist, where all items are open
 base_test_expectChecklist("Checklist", "open", "no").
 
@@ -50,6 +53,10 @@ base_test_expectItem("base_test_cl_dev_2", "ok", "yes", "no", "closed").
 base_test_expectItem("base_test_cl_devnc_1", "deviation", "no", "yes", "error").
 base_test_expectItem("base_test_cl_devnc_2", "ok", "yes", "no", "closed").
 base_test_expectItem("base_test_cl_arch_1", "ok", "yes", "no", "closed").
+base_test_expectItem("base_test_cl_pdev_1", "ok", "yes", "no", "closed").
+base_test_expectItem("base_test_cl_pdev_2", "deviation", "yes", "no", "active").
+base_test_expectItem("base_test_cl_preopen_1", "ok", "yes", "no", "closed").
+base_test_expectItem("base_test_cl_preopen_2", "open", "no", "no", "initial").
 
 % Items that are not part of a checklist
 base_test_expectExcluded("base_test_cl_arch_2").
@@ -60,10 +67,25 @@ base_test_expectExcluded("base_test_cl_arch_2").
 base_test_expectReview("All items OK", 100).
 base_test_expectReview("Open items", 33).
 base_test_expectReview("Deviation without a comment", 50).
+base_test_expectReview("Passed with a deviation", 100).
+base_test_expectReview("Passed, then an item reopened", 50).
 
 % Failures of items that a review shows as its own:
 % base_test_expectLifted(Title, ItemIdentifier).
 base_test_expectLifted("Deviation without a comment", "base_test_cl_devnc_1").
+
+% Other failures of a review: base_test_expectFailure(Title, FailureTitle).
+base_test_expectFailure("Passed, then an item reopened", "Open checklist items after the review passed").
+
+% "Mark as passed": base_test_expectPassDenied(Title, Message) and
+% base_test_expectPassAllowed(Title). A review passes only with a complete
+% checklist. Deviations do not stop it.
+base_test_expectPassDenied("Open items", "Complete the checklist before passing the review: 2 open, 0 comment(s) missing.").
+base_test_expectPassDenied("Deviation without a comment", "Complete the checklist before passing the review: 0 open, 1 comment(s) missing.").
+base_test_expectPassAllowed("All items OK").
+
+% Notifications: base_test_expectNotification(Title, NotificationTitle).
+base_test_expectNotification("Passed with a deviation", "Passed with deviations").
 
 % Bind the expectations to the fixture cards
 
@@ -207,10 +229,43 @@ base_test_failure(Title, "status indicator is not error") :-
     base_test_checklist(Title, Card),
     not field(Card, "statusIndicator", "error").
 
-base_test_failure(Title, "unexpected policy check") :-
+base_test_expectedFailureTitle(Title, "Comment missing") :- base_test_expectLifted(Title, _).
+base_test_expectedFailureTitle(Title, Failure) :- base_test_expectFailure(Title, Failure).
+
+base_test_failure(Title, @concatenate("unexpected policy check: ", Failure)) :-
     base_test_checklist(Title, Card),
-    not base_test_expectLifted(Title, _),
-    base_policyCheckFailure(Card, _, _, _).
+    base_policyCheckFailure(Card, _, Failure, _),
+    not base_test_expectedFailureTitle(Title, Failure).
+
+base_test_failure(Title, @concatenate("policy check missing: ", Failure)) :-
+    base_test_expectFailure(Title, Failure),
+    base_test_checklist(Title, Card),
+    not base_policyCheckFailure(Card, "Checklist", Failure, _).
+
+base_test_failure(Title, @concatenate("not denied: ", Message)) :-
+    base_test_expectPassDenied(Title, Message),
+    base_test_checklist(Title, Card),
+    not transitionDenied(Card, "Mark as passed", Message).
+
+base_test_failure(Title, "pass denied") :-
+    base_test_expectPassAllowed(Title),
+    base_test_checklist(Title, Card),
+    transitionDenied(Card, "Mark as passed", _).
+
+base_test_failure(Title, @concatenate("notification missing: ", Notification)) :-
+    base_test_expectNotification(Title, Notification),
+    base_test_checklist(Title, Card),
+    not notification(Card, "Checklist", Notification, _).
+
+base_test_failure(Title, @concatenate("unexpected notification: ", Notification)) :-
+    base_test_checklist(Title, Card),
+    notification(Card, _, Notification, _),
+    not base_test_expectNotification(Title, Notification).
+
+base_test_failure(Title, "not passed") :-
+    base_test_expectNotification(Title, _),
+    base_test_checklist(Title, Card),
+    not field(Card, "workflowState", "Passed").
 
 % The items are hidden in the navigation tree, and the checklists are not
 

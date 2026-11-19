@@ -44,6 +44,12 @@ them as a table, with a link to each item. A review that is a checklist shows
 the policy check failures of its items, and its progress is the percentage of
 complete items.
 
+A review that is a checklist can pass only when its checklist is complete. It
+can pass with deviations: that is a judgement of the reviewer, and the review
+shows a notification, not a policy check failure. A policy check failure would
+make the review count as failed evidence (see the reviewAssessment calculation
+of ismsa). A review can fail at any time.
+
 These predicates are only for project cards. Template cards do not get them.
 *%
 
@@ -158,6 +164,57 @@ field(Checklist, "progress", 100 * Complete / Total) :-
         Item : base_checklistItem(Item, Checklist),
                base_checklistItemComplete(Item)
     }.
+
+% A review passes only when its checklist is complete
+
+base_checklistCommentMissingCount(Checklist, Count) :-
+    base_checklist(Checklist),
+    Count = #count {
+        Item : base_checklistItem(Item, Checklist),
+               base_checklistCommentMissing(Item)
+    }.
+
+transitionDenied(
+    Review,
+    "Mark as passed",
+    @concatenate(
+        "Complete the checklist before passing the review: ",
+        Open, " open, ", Missing, " comment(s) missing.")
+    ) :-
+        base_checklistReview(Review),
+        not base_checklistComplete(Review),
+        base_checklistItemCount(Review, "open", Open),
+        base_checklistCommentMissingCount(Review, Missing).
+
+% A review that passed with deviations shows them as a notification
+
+notification(
+    Review,
+    "Checklist",
+    "Passed with deviations",
+    @concatenate(
+        "The review passed with ", Count,
+        " deviation(s). The checklist shows them with their comments.")
+    ) :-
+        base_checklistReview(Review),
+        field(Review, "workflowState", "Passed"),
+        base_checklistItemCount(Review, "deviation", Count),
+        Count > 0.
+
+% A passed review whose checklist has open items again. Comments that are
+% missing already show as failures of the items.
+
+policyCheckFailure(
+    Review,
+    "Checklist",
+    "Open checklist items after the review passed",
+    @concatenate(
+        Count, " checklist item(s) are open. Set their results, or reopen the review.")
+    ) :-
+        base_checklistReview(Review),
+        field(Review, "workflowState", "Passed"),
+        base_checklistItemCount(Review, "open", Count),
+        Count > 0.
 
 % The status indicator of a checklist item follows its result
 

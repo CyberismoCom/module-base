@@ -1,0 +1,5 @@
+Expected: result Open, not complete. This checklist is a review that passed, and then one item was set back to Open: progress 50%, and the policy check failure "Open checklist items after the review passed".
+
+{{#report}}
+  "name": "base/reports/checklist"
+{{/report}}
