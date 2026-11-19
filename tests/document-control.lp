@@ -21,12 +21,9 @@ base_test_expectPolicy("base_test_doc_reviewer_is_owner", "Reviewer cannot be th
 base_test_expectPolicy("base_test_doc_reviewer_is_owner_review", "Reviewer cannot be the same as document owner").
 base_test_expectPolicy("base_test_doc_open_review", "The review subtasks of approved documents must be closed").
 base_test_expectPolicy("base_test_doc_review_expired", "Review has expired").
-
-% Known issue: an approved document whose reviews are all open also fails
-% "Review has expired". The rule requires that all closed reviews are expired,
-% and with no closed review that is true. The tests neither require nor reject
-% this policy check.
-base_test_knownIssue("base_test_doc_open_review", "Review has expired").
+% Without a review task, only "Review task missing" fails. "Review has expired"
+% and "Failing policy checks in all review tasks" need a review task.
+base_test_expectPolicy("base_test_doc_approved_no_reviews", "Review task missing").
 
 % Status indicators: base_test_expectStatus(Identifier, Indicator).
 base_test_expectStatus("base_test_doc_draft_empty", "initial").
@@ -43,20 +40,22 @@ base_test_expectStatus("base_test_doc_review_expired", "error").
 base_test_expectStatus("base_test_doc_current", "closed").
 base_test_expectStatus("base_test_doc_current_review", "closed").
 base_test_expectStatus("base_test_doc_archived", "closed").
+base_test_expectStatus("base_test_doc_approved_no_reviews", "error").
 
-% Denied transitions: base_test_expectDenied(Identifier, Transition, Message)
-% and base_test_expectAllowed(Identifier, Transition).
+% Denied transitions: base_test_expectDenied(Identifier, Transition, Message),
+% base_test_expectNotDenied(Identifier, Transition, Message), and
+% base_test_expectAllowed(Identifier, Transition).
 base_test_expectDenied("base_test_doc_draft_empty", "Approve", "Fill in the owner field before approving").
 base_test_expectDenied("base_test_doc_draft_empty", "Approve", "Fill in the approver field before approving").
 base_test_expectDenied("base_test_doc_draft_empty", "Approve", "Complete the review task(s) before approving").
-base_test_expectDenied("base_test_doc_draft_empty_review", "Start progress", "Fill in the owner field before starting progess").
+base_test_expectDenied("base_test_doc_draft_empty_review", "Start progress", "Fill in the owner field before starting progress").
 base_test_expectDenied("base_test_doc_draft_empty_review", "Done", "Fill in the owner field before completing the task").
 base_test_expectDenied("base_test_doc_reviewer_is_owner", "Approve", "Complete the review task(s) before approving").
 base_test_expectDenied("base_test_doc_reviewer_is_owner", "Approve", "Fix policy failures before approving").
 base_test_expectDenied("base_test_doc_reviewer_is_owner", "Approve", "Fix policy failures in at least one of the review subtask(s) before approving").
-% A document without review tasks cannot be approved. The message is the one
-% of the rule that requires that all review tasks fail.
-base_test_expectDenied("base_test_doc_no_reviews", "Approve", "Fix policy failures in at least one of the review subtask(s) before approving").
+% A document without review tasks cannot be approved, and the message says why.
+base_test_expectDenied("base_test_doc_no_reviews", "Approve", "Add a review task before approving").
+base_test_expectNotDenied("base_test_doc_no_reviews", "Approve", "Fix policy failures in at least one of the review subtask(s) before approving").
 base_test_expectAllowed("base_test_doc_ready", "Approve").
 
 % Editing: base_test_expectEditDenied(Identifier, Message) and
@@ -82,6 +81,7 @@ base_test_fixture(Id, Card) :-
 base_test_expected(Id) :- base_test_expectPolicy(Id, _).
 base_test_expected(Id) :- base_test_expectStatus(Id, _).
 base_test_expected(Id) :- base_test_expectDenied(Id, _, _).
+base_test_expected(Id) :- base_test_expectNotDenied(Id, _, _).
 base_test_expected(Id) :- base_test_expectAllowed(Id, _).
 base_test_expected(Id) :- base_test_expectEditDenied(Id, _).
 base_test_expected(Id) :- base_test_expectEditAllowed(Id).
@@ -100,8 +100,7 @@ base_test_failure(Id, @concatenate("policy check missing: ", Title)) :-
 base_test_failure(Id, @concatenate("unexpected policy check: ", Title)) :-
     base_test_fixture(Id, Card),
     base_policyCheckFailure(Card, _, Title, _),
-    not base_test_expectPolicy(Id, Title),
-    not base_test_knownIssue(Id, Title).
+    not base_test_expectPolicy(Id, Title).
 
 base_test_failure(Id, @concatenate("status indicator is not ", Expected)) :-
     base_test_expectStatus(Id, Expected),
@@ -117,6 +116,11 @@ base_test_failure(Id, @concatenate("not denied: ", Message)) :-
     base_test_expectDenied(Id, Transition, Message),
     base_test_fixture(Id, Card),
     not transitionDenied(Card, Transition, Message).
+
+base_test_failure(Id, @concatenate("denied: ", Message)) :-
+    base_test_expectNotDenied(Id, Transition, Message),
+    base_test_fixture(Id, Card),
+    transitionDenied(Card, Transition, Message).
 
 base_test_failure(Id, @concatenate("denied: ", Transition)) :-
     base_test_expectAllowed(Id, Transition),
