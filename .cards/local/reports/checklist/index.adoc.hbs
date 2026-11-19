@@ -1,14 +1,14 @@
 {{#each results}}
 {{#if items}}
-[cols="4,2,4,2"]
+[cols="4,2,5"]
 |===
-| Item | Result | Comment | Evidence
+| Item | Result | Comment
 
 {{#each items}}
-|{{#xref}}"cardKey": "{{this.key}}"{{/xref}}
+|{{#xref}}"cardKey": "{{this.key}}"{{/xref}}{{#each this.failures}} +
+*{{this.title}}*{{/each}}
 |{{#if ../editable}}{{#field}}"cardKey": "{{this.key}}", "field": "base/fieldTypes/checklistResult", "display": "inline"{{/field}}{{else}}{{this.resultDisplay}}{{/if}}
 |{{#field}}"cardKey": "{{this.key}}", "field": "base/fieldTypes/comment", "display": "inline"{{/field}}
-|{{#field}}"cardKey": "{{this.key}}", "field": "base/fieldTypes/evidenceReference", "display": "inline"{{/field}}
 {{/each}}
 |===
 

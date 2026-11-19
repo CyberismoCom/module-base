@@ -36,6 +36,14 @@ base_checklistItemCount(Checklist, Result, Count)
     The number of items of the checklist that have the result. There is a
     fact for each result, also when the count is zero.
 
+base_checklistReview(Checklist)
+    Checklist is a review (base/cardTypes/review) with checklist items.
+
+In the navigation tree, checklist items are hidden: the checklist report shows
+them as a table, with a link to each item. A review that is a checklist shows
+the policy check failures of its items, and its progress is the percentage of
+complete items.
+
 These predicates are only for project cards. Template cards do not get them.
 *%
 
@@ -116,6 +124,40 @@ policyCheckFailure(
     "base/fieldTypes/comment"
     ) :-
         base_checklistCommentMissing(Item).
+
+% Checklist items are hidden in the navigation tree. The checklist report
+% shows the items as a table, and links to each item.
+
+hiddenInTreeView(Item) :-
+    base_projectCardType(Item, "base/cardTypes/checklistItem").
+
+% A review that is a checklist
+
+base_checklistReview(Checklist) :-
+    base_checklist(Checklist),
+    base_projectCardType(Checklist, "base/cardTypes/review").
+
+% The items are hidden, so the review shows the policy check failures of its
+% items. The message names the item.
+policyCheckFailure(
+    Checklist,
+    "Checklist",
+    Title,
+    @concatenate("Checklist item \"", ItemTitle, "\": ", Message)
+    ) :-
+        base_checklistReview(Checklist),
+        base_checklistItem(Item, Checklist),
+        base_policyCheckFailure(Item, _, Title, Message),
+        field(Item, "title", ItemTitle).
+
+% The progress of a review is the percentage of complete items
+field(Checklist, "progress", 100 * Complete / Total) :-
+    base_checklistReview(Checklist),
+    Total = #count { Item : base_checklistItem(Item, Checklist) },
+    Complete = #count {
+        Item : base_checklistItem(Item, Checklist),
+               base_checklistItemComplete(Item)
+    }.
 
 % The status indicator of a checklist item follows its result
 

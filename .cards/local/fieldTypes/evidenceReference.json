@@ -1,6 +1,0 @@
-{
-    "name": "base/fieldTypes/evidenceReference",
-    "displayName": "Evidence reference",
-    "dataType": "shortText",
-    "description": "A reference to the evidence, for example a document identifier, a URL, or a test report"
-}

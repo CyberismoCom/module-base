@@ -3,7 +3,7 @@
     "workflowState": "Draft",
     "createdAt": "2026-11-17T20:31:08.806Z",
     "links": [],
-    "cardType": "base/cardTypes/page",
+    "cardType": "base/cardTypes/review",
     "title": "All items OK",
     "templateCardKey": "base_2",
     "base/fieldTypes/informationClassification": "internal",

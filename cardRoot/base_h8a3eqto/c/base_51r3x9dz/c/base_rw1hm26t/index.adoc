@@ -1,4 +1,4 @@
-Expected: result Deviation, not complete. The item without a comment has a policy check failure.
+Expected: result Deviation, not complete. The item without a comment has a policy check failure. This checklist is a review: it shows the failure of the item as its own "Comment missing" failure, which names the item, and its progress is 50%.
 
 {{#report}}
   "name": "base/reports/checklist"

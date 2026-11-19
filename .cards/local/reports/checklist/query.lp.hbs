@@ -38,6 +38,18 @@ childResult(result, Item, "items") :-
     base_checklistReportItem(Item).
 order(2, "items", 1, "rank", "ASC").
 
+% The items are hidden in the navigation tree, so the table shows the policy
+% check failures of each item. Failure keys have their own tag, so that they do
+% not collide with other result keys.
+childResultCollection(Item, "failures") :-
+    base_checklistReportItem(Item).
+childResult(Item, ("failure", Item, Title), "failures") :-
+    base_checklistReportItem(Item),
+    base_policyCheckFailure(Item, _, Title, _).
+resultField(("failure", Item, Title), "title", Title, "shortText") :-
+    base_checklistReportItem(Item),
+    base_policyCheckFailure(Item, _, Title, _).
+
 resultField(result, "total", Count, "integer") :-
     Count = #count { Item : base_checklistReportItem(Item) }.
 

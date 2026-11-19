@@ -3,7 +3,7 @@
     "workflowState": "Draft",
     "createdAt": "2026-11-17T20:31:24.389Z",
     "links": [],
-    "cardType": "base/cardTypes/page",
+    "cardType": "base/cardTypes/review",
     "title": "Deviation without a comment",
     "templateCardKey": "base_2",
     "base/fieldTypes/informationClassification": "internal",

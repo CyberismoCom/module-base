@@ -54,6 +54,17 @@ base_test_expectItem("base_test_cl_arch_1", "ok", "yes", "no", "closed").
 % Items that are not part of a checklist
 base_test_expectExcluded("base_test_cl_arch_2").
 
+% Reviews: base_test_expectReview(Title, Progress). A checklist that is a
+% review has a progress percentage of complete items. Other checklists have no
+% progress.
+base_test_expectReview("All items OK", 100).
+base_test_expectReview("Open items", 33).
+base_test_expectReview("Deviation without a comment", 50).
+
+% Failures of items that a review shows as its own:
+% base_test_expectLifted(Title, ItemIdentifier).
+base_test_expectLifted("Deviation without a comment", "base_test_cl_devnc_1").
+
 % Bind the expectations to the fixture cards
 
 base_test_page(Page) :-
@@ -159,6 +170,63 @@ base_test_failure(Id, "excluded item is in a checklist") :-
     base_test_expectExcluded(Id),
     base_test_item(Id, Card),
     base_checklistItem(Card, _).
+
+% Review assertions
+
+base_test_failure(Title, "not a review") :-
+    base_test_expectReview(Title, _),
+    base_test_checklist(Title, Card),
+    not base_checklistReview(Card).
+
+base_test_failure(Title, @concatenate("progress is not ", Expected)) :-
+    base_test_expectReview(Title, Expected),
+    base_test_checklist(Title, Card),
+    not field(Card, "progress", Expected).
+
+base_test_failure(Title, "progress count") :-
+    base_test_expectReview(Title, _),
+    base_test_checklist(Title, Card),
+    #count { P : field(Card, "progress", P) } != 1.
+
+base_test_failure(Title, "progress on a checklist that is not a review") :-
+    base_test_checklist(Title, Card),
+    not base_test_expectReview(Title, _),
+    field(Card, "progress", _).
+
+base_test_failure(Title, @concatenate("failure of item not shown: ", Id)) :-
+    base_test_expectLifted(Title, Id),
+    base_test_checklist(Title, Card),
+    base_test_item(Id, Item),
+    field(Item, "title", ItemTitle),
+    not policyCheckFailure(Card, "Checklist", "Comment missing",
+        @concatenate("Checklist item \"", ItemTitle, "\": ",
+            "A Deviation or Not applicable result needs a comment. Explain the result in the Comment field.")).
+
+base_test_failure(Title, "status indicator is not error") :-
+    base_test_expectLifted(Title, _),
+    base_test_checklist(Title, Card),
+    not field(Card, "statusIndicator", "error").
+
+base_test_failure(Title, "unexpected policy check") :-
+    base_test_checklist(Title, Card),
+    not base_test_expectLifted(Title, _),
+    base_policyCheckFailure(Card, _, _, _).
+
+% The items are hidden in the navigation tree, and the checklists are not
+
+base_test_failure(Id, "not hidden") :-
+    base_test_expectItem(Id, _, _, _, _),
+    base_test_item(Id, Card),
+    not hiddenInTreeView(Card).
+
+base_test_failure(Id, "not hidden") :-
+    base_test_expectExcluded(Id),
+    base_test_item(Id, Card),
+    not hiddenInTreeView(Card).
+
+base_test_failure(Title, "checklist is hidden") :-
+    base_test_checklist(Title, Card),
+    hiddenInTreeView(Card).
 
 % Negative tests: cards that are not checklists
 
