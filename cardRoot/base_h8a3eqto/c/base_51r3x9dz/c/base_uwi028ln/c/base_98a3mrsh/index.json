@@ -1,0 +1,13 @@
+{
+    "rank": "0|c",
+    "workflowState": "Active",
+    "createdAt": "2026-11-19T17:58:27.089Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "Item with an accepted deviation",
+    "templateCardKey": "base_ue4gfkxj",
+    "base/fieldTypes/checklistResult": "deviation",
+    "lastUpdated": "2026-11-19T17:58:27.233Z",
+    "base/fieldTypes/identifier": "base_test_cl_pdev_2",
+    "base/fieldTypes/comment": "The deviation is accepted for this test."
+}

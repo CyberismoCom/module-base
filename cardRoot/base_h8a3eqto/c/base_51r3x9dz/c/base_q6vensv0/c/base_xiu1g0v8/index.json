@@ -1,0 +1,12 @@
+{
+    "rank": "0|c",
+    "workflowState": "Archived",
+    "createdAt": "2026-11-17T20:31:28.017Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "Archived item with a deviation",
+    "templateCardKey": "base_ue4gfkxj",
+    "base/fieldTypes/checklistResult": "deviation",
+    "lastUpdated": "2026-11-17T20:31:28.018Z",
+    "base/fieldTypes/identifier": "base_test_cl_arch_2"
+}

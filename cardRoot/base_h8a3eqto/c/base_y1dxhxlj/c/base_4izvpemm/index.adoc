@@ -1,0 +1,1 @@
+Expected: the transition "Review as not applicable" is denied.

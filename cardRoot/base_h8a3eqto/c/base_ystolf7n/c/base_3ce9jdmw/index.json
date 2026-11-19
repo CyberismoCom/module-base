@@ -1,0 +1,17 @@
+{
+    "rank": "0|k",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-19T17:27:10.025Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Approved without review tasks",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "lastUpdated": "2026-11-19T17:27:40.714Z",
+    "base/fieldTypes/identifier": "base_test_doc_approved_no_reviews",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-19T17:27:40.705Z",
+    "base/fieldTypes/approvalDate": "2026-11-19"
+}

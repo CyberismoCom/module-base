@@ -1,0 +1,17 @@
+{
+    "rank": "0|h",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-19T17:17:58.148Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Approved with a current review",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "lastUpdated": "2026-11-19T17:17:58.494Z",
+    "base/fieldTypes/identifier": "base_test_doc_current",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-19T17:17:58.476Z",
+    "base/fieldTypes/approvalDate": "2026-11-19"
+}

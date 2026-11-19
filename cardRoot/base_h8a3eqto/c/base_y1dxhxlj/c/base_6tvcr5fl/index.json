@@ -1,0 +1,14 @@
+{
+    "rank": "0|j",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T17:17:52.271Z",
+    "links": [],
+    "cardType": "base/cardTypes/quarterlyTask",
+    "title": "Open recurring task without a review date",
+    "templateCardKey": "base_9",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 90,
+    "base/fieldTypes/quarterlyReviewMonth": "month1",
+    "lastUpdated": "2026-11-19T17:17:52.356Z",
+    "base/fieldTypes/identifier": "base_test_task_open_no_review"
+}

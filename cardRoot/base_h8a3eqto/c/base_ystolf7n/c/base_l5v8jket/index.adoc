@@ -1,0 +1,1 @@
+Expected: no policy check fails. "Approve" is denied with "Add a review task before approving", because the document has no review task.

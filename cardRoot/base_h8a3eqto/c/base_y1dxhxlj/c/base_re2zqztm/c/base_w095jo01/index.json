@@ -1,0 +1,13 @@
+{
+    "rank": "0|c",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T17:17:52.631Z",
+    "links": [],
+    "cardType": "base/cardTypes/task",
+    "title": "Step 3",
+    "templateCardKey": "base_3",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-19T17:17:52.741Z",
+    "base/fieldTypes/identifier": "base_test_task_step3",
+    "base/fieldTypes/adoptionStep": "step3"
+}

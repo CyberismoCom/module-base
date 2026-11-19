@@ -1,0 +1,15 @@
+{
+    "rank": "0|e",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T17:17:57.101Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Reviewer is the document owner",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "lastUpdated": "2026-11-19T17:17:57.288Z",
+    "base/fieldTypes/identifier": "base_test_doc_reviewer_is_owner",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com"
+}

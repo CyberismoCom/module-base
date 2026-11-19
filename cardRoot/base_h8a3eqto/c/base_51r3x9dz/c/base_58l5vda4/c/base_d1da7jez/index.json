@@ -1,0 +1,13 @@
+{
+    "rank": "0|b",
+    "workflowState": "Active",
+    "createdAt": "2026-11-17T20:31:13.703Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "Item not applicable with a comment",
+    "templateCardKey": "base_ue4gfkxj",
+    "base/fieldTypes/checklistResult": "notApplicable",
+    "lastUpdated": "2026-11-17T20:31:13.705Z",
+    "base/fieldTypes/identifier": "base_test_cl_na_1",
+    "base/fieldTypes/comment": "This does not apply."
+}

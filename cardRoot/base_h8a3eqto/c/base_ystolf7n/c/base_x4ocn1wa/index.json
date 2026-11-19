@@ -1,0 +1,17 @@
+{
+    "rank": "0|g",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-19T17:17:57.738Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Approved with an expired review",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-11-19T17:17:58.127Z",
+    "base/fieldTypes/identifier": "base_test_doc_review_expired",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-19T17:17:58.082Z",
+    "base/fieldTypes/approvalDate": "2026-11-19"
+}

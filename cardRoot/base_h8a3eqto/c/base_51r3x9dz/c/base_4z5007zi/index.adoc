@@ -1,0 +1,5 @@
+Expected: result Open, not complete. This checklist is a review: progress 33% (one of three items is complete).
+
+{{#report}}
+  "name": "base/reports/checklist"
+{{/report}}

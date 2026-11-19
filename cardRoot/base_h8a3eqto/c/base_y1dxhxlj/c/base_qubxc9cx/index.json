@@ -1,0 +1,14 @@
+{
+    "rank": "0|g",
+    "workflowState": "Closed as done",
+    "createdAt": "2026-11-19T17:17:51.711Z",
+    "links": [],
+    "cardType": "base/cardTypes/monthlyTask",
+    "title": "Closed recurring task without a review date",
+    "templateCardKey": "base_8",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 30,
+    "lastUpdated": "2026-11-19T17:17:51.877Z",
+    "base/fieldTypes/identifier": "base_test_task_closed_no_review",
+    "lastTransitioned": "2026-11-19T17:17:51.835Z"
+}

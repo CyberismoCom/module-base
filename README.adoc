@@ -22,12 +22,21 @@ See separate file CONTRIBUTING.
 
 The Cyberismo base module contains the basic building blocks common to many Cyberismo project types. This includes card types such as
 
+* checklist item
 * controlled document
 * decision
 * page
 * task
 
 along with their fundamental field types, link types, templates and workflows.
+
+== Tests
+
+The test content is under the "Test content" card. The assertion tests are in the `tests` folder: `checklist.lp`, `tasks.lp`, and `document-control.lp`. To run one, go to the project root and run, for example:
+
+    cyberismo calc run tests/checklist.lp
+
+The tests pass when the "results" array is empty.
 
 == Using the Cyberismo base module
 

@@ -1,0 +1,1 @@
+Expected: no policy check fails, because the document is a draft. "Approve" is denied: the owner and the approver are missing, and the review task is not closed. The review task cannot start or be done without an owner.

@@ -1,0 +1,13 @@
+{
+    "rank": "0|b",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T17:17:51.074Z",
+    "links": [],
+    "cardType": "base/cardTypes/task",
+    "title": "Open task with a passed due date",
+    "templateCardKey": "base_3",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-19T17:17:51.172Z",
+    "base/fieldTypes/identifier": "base_test_task_overdue",
+    "base/fieldTypes/dueDate": "2000-01-01"
+}

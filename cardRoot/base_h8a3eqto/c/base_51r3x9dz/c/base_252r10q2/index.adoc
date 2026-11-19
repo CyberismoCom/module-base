@@ -1,0 +1,5 @@
+Expected: result OK, complete. This checklist is a review: progress 100%.
+
+{{#report}}
+  "name": "base/reports/checklist"
+{{/report}}

@@ -1,0 +1,15 @@
+{
+    "rank": "0|i",
+    "workflowState": "Closed as done",
+    "createdAt": "2026-11-19T17:17:52.083Z",
+    "links": [],
+    "cardType": "base/cardTypes/annualTask",
+    "title": "Closed recurring task with an expired review",
+    "templateCardKey": "base_7",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-11-19T17:17:52.251Z",
+    "base/fieldTypes/identifier": "base_test_task_review_expired",
+    "lastTransitioned": "2026-11-19T17:17:52.208Z",
+    "base/fieldTypes/lastReviewed": "2000-01-01"
+}

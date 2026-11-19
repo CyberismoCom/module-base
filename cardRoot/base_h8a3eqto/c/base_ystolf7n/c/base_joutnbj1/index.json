@@ -1,0 +1,13 @@
+{
+    "rank": "0|b",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T17:17:56.161Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Draft without fields",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "lastUpdated": "2026-11-19T17:19:15.679Z",
+    "base/fieldTypes/identifier": "base_test_doc_draft_empty"
+}

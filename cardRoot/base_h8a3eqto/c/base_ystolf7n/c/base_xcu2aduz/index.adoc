@@ -1,0 +1,1 @@
+Expected: policy check "The review subtasks of approved documents must be closed". The open review does not make the review expire.

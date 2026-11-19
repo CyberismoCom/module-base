@@ -1,0 +1,12 @@
+{
+    "rank": "0|b",
+    "workflowState": "Active",
+    "createdAt": "2026-11-19T17:58:26.938Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "Item OK",
+    "templateCardKey": "base_ue4gfkxj",
+    "base/fieldTypes/checklistResult": "ok",
+    "lastUpdated": "2026-11-19T17:58:27.067Z",
+    "base/fieldTypes/identifier": "base_test_cl_pdev_1"
+}
