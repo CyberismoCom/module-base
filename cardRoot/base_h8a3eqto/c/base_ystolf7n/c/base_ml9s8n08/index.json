@@ -1,0 +1,15 @@
+{
+    "rank": "0|c",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-19T17:17:56.296Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Draft ready for approval",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "lastUpdated": "2026-11-19T17:17:56.500Z",
+    "base/fieldTypes/identifier": "base_test_doc_ready",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com"
+}

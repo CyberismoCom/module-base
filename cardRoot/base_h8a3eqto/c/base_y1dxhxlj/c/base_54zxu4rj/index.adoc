@@ -1,0 +1,1 @@
+Expected: no policy check fails, because the task is closed.

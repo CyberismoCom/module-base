@@ -1,0 +1,1 @@
+Expected: this task (step 2) is on a higher adoption step than its children on step 1 and without a step. The child on step 3 is higher than this task.

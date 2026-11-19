@@ -1,0 +1,3 @@
+Expected: no policy check fails. "Approve" is denied, because the document has no review task.
+
+The message of the denial is "Fix policy failures in at least one of the review subtask(s) before approving". The rule requires that all review tasks fail, and with no review task that is true.

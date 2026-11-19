@@ -1,0 +1,17 @@
+{
+    "rank": "0|i",
+    "workflowState": "Archived",
+    "createdAt": "2026-11-19T17:17:58.536Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Archived document",
+    "templateCardKey": "base_5",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "lastUpdated": "2026-11-19T17:17:58.930Z",
+    "base/fieldTypes/identifier": "base_test_doc_archived",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-19T17:17:58.930Z",
+    "base/fieldTypes/approvalDate": "2026-11-19"
+}

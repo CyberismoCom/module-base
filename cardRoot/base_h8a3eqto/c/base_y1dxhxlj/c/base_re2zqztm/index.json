@@ -1,0 +1,13 @@
+{
+    "rank": "0|k",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T17:17:52.377Z",
+    "links": [],
+    "cardType": "base/cardTypes/task",
+    "title": "Adoption steps",
+    "templateCardKey": "base_3",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-19T17:17:52.478Z",
+    "base/fieldTypes/identifier": "base_test_task_step2",
+    "base/fieldTypes/adoptionStep": "step2"
+}

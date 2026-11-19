@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T17:17:56.161Z",
+    "links": [],
+    "cardType": "base/cardTypes/reviewTask",
+    "title": "Document review",
+    "templateCardKey": "base_z5xfuc3n",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 365,
+    "base/fieldTypes/adoptionStep": "step1",
+    "lastUpdated": "2026-11-19T17:17:56.244Z",
+    "base/fieldTypes/identifier": "base_test_doc_draft_empty_review"
+}

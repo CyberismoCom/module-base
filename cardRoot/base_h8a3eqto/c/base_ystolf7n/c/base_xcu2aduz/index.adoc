@@ -1,0 +1,3 @@
+Expected: policy check "The review subtasks of approved documents must be closed".
+
+Known issue: the policy check "Review has expired" also fails. The rule checks that all closed reviews are older than the review period, and with no closed review that is true.

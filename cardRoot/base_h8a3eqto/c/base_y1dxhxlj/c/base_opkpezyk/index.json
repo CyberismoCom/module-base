@@ -1,0 +1,13 @@
+{
+    "rank": "0|f",
+    "workflowState": "Open",
+    "createdAt": "2026-11-19T17:17:51.575Z",
+    "links": [],
+    "cardType": "base/cardTypes/task",
+    "title": "Task with a justification",
+    "templateCardKey": "base_3",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-19T17:17:51.692Z",
+    "base/fieldTypes/identifier": "base_test_task_justification",
+    "base/fieldTypes/justification": "The task does not apply to this test."
+}

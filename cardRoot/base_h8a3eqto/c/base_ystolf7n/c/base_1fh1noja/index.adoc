@@ -1,0 +1,1 @@
+Expected: policy check "Reviewer cannot be the same as document owner" on the document and on its review. "Approve" is denied until the review is closed.
