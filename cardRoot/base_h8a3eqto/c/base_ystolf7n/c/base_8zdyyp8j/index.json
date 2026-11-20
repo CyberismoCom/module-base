@@ -1,0 +1,16 @@
+{
+    "rank": "0|qa",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-20T10:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Approved with one failing review of two",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_approved_failing_review",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-02T09:00:00.000Z",
+    "base/fieldTypes/approvalDate": "2026-11-02",
+    "lastUpdated": "2026-11-20T10:00:00.000Z"
+}

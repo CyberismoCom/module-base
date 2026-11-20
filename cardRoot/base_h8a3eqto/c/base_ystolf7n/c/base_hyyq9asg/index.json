@@ -1,0 +1,14 @@
+{
+    "rank": "0|q",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T10:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Draft with one failing review of two",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_one_failing_review",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastUpdated": "2026-11-20T10:00:00.000Z"
+}
