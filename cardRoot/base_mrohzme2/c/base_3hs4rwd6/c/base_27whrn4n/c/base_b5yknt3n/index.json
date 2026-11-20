@@ -1,0 +1,13 @@
+{
+    "rank": "0|n",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:12.843Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_documentHasReview(Document)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.133Z",
+    "base/fieldTypes/category": "Document control",
+    "base/fieldTypes/briefDescription": "A controlled document has a review task",
+    "lastTransitioned": "2026-11-19T22:36:09.133Z"
+}

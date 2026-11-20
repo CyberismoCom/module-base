@@ -1,0 +1,13 @@
+{
+    "rank": "0|p",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:13.630Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_policyCheckFailure(Card, Category, Title, Message)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:08.765Z",
+    "base/fieldTypes/category": "Status",
+    "base/fieldTypes/briefDescription": "A card fails a policy check, with or without a field",
+    "lastTransitioned": "2026-11-19T22:36:08.765Z"
+}

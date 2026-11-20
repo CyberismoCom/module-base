@@ -1,0 +1,8 @@
+== Parameters
+
+* `Item`: the key of a checklist item
+* `Result`: `"open"`, `"ok"`, `"deviation"`, or `"notApplicable"`
+
+== Description
+
+The value of the field "Result" (`base/fieldTypes/checklistResult`) of the item. An item without a result is `"open"`.

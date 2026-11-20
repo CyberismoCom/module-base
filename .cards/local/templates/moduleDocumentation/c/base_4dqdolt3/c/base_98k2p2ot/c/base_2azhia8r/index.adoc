@@ -1,0 +1,13 @@
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "workflows"
+{{/report}}
+
+== Diagrams
+
+#TODO: Change "prefix" in the report below to the prefix of the module.#
+
+{{#report}}
+  "name": "base/reports/allWorkflows",
+  "module": "prefix"
+{{/report}}

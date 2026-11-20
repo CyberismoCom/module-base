@@ -1,0 +1,8 @@
+== Parameters
+
+* `Card1`: the key of a card in the project
+* `Card2`: the key of a card in the project
+
+== Description
+
+`Card1` is on a higher adoption step (`base/fieldTypes/adoptionStep`) than `Card2`. A card with a step is on a higher step than a card without one, if both card types have the field. For speed, base compares only cards where one is an ancestor of the other.

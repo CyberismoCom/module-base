@@ -1,0 +1,19 @@
+A donut chart of the parts of a whole. The widget computes the share of each part from the total. Use it for six parts or fewer: the palette has six colours. With more than six slices, the widget shows a table. For more categories, use the bar widget.
+
+{{#report}}
+  "name": "base/reports/pieWidget",
+  "title": "Findings by severity",
+  "legend": "across all active projects",
+  "slices": [
+      {"label": "Critical", "value": 3},
+      {"label": "High", "value": 11},
+      {"label": "Medium", "value": 24},
+      {"label": "Low", "value": 42}
+  ]
+{{/report}}
+
+== Parameters
+
+* `title` (required): the title above the chart.
+* `legend` (required): the text below the chart.
+* `slices` (required): the parts. Each slice has a `label`, a `value` in any unit, and an optional `colour`: blue, green, yellow, red, orange, or purple. Without colours, the slices get the colours of the palette in order.

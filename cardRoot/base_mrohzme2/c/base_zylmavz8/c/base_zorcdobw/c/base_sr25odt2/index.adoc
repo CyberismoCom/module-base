@@ -1,0 +1,5 @@
+An example of a release checklist. Set the result of each item in the table. A Deviation or Not applicable result needs a comment.
+
+{{#report}}
+  "name": "base/reports/checklist"
+{{/report}}

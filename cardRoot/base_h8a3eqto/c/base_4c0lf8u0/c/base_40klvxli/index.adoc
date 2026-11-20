@@ -6,20 +6,6 @@ The `scale` parameter decides how the horizontal axis is laid out. Use `time` or
 `number` whenever the gaps between points are uneven: `category` spaces points evenly
 and would misstate the shape of the trend.
 
-== Four quarters
-
-{{#report}}
-  "name": "base/reports/trendWidget",
-  "title": "Open findings",
-  "legend": "over the last four quarters",
-  "points": [
-      {"label": "Q1", "value": 71},
-      {"label": "Q2", "value": 63},
-      {"label": "Q3", "value": 55},
-      {"label": "Q4", "value": 42}
-  ]
-{{/report}}
-
 == Twelve months
 
 {{#report}}

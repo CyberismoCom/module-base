@@ -1,0 +1,13 @@
+{
+    "rank": "0|b",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:08.182Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_projectCardType(Card, CardType)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.582Z",
+    "base/fieldTypes/category": "Cards",
+    "base/fieldTypes/briefDescription": "The card type of a card in the project",
+    "lastTransitioned": "2026-11-19T22:36:09.582Z"
+}

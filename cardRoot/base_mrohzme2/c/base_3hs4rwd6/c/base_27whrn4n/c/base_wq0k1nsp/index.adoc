@@ -1,0 +1,7 @@
+== Parameters
+
+* `Checklist`: the key of a review
+
+== Description
+
+`Checklist` is a review (`base/cardTypes/review`) with one or more checklist items. Base gives these reviews their progress, the policy check failures of their items, and the pass rules. See the page "Checklists" under "Using the base module".

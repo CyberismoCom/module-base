@@ -1,0 +1,7 @@
+== Parameters
+
+* `Document`: the key of a controlled document
+
+== Description
+
+`Document` has a review task that is closed as done and has a "Last reviewed" date.

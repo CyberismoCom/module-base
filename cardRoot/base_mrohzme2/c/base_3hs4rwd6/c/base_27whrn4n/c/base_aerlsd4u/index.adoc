@@ -1,0 +1,7 @@
+== Parameters
+
+None.
+
+== Description
+
+When a module adds this fact, base does not set the default status indicator for any card. The module must then set `field(Card, "statusIndicator", ...)` itself.

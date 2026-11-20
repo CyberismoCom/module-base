@@ -1,0 +1,26 @@
+A line chart that shows how one value changes over time. Only the last value has a label.
+
+{{#report}}
+  "name": "base/reports/trendWidget",
+  "title": "Open findings",
+  "legend": "over the last four quarters",
+  "points": [
+      {"label": "Q1", "value": 71},
+      {"label": "Q2", "value": 63},
+      {"label": "Q3", "value": 55},
+      {"label": "Q4", "value": 42}
+  ]
+{{/report}}
+
+== Parameters
+
+* `title` (required): the title above the chart.
+* `legend`: the text below the chart.
+* `colour`: the colour of the line: blue (the default), green, yellow, red, orange, or purple.
+* `scale`: how the horizontal axis is laid out.
+** `category` spaces the points evenly. Each point has a `label`.
+** `time` places the points by date. Each point has a `date`, as YYYY-MM-DD or a full ISO timestamp.
+** `number` places the points on a numeric axis. Each point has an `x`.
+* `points` (required): the values, oldest first. Each point has a `value`. A `null` value means that nothing was measured, and the line has a gap there.
+
+When the gaps between the points are not even, use the scale `time` or `number`. The scale `category` spaces the points evenly, so it would show the trend in the wrong shape.
