@@ -10,6 +10,25 @@ base_document(Document) :-
     base_controlledDocumentCardType(CardType),
     base_projectCardType(Document, CardType).
 
+% Document control is strict by default. A project or module can relax it for
+% some documents, for example for one card type:
+%
+%     base_relaxedDocumentControl(Document) :-
+%         base_projectCardType(Document, "base/cardTypes/controlledDocument").
+%
+% For a relaxed document, approved and archived documents can be edited, a
+% change after the review does not need a new review, and a failing review
+% task does not block approval. A change after approval shows a notification.
+#defined base_relaxedDocumentControl/1.
+
+base_documentStrict(Document) :-
+    base_document(Document),
+    not base_relaxedDocumentControl(Document).
+
+base_documentRelaxed(Document) :-
+    base_document(Document),
+    base_relaxedDocumentControl(Document).
+
 % The review tasks of a document. A review task that is closed as not
 % applicable does not count.
 base_documentReview(Document, ReviewTask) :-
@@ -39,11 +58,17 @@ base_documentClosedReview(Document, ReviewTask, Closed) :-
 % A review of the current version of a draft: closed after the last change of
 % the document. Any change of the document, also a reopen, stamps
 % lastUpdated. Reviews closed before the last change are earlier reviews, and
-% the rules for approval ignore them.
+% the rules for approval ignore them. For a relaxed document, every closed
+% review is current.
 base_documentCurrentReview(Document, ReviewTask) :-
     base_documentClosedReview(Document, ReviewTask, Closed),
+    base_documentStrict(Document),
     field(Document, "lastUpdated", LastUpdated),
     Closed >= LastUpdated.
+
+base_documentCurrentReview(Document, ReviewTask) :-
+    base_documentClosedReview(Document, ReviewTask, _),
+    base_documentRelaxed(Document).
 
 base_documentHasCurrentReview(Document) :-
     base_documentCurrentReview(Document, _).
@@ -100,6 +125,7 @@ transitionDenied(Document, "Approve", "Fix policy failures before approving") :-
     base_policyCheckFailure(Document, _, _, _).
 
 transitionDenied(Document, "Approve", "Fix the policy failures of the review tasks before approving") :-
+    base_documentStrict(Document),
     base_documentCheckedReview(Document, ReviewTask),
     base_policyCheckFailure(ReviewTask, _, _, _).
 
@@ -121,11 +147,11 @@ onTransitionSetField(Document, "Approve", Document, "base/fieldTypes/approvalDat
 % Editing approved and archived documents
 
 base_documentLocked(Document, "You cannot edit approved documents") :-
-    base_document(Document),
+    base_documentStrict(Document),
     field(Document, "workflowState", "Approved").
 
 base_documentLocked(Document, "You cannot edit archived documents") :-
-    base_document(Document),
+    base_documentStrict(Document),
     field(Document, "workflowState", "Archived").
 
 editingContentDenied(Document, Message) :-
@@ -189,6 +215,7 @@ policyCheckFailure(Document, "Document control", "The review subtasks of approve
     field(Document, "workflowState", "Approved").
 
 policyCheckFailure(Document, "Document control", "Failing policy checks in a review task", "Fix the policy failures of the review tasks.") :-
+    base_documentStrict(Document),
     base_documentCheckedReview(Document, ReviewTask),
     field(Document, "workflowState", "Approved"),
     base_policyCheckFailure(ReviewTask, _, _, _).
@@ -201,6 +228,16 @@ policyCheckFailure(Document, "Document control", "Review has expired", "Complete
     field(Document, "base/fieldTypes/reviewPeriod", ReviewPeriod),
     @daysSince(LastReviewed) > ReviewPeriod :
     base_documentDoneReview(Document, _, LastReviewed).
+
+% A relaxed approved document that was changed on a later day than its
+% approval. The approval itself changes the document, so a change on the day
+% of the approval does not show.
+notification(Document, "Document control", "Changed after approval", "This document was changed after it was approved. Reopen it and have it reviewed again.") :-
+    base_documentRelaxed(Document),
+    field(Document, "workflowState", "Approved"),
+    field(Document, "base/fieldTypes/approvalDate", ApprovalDate),
+    field(Document, "lastUpdated", LastUpdated),
+    LastUpdated > @concatenate(ApprovalDate, "T23:59:59.999Z").
 
 % Policy checks on the review tasks that the rules check
 

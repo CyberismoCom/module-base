@@ -111,7 +111,32 @@ base_test_expectFieldEditDenied("base_test_doc_archived", "base/fieldTypes/revie
 base_test_expectFieldEditAllowed("base_test_doc_ready", "title").
 base_test_expectFieldEditAllowed("base_test_doc_ready", "base/fieldTypes/owner").
 
+% Relaxed document control: base_test_relaxed(Identifier) turns it on for a
+% fixture.
+base_test_relaxed("base_test_doc_relaxed_edited_after_review").
+base_test_relaxed("base_test_doc_relaxed_review_field_failure").
+base_test_relaxed("base_test_doc_relaxed_approved_changed").
+base_test_relaxed("base_test_doc_relaxed_approved_same_day").
+
+% A relaxed draft can be approved after a change, and with a failing review.
+base_test_expectAllowed("base_test_doc_relaxed_edited_after_review", "Approve").
+base_test_expectAllowed("base_test_doc_relaxed_review_field_failure", "Approve").
+base_test_expectPolicy("base_test_doc_relaxed_review_field_failure_review", "Test field failure").
+% A relaxed approved document can be edited, and a change on a later day than
+% the approval shows a notification.
+base_test_expectEditAllowed("base_test_doc_relaxed_approved_changed").
+base_test_expectFieldEditAllowed("base_test_doc_relaxed_approved_changed", "title").
+base_test_expectFieldEditAllowed("base_test_doc_relaxed_approved_changed", "base/fieldTypes/owner").
+base_test_expectStatus("base_test_doc_relaxed_approved_changed", "closed").
+base_test_expectNotification("base_test_doc_relaxed_approved_changed", "Changed after approval").
+base_test_expectNoNotification("base_test_doc_relaxed_approved_same_day").
+base_test_expectNoNotification("base_test_doc_current").
+
 % Bind the expectations to the fixture cards
+
+base_relaxedDocumentControl(Card) :-
+    base_test_relaxed(Id),
+    base_test_fixture(Id, Card).
 
 base_test_page(Page) :-
     projectCard(Page),
@@ -132,11 +157,17 @@ base_test_expected(Id) :- base_test_expectEditDenied(Id, _).
 base_test_expected(Id) :- base_test_expectEditAllowed(Id).
 base_test_expected(Id) :- base_test_expectFieldEditDenied(Id, _, _).
 base_test_expected(Id) :- base_test_expectFieldEditAllowed(Id, _).
+base_test_expected(Id) :- base_test_relaxed(Id).
+base_test_expected(Id) :- base_test_expectNotification(Id, _).
+base_test_expected(Id) :- base_test_expectNoNotification(Id).
 
 % A field-level policy check failure on one review task. Base has no such
 % check on review tasks, but other modules can add one.
 policyCheckFailure(Card, "Document control", "Test field failure", "Test.", "base/fieldTypes/owner") :-
     base_test_fixture("base_test_doc_review_field_failure_review", Card).
+
+policyCheckFailure(Card, "Document control", "Test field failure", "Test.", "base/fieldTypes/owner") :-
+    base_test_fixture("base_test_doc_relaxed_review_field_failure_review", Card).
 
 % Assertions
 
@@ -198,5 +229,15 @@ base_test_failure(Id, @concatenate("field editing denied: ", Field)) :-
     base_test_expectFieldEditAllowed(Id, Field),
     base_test_fixture(Id, Card),
     editingFieldDenied(Card, Field, _).
+
+base_test_failure(Id, @concatenate("notification missing: ", Title)) :-
+    base_test_expectNotification(Id, Title),
+    base_test_fixture(Id, Card),
+    not notification(Card, "Document control", Title, _).
+
+base_test_failure(Id, @concatenate("unexpected notification: ", Title)) :-
+    base_test_expectNoNotification(Id),
+    base_test_fixture(Id, Card),
+    notification(Card, "Document control", Title, _).
 
 result((Subject, Reason)) :- base_test_failure(Subject, Reason).

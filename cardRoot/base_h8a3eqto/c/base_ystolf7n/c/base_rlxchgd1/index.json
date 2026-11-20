@@ -1,0 +1,16 @@
+{
+    "rank": "0|qi",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-01T08:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Relaxed: approved document changed after approval",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_relaxed_approved_changed",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-02T09:00:00.000Z",
+    "base/fieldTypes/approvalDate": "2026-11-02",
+    "lastUpdated": "2026-11-05T10:00:00.000Z"
+}
