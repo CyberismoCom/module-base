@@ -74,6 +74,8 @@ base_test_expectDenied("base_test_doc_reopened_stale", "Approve", "Complete a ne
 base_test_expectNotDenied("base_test_doc_reopened_stale", "Approve", "Complete the review task(s) before approving").
 base_test_expectNotDenied("base_test_doc_ready", "Approve", "Complete a new review after reopening the document").
 base_test_expectAllowed("base_test_doc_reopened_current", "Approve").
+% A done review without a review date is not a new review.
+base_test_expectDenied("base_test_doc_reopened_no_date", "Approve", "Complete a new review after reopening the document").
 % A review closed as not applicable does not count, and does not block.
 base_test_expectDenied("base_test_doc_not_applicable", "Approve", "Add a review task before approving").
 base_test_expectNotDenied("base_test_doc_not_applicable", "Approve", "Complete the review task(s) before approving").

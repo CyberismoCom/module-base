@@ -58,9 +58,11 @@ transitionDenied(Document, "Approve", "Complete the review task(s) before approv
     base_documentReview(Document, ReviewTask),
     not field(ReviewTask, "workflowState", "Closed as done").
 
+% A done review without a review date does not count as a new review.
 transitionDenied(Document, "Approve", "Complete a new review after reopening the document") :-
     base_documentReopened(Document, _),
-    base_documentReviewed(Document),
+    base_documentReview(Document, ReviewTask),
+    field(ReviewTask, "workflowState", "Closed as done"),
     not base_documentCurrentReview(Document).
 
 transitionDenied(Document, "Approve", "Fix policy failures before approving") :-
