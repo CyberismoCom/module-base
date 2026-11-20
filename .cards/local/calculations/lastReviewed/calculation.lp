@@ -27,6 +27,11 @@ onTransitionSetField(Card, "Mark as done", Card, "base/fieldTypes/lastReviewed",
     customField(CardType, "base/fieldTypes/lastReviewed"),
     field(CardType, "workflow", "base/workflows/reviewTask").
 
+onTransitionSetField(Card, "Changes implemented", Card, "base/fieldTypes/lastReviewed", @today()) :-
+    base_projectCardType(Card, CardType),
+    customField(CardType, "base/fieldTypes/lastReviewed"),
+    field(CardType, "workflow", "base/workflows/reviewTask").
+
 onTransitionSetField(Card, "Review as OK", Card, "base/fieldTypes/lastReviewed", @today()) :-
     base_projectCardType(Card, CardType),
     customField(CardType, "base/fieldTypes/lastReviewed"),

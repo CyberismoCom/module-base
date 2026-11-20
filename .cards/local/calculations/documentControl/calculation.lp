@@ -11,8 +11,7 @@ base_document(Document) :-
     base_projectCardType(Document, CardType).
 
 % The review tasks of a document. A review task that is closed as not
-% applicable does not count. The rules over the review tasks below need at
-% least one review task.
+% applicable does not count.
 base_documentReview(Document, ReviewTask) :-
     base_document(Document),
     parent(ReviewTask, Document),
@@ -21,6 +20,57 @@ base_documentReview(Document, ReviewTask) :-
 
 base_documentHasReview(Document) :-
     base_documentReview(Document, _).
+
+% A review that is not closed yet.
+base_documentPendingReview(Document, ReviewTask) :-
+    base_documentReview(Document, ReviewTask),
+    not field(ReviewTask, "workflowState", "Closed as done").
+
+base_documentHasPendingReview(Document) :-
+    base_documentPendingReview(Document, _).
+
+% A review that is closed as done, and the time it was closed. Core writes
+% both timestamps in UTC in the same format, so they compare as strings.
+base_documentClosedReview(Document, ReviewTask, Closed) :-
+    base_documentReview(Document, ReviewTask),
+    field(ReviewTask, "workflowState", "Closed as done"),
+    field(ReviewTask, "lastTransitioned", Closed).
+
+% A review of the current version of a draft: closed after the last change of
+% the document. Any change of the document, also a reopen, stamps
+% lastUpdated. Reviews closed before the last change are earlier reviews, and
+% the rules for approval ignore them.
+base_documentCurrentReview(Document, ReviewTask) :-
+    base_documentClosedReview(Document, ReviewTask, Closed),
+    field(Document, "lastUpdated", LastUpdated),
+    Closed >= LastUpdated.
+
+base_documentHasCurrentReview(Document) :-
+    base_documentCurrentReview(Document, _).
+
+% The last review that was closed. Approval stamps lastUpdated, so for an
+% approved or archived document this is the review that it was approved with.
+base_documentNewerReview(Document, Closed) :-
+    base_documentClosedReview(Document, _, Closed),
+    base_documentClosedReview(Document, _, Newer),
+    Newer > Closed.
+
+base_documentLatestReview(Document, ReviewTask) :-
+    base_documentClosedReview(Document, ReviewTask, Closed),
+    not base_documentNewerReview(Document, Closed).
+
+% The reviews that the rules check: the open ones, and for a draft the
+% current ones, or for other states the latest one.
+base_documentCheckedReview(Document, ReviewTask) :-
+    base_documentPendingReview(Document, ReviewTask).
+
+base_documentCheckedReview(Document, ReviewTask) :-
+    base_documentCurrentReview(Document, ReviewTask),
+    field(Document, "workflowState", "Draft").
+
+base_documentCheckedReview(Document, ReviewTask) :-
+    base_documentLatestReview(Document, ReviewTask),
+    not field(Document, "workflowState", "Draft").
 
 % A review that is closed as done and has a review date.
 base_documentDoneReview(Document, ReviewTask, LastReviewed) :-
@@ -31,23 +81,6 @@ base_documentDoneReview(Document, ReviewTask, LastReviewed) :-
 base_documentReviewed(Document) :-
     base_documentDoneReview(Document, _, _).
 
-% A draft that was reopened. A new draft has no transitions.
-base_documentReopened(Document, Reopened) :-
-    base_document(Document),
-    field(Document, "workflowState", "Draft"),
-    field(Document, "lastTransitioned", Reopened).
-
-% A review that counts for the next approval: for a new draft any done review,
-% and for a reopened draft a review done on or after the day it was reopened.
-base_documentCurrentReview(Document) :-
-    base_documentDoneReview(Document, _, _),
-    not base_documentReopened(Document, _).
-
-base_documentCurrentReview(Document) :-
-    base_documentDoneReview(Document, _, LastReviewed),
-    base_documentReopened(Document, Reopened),
-    @daysSince(LastReviewed) <= @daysSince(Reopened).
-
 % Approval
 
 transitionDenied(Document, "Approve", "Add a review task before approving") :-
@@ -55,22 +88,19 @@ transitionDenied(Document, "Approve", "Add a review task before approving") :-
     not base_documentHasReview(Document).
 
 transitionDenied(Document, "Approve", "Complete the review task(s) before approving") :-
-    base_documentReview(Document, ReviewTask),
-    not field(ReviewTask, "workflowState", "Closed as done").
+    base_documentHasPendingReview(Document).
 
-% A done review without a review date does not count as a new review.
-transitionDenied(Document, "Approve", "Complete a new review after reopening the document") :-
-    base_documentReopened(Document, _),
-    base_documentReview(Document, ReviewTask),
-    field(ReviewTask, "workflowState", "Closed as done"),
-    not base_documentCurrentReview(Document).
+transitionDenied(Document, "Approve", "Complete a new review after the last change to the document") :-
+    base_documentHasReview(Document),
+    not base_documentHasPendingReview(Document),
+    not base_documentHasCurrentReview(Document).
 
 transitionDenied(Document, "Approve", "Fix policy failures before approving") :-
     base_document(Document),
     base_policyCheckFailure(Document, _, _, _).
 
 transitionDenied(Document, "Approve", "Fix the policy failures of the review tasks before approving") :-
-    base_documentReview(Document, ReviewTask),
+    base_documentCheckedReview(Document, ReviewTask),
     base_policyCheckFailure(ReviewTask, _, _, _).
 
 transitionDenied(Document, "Approve", "Fill in the owner field before approving") :-
@@ -104,10 +134,13 @@ editingContentDenied(Document, Message) :-
 editingFieldDenied(Document, "title", Message) :-
     base_documentLocked(Document, Message).
 
+% Core sets the fields of a transition after the new state is saved, and skips
+% locked fields. The fields that Approve sets stay unlocked.
 editingFieldDenied(Document, Field, Message) :-
     base_documentLocked(Document, Message),
     base_projectCardType(Document, CardType),
-    customField(CardType, Field).
+    customField(CardType, Field),
+    not onTransitionSetField(Document, "Approve", Document, Field, _).
 
 % Review tasks
 
@@ -152,12 +185,11 @@ policyCheckFailure(Document, "Document control", "Review task missing", "Add a r
     not base_documentHasReview(Document).
 
 policyCheckFailure(Document, "Document control", "The review subtasks of approved documents must be closed", "Complete review task(s)" ):-
-    base_documentReview(Document, ReviewTask),
-    field(Document, "workflowState", "Approved"),
-    not field(ReviewTask, "workflowState", "Closed as done").
+    base_documentHasPendingReview(Document),
+    field(Document, "workflowState", "Approved").
 
 policyCheckFailure(Document, "Document control", "Failing policy checks in a review task", "Fix the policy failures of the review tasks.") :-
-    base_documentReview(Document, ReviewTask),
+    base_documentCheckedReview(Document, ReviewTask),
     field(Document, "workflowState", "Approved"),
     base_policyCheckFailure(ReviewTask, _, _, _).
 
@@ -170,24 +202,31 @@ policyCheckFailure(Document, "Document control", "Review has expired", "Complete
     @daysSince(LastReviewed) > ReviewPeriod :
     base_documentDoneReview(Document, _, LastReviewed).
 
+% Policy checks on the review tasks that the rules check
+
+policyCheckFailure(ReviewTask, "Document control", "Last reviewed is a required field", "Fill in the last reviewed field.", "base/fieldTypes/lastReviewed") :-
+    base_documentCheckedReview(_, ReviewTask),
+    field(ReviewTask, "workflowState", "Closed as done"),
+    not field(ReviewTask, "base/fieldTypes/lastReviewed", _).
+
 % Separation of duties. The check fails on the document and on the review task.
 
 policyCheckFailure(Document, "Document control", "Reviewer cannot be the same as document owner", "The owner of a review task is also the owner of this document. Change the owner of the review task.") :-
-    base_documentReview(Document, ReviewTask),
+    base_documentCheckedReview(Document, ReviewTask),
     field(Document, "base/fieldTypes/owner", Owner),
     field(ReviewTask, "base/fieldTypes/owner", Owner).
 
 policyCheckFailure(ReviewTask, "Document control", "Reviewer cannot be the same as document owner", "The owner of this review task is also the owner of the document. Change the owner of this review task.") :-
-    base_documentReview(Document, ReviewTask),
+    base_documentCheckedReview(Document, ReviewTask),
     field(Document, "base/fieldTypes/owner", Owner),
     field(ReviewTask, "base/fieldTypes/owner", Owner).
 
 policyCheckFailure(Document, "Document control", "Reviewer cannot be the same as document approver", "The owner of a review task is also the approver of this document. Change the owner of the review task or the approver of this document.") :-
-    base_documentReview(Document, ReviewTask),
+    base_documentCheckedReview(Document, ReviewTask),
     field(Document, "base/fieldTypes/approver", Approver),
     field(ReviewTask, "base/fieldTypes/owner", Approver).
 
 policyCheckFailure(ReviewTask, "Document control", "Reviewer cannot be the same as document approver", "The owner of this review task is also the approver of the document. Change the owner of this review task or the approver of the document.") :-
-    base_documentReview(Document, ReviewTask),
+    base_documentCheckedReview(Document, ReviewTask),
     field(Document, "base/fieldTypes/approver", Approver),
     field(ReviewTask, "base/fieldTypes/owner", Approver).

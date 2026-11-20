@@ -7,7 +7,7 @@ Run from the project root:
 The tests pass when "results" is empty. Each result is one failed assertion.
 The fixtures are under "Test content" > "Document control tests". A fixture
 "X" is a controlled document, and "X_review" is its review task. The fixtures
-use fixed dates and a review period of 36500 days, so that the results do not
+use fixed dates and timestamps and a review period of 36500 days, so that the results do not
 change over time.
 *%
 
@@ -33,6 +33,7 @@ base_test_expectPolicy("base_test_doc_approved_failing_review", "Failing policy 
 base_test_expectPolicy("base_test_doc_approved_failing_review_review2", "Reviewer cannot be the same as document approver").
 % A field-level (5-arity) failure, made by the test rule at the end of this file.
 base_test_expectPolicy("base_test_doc_review_field_failure_review", "Test field failure").
+base_test_expectPolicy("base_test_doc_reopened_no_date_review", "Last reviewed is a required field").
 
 % Status indicators: base_test_expectStatus(Identifier, Indicator).
 base_test_expectStatus("base_test_doc_draft_empty", "initial").
@@ -53,6 +54,10 @@ base_test_expectStatus("base_test_doc_approved_no_reviews", "error").
 base_test_expectStatus("base_test_doc_approved_failing_review", "error").
 % A draft can be archived without an approval date.
 base_test_expectStatus("base_test_doc_archived_draft", "closed").
+% After approval, only the latest review counts. The earlier review has the
+% owner of the document as the reviewer, and nothing fails.
+base_test_expectStatus("base_test_doc_approved_old_failing_review", "closed").
+base_test_expectStatus("base_test_doc_earlier_failing_review", "initial").
 
 % Denied transitions: base_test_expectDenied(Identifier, Transition, Message),
 % base_test_expectNotDenied(Identifier, Transition, Message), and
@@ -69,13 +74,19 @@ base_test_expectDenied("base_test_doc_reviewer_is_owner", "Approve", "Fix the po
 base_test_expectDenied("base_test_doc_no_reviews", "Approve", "Add a review task before approving").
 base_test_expectNotDenied("base_test_doc_no_reviews", "Approve", "Fix the policy failures of the review tasks before approving").
 base_test_expectAllowed("base_test_doc_ready", "Approve").
-% A reopened draft needs a review done on or after the day it was reopened.
-base_test_expectDenied("base_test_doc_reopened_stale", "Approve", "Complete a new review after reopening the document").
+% A draft needs a review closed after its last change. A reopen is a change.
+base_test_expectDenied("base_test_doc_reopened_stale", "Approve", "Complete a new review after the last change to the document").
 base_test_expectNotDenied("base_test_doc_reopened_stale", "Approve", "Complete the review task(s) before approving").
-base_test_expectNotDenied("base_test_doc_ready", "Approve", "Complete a new review after reopening the document").
+base_test_expectNotDenied("base_test_doc_ready", "Approve", "Complete a new review after the last change to the document").
 base_test_expectAllowed("base_test_doc_reopened_current", "Approve").
-% A done review without a review date is not a new review.
-base_test_expectDenied("base_test_doc_reopened_no_date", "Approve", "Complete a new review after reopening the document").
+% A current review without a review date fails a policy check, and that blocks
+% approval.
+base_test_expectDenied("base_test_doc_reopened_no_date", "Approve", "Fix the policy failures of the review tasks before approving").
+base_test_expectNotDenied("base_test_doc_reopened_no_date", "Approve", "Complete a new review after the last change to the document").
+% A change later on the day of the review needs a new review.
+base_test_expectDenied("base_test_doc_edited_after_review", "Approve", "Complete a new review after the last change to the document").
+% Earlier reviews do not count, and their failures do not block approval.
+base_test_expectAllowed("base_test_doc_earlier_failing_review", "Approve").
 % A review closed as not applicable does not count, and does not block.
 base_test_expectDenied("base_test_doc_not_applicable", "Approve", "Add a review task before approving").
 base_test_expectNotDenied("base_test_doc_not_applicable", "Approve", "Complete the review task(s) before approving").
