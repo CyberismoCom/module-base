@@ -6,7 +6,7 @@
     "cardType": "base/cardTypes/predicate",
     "title": "base_checklistReview(Checklist)",
     "templateCardKey": "base_weu9g7lz",
-    "lastUpdated": "2026-11-19T22:36:09.758Z",
+    "lastUpdated": "2026-11-20T08:01:06.582Z",
     "base/fieldTypes/category": "Checklists",
     "base/fieldTypes/briefDescription": "A review has checklist items",
     "lastTransitioned": "2026-11-19T22:36:09.758Z"

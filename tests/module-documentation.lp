@@ -8,7 +8,7 @@ Run from the project root, once in each context:
     cyberismo calc run tests/module-documentation.lp -c exportedDocument
 
 The tests pass when "results" is empty. Each result is one failed assertion.
-The tests use the top-level cards "Base" (the documentation) and "Test
+The tests use the top-level cards "Base module" (the documentation) and "Test
 content".
 *%
 
@@ -20,7 +20,7 @@ base_test_exportContext :- exportedDocument.
 base_test_root("documentation", Card) :-
     projectCard(Card),
     not parent(Card, _),
-    field(Card, "title", "Base").
+    field(Card, "title", "Base module").
 
 base_test_root("test content", Card) :-
     projectCard(Card),

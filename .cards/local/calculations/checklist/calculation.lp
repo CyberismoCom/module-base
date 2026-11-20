@@ -1,8 +1,8 @@
 %* Checklists
 
 A checklist is a card that has checklist items as its children. The base
-documentation describes the rules of this calculation, under "Using base" >
-"Checklists".
+documentation describes the rules of this calculation, under "Using the base
+module" > "Checklists".
 
 Shared predicates: base_checklistItem/2, base_checklist/1,
 base_checklistItemResult/2, base_checklistItemComplete/1,

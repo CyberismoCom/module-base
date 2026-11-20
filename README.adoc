@@ -26,4 +26,4 @@ To use the base module in your Cyberismo project, go to the project folder and r
 
 Most projects get the base module as a dependency of another module, for example the ISMS essentials module or the secure development essentials module.
 
-The documentation of the base module is in the card root of this repository, under the card "Base". Open this repository as a project in the Cyberismo app to read it. For more about Cyberismo, see the https://docs.cyberismo.com[Cyberismo documentation].
+The documentation of the base module is in the card root of this repository, under the card "Base module". Open this repository as a project in the Cyberismo app to read it. For more about Cyberismo, see the https://docs.cyberismo.com[Cyberismo documentation].

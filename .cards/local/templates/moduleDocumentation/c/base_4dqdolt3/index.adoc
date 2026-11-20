@@ -1,4 +1,4 @@
-#TODO: Change the title to the name of the module. Say what the module is for and who it is for, in a few paragraphs.#
+#TODO: Change the title to the name of the module, for example "Base module". Say what the module is for and who it is for, in a few paragraphs.#
 
 == Status
 
