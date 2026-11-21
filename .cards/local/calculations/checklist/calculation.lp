@@ -40,7 +40,7 @@ base_checklistReview(Checklist)
     Checklist is a review (base/cardTypes/review) with checklist items.
 
 In the navigation tree, checklist items are hidden: the checklist report shows
-them as a table, with a link to each item. A review that is a checklist shows
+them as a table, with the text of each item and a link to it. A review that is a checklist shows
 the policy check failures of its items, and its progress is the percentage of
 complete items.
 
