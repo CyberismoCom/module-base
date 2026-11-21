@@ -1,0 +1,14 @@
+{
+    "rank": "0|p",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T10:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Draft whose review has a field-level policy check failure",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_review_field_failure",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastUpdated": "2026-11-10T09:00:00.000Z"
+}

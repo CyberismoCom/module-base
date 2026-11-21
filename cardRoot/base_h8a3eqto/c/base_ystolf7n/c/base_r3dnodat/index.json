@@ -1,0 +1,15 @@
+{
+    "rank": "0|qc",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-20T13:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Reopened draft whose done review has no review date",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_reopened_no_date",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastTransitioned": "2026-11-10T09:00:00.000Z",
+    "lastUpdated": "2026-11-10T09:00:00.000Z"
+}
