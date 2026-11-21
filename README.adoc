@@ -38,6 +38,12 @@ The test content is under the "Test content" card. The assertion tests are in th
 
 The tests pass when the "results" array is empty.
 
+`tests/checklist-report.sh` exports the checklist fixture as AsciiDoc and PDF, and checks the output of the checklist report. Run it from the project root:
+
+    tests/checklist-report.sh
+
+It passes when it prints "PASS".
+
 == Using the Cyberismo base module
 
 In order to use the base module content in your Cyberismo project, take the following steps:
