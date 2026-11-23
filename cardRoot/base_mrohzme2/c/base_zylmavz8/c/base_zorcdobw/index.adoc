@@ -13,7 +13,7 @@ A Deviation or Not applicable result needs a comment. Put references to the evid
 
 An item is complete when its result is not Open and it has the comment that its result needs. A checklist is complete when all its items are complete. A complete checklist can have deviations. Archived checklist items are not part of the checklist.
 
-To add a checklist to a card, create the template "Checklist" under the card. To add one item, create the template "Checklist item" under the card. The report "Checklist" (`base/reports/checklist`) shows the items of a card as a table. In the app, you can set the result and the comment of each item in the table.
+To add a checklist to a card, create the template "Checklist" under the card. To add one item, create the template "Checklist item" under the card. The report "Checklist" (`base/reports/checklist`) shows the items of a card as a table, with the text of each item. In the app, you can set the result and the comment of each item in the table.
 
 == Reviews with a checklist
 
@@ -30,7 +30,7 @@ Other checklists do not get these rules, so that the failures of items do not ch
 
 == What you see
 
-Checklist items are hidden in the navigation tree. The checklist table links to each item.
+Checklist items are hidden in the navigation tree. In the app, the checklist table links to each item. Exported sites and documents do not have the hidden items, so there the title of each item is text.
 
 The status indicator of an item follows its result. Open is grey, Deviation is yellow, and OK and Not applicable are green. An item with a Deviation or Not applicable result and no comment fails the policy check "Comment missing", and shows the error indicator.
 

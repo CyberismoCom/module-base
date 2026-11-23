@@ -9,6 +9,12 @@ The changes in each version, newest first.
 
 No migration is needed.
 
+== 1.8.0
+
+* The checklist report shows the text of each item. In exported sites and documents, the titles of the items are text, not links.
+* The project schema is version 7.
+* An export test for the checklist report.
+
 == 1.7.0
 
 * Checklists: the card type "Checklist item", the field types "Result" and "Comment", the templates "Checklist" and "Checklist item", the report "Checklist", and the shared checklist predicates. Checklist items are hidden in the navigation tree. A review with a checklist shows the progress of the checklist, and it can pass only when the checklist is complete.

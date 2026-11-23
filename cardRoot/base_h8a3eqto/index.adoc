@@ -1,7 +1,7 @@
 The cards under this card are the test content of the base module. Exported sites and documents leave them out, because this card has the label `test-content`. The documentation of base is under the card "Base module".
 
 * "Widgets": pages that show the widget reports with edge cases. Check them by eye.
-* "Checklist tests": the fixtures of `tests/checklist.lp`.
+* "Checklist tests": the fixtures of `tests/checklist.lp` and `tests/checklist-report.sh`.
 * "Test role assignments report": role assignments in each workflow state, for the report "Role assignments".
 * "Controlled document": a controlled document with two review tasks.
 * "Task tests": the fixtures of `tests/tasks.lp`.
