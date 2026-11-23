@@ -6,6 +6,7 @@ The changes in each version, newest first.
 * The label `test-content` and the calculation `base/calculations/moduleDocumentation`. Exported sites and documents leave out the cards that have the label, and their descendants. The app still shows them.
 * The documentation of base is in the card root, and the README has only the copyright, the licence, how to contribute, and how to install.
 * The shared predicates of base are documented as predicate cards.
+* The report "Predicates" sorts the predicates by title within the order that `orderBy` gives.
 
 No migration is needed.
 

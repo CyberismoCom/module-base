@@ -23,13 +23,17 @@ cyberismo calc run tests/module-documentation.lp -c exportedSite
 cyberismo calc run tests/module-documentation.lp -c exportedDocument
 ----
 
-The export test `tests/checklist-report.sh` exports a checklist fixture as AsciiDoc and PDF, and checks the output of the checklist report. Run it from the root of the repository:
+Two shell tests check what the logic programs cannot see. Run them from the root of the repository:
+
+* `tests/checklist-report.sh` exports a checklist fixture as AsciiDoc and PDF, and checks the output of the checklist report.
+* `tests/module-documentation-links.sh` checks that the content of the documentation cards refers only to documentation cards, and not to the test content.
 
 ----
 tests/checklist-report.sh
+tests/module-documentation-links.sh
 ----
 
-It passes when it prints "PASS".
+Each test passes when it prints "PASS".
 
 == Test content
 

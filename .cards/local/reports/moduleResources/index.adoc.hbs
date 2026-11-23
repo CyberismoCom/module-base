@@ -24,7 +24,7 @@ Data type: {{this.dataType}}
 {{/if}}
 {{#if this.outbound}}
 
-Link: {{this.outbound}} / {{this.inbound}}
+Link: {{this.outbound}}{{#if this.inbound}} / {{this.inbound}}{{/if}}
 {{/if}}
 | `{{this.key}}`
 {{/each}}

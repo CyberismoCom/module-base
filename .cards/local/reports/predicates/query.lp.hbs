@@ -12,7 +12,8 @@ result(Card) :-
     parent(Card, Parent).
 
 {{#if orderBy}}
-orderBy("{{orderBy}}", "ASC").
+order(1, "results", 1, "{{orderBy}}", "ASC").
+order(1, "results", 2, "title", "ASC").
 {{else}}
-orderBy("title", "ASC").
+order(1, "results", 1, "title", "ASC").
 {{/if}}

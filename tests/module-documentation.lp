@@ -50,6 +50,14 @@ base_test_failure(Card, "test content root has no label test-content") :-
     base_test_root("test content", Card),
     not base_testContent(Card).
 
+% Each top-level card is the documentation or test content. A new top-level
+% card without the label would be exported.
+base_test_failure(Card, "top-level card is not documentation or test content") :-
+    projectCard(Card),
+    not parent(Card, _),
+    not base_test_root("documentation", Card),
+    not base_testContent(Card).
+
 % In an export, the test content and all its descendants are hidden
 base_test_failure(Card, "test content not hidden in an export") :-
     base_test_exportContext,
@@ -69,7 +77,9 @@ base_test_failure(Card, "documentation card hidden") :-
     hiddenInTreeView(Card),
     not base_projectCardType(Card, "base/cardTypes/checklistItem").
 
-% The documentation does not link to the test content
+% The documentation does not link to the test content. Logic programs do not
+% see the references in card content (xref and report macros), so
+% tests/module-documentation-links.sh checks those.
 base_test_failure(Card, "documentation links to test content") :-
     base_test_documentation(Card),
     base_test_testContent(Other),
