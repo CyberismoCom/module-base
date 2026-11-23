@@ -46,12 +46,12 @@ resultField(("field", R, F), "displayName", F, "shortText") :-
     childResult(R, ("field", R, F), "fields"), not field(F, "displayName", _).
 resultField(("field", R, F), "index", I, "integer") :-
     childResult(R, ("field", R, F), "fields"), field((R, F), "index", I).
-order(1, "fields", 1, "index", "ASC").
+order(2, "fields", 1, "index", "ASC").
 {{/if}}
 
-% Templates: the card types of the top-level cards
+% Templates: the card types of all cards in the template
 childResult(R, ("cardType", R, CT), "cardTypes") :-
-    result(R), template(R), parent(Card, R), field(Card, "cardType", CT).
+    result(R), template(R), ancestor(Card, R), field(Card, "cardType", CT).
 resultField(("cardType", R, CT), "displayName", CTN, "shortText") :-
     childResult(R, ("cardType", R, CT), "cardTypes"), field(CT, "displayName", CTN).
 resultField(("cardType", R, CT), "displayName", CT, "shortText") :-
@@ -64,4 +64,5 @@ resultField(R, "dataType", D, "shortText") :- result(R), fieldType(R), field(R, 
 resultField(R, "outbound", D, "shortText") :- result(R), linkType(R), field(R, "outboundDisplayName", D).
 resultField(R, "inbound", D, "shortText") :- result(R), linkType(R), field(R, "inboundDisplayName", D).
 
+order(2, "cardTypes", 1, "displayName", "ASC").
 orderBy("displayName", "ASC").

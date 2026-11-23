@@ -4,5 +4,6 @@ The checklist, task, and document control predicates are only for cards in a pro
 
 {{#report}}
   "name": "base/reports/predicates",
-  "orderBy": "base/fieldTypes/category"
+  "orderBy": "base/fieldTypes/category",
+  "descendants": true
 {{/report}}

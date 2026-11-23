@@ -4,6 +4,9 @@ result(Card) :-
 {{#if category}}
     field(Card, "base/fieldTypes/category", "{{category}}"),
 {{/if}}
+{{#if descendants}}
+    ancestor(Card, {{cardKey}}),
+{{/if}}
     field(Card, "cardType", "base/cardTypes/predicate"),
     not template(Parent) :
     parent(Card, Parent).
