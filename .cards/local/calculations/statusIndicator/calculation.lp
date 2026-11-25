@@ -37,6 +37,20 @@ field(Card, "statusIndicator", "initial") :-
   not field(Card, "progress", _),
   field(Card, "base/fieldTypes/assessment", "open").
 
+field(Card, "statusIndicator", "initial") :-
+  base_projectCardType(Card, CardType),
+  customField(CardType, "base/fieldTypes/assessment"),
+  not base_policyCheckFailure(Card, _, _, _),
+  not field(Card, "progress", _),
+  field(Card, "base/fieldTypes/assessment", "notStarted").
+
+field(Card, "statusIndicator", "active") :-
+  base_projectCardType(Card, CardType),
+  customField(CardType, "base/fieldTypes/assessment"),
+  not base_policyCheckFailure(Card, _, _, _),
+  not field(Card, "progress", _),
+  field(Card, "base/fieldTypes/assessment", "inProgress").
+
 field(Card, "statusIndicator", "active") :-
   base_projectCardType(Card, CardType),
   customField(CardType, "base/fieldTypes/assessment"),
