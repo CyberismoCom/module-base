@@ -1,5 +1,12 @@
 The changes in each version, newest first.
 
+== 1.9.1
+
+* The module has a description, so the project list of an exported site says what base is.
+* The documentation of the widgets "Progress tiles" and "Steps" is corrected: a tile or a step with a card key is a link in the app and in exported sites. Only exported documents (AsciiDoc and PDF) show the widget as an image without links.
+
+No migration is needed.
+
 == 1.9.0
 
 * Module documentation: the template "Module documentation" (`base/templates/moduleDocumentation`), the reports "Module resources" (`base/reports/moduleResources`) and "Module dependencies" (`base/reports/moduleDependencies`), the parameter `module` of the report "All workflows", and the parameter `descendants` of the report "Predicates", which lists only the predicates under a card.
