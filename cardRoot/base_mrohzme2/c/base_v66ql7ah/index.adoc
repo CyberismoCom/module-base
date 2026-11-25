@@ -1,6 +1,6 @@
 The changes in each version, newest first.
 
-== Unreleased
+== 1.10.0
 
 * The field "Assessment" (`base/fieldTypes/assessment`) has two new values: "Not started" (`notStarted`) for work that is in scope but not started, and "In progress" (`inProgress`) for work that has started but is not ready. "Open" keeps its meaning: not scoped yet. A card with "Not started" shows the grey status indicator, and a card with "In progress" shows the yellow one. Each value has a description.
 * The test `tests/assessment-status.lp` checks the status indicator of each assessment value.
