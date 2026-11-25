@@ -3,7 +3,7 @@ The navigation tree shows a coloured dot for each card: the status indicator. Ba
 * By default, the dot follows the workflow state. A state in the category "initial" is grey, "active" is yellow, and "closed" is green.
 * A card that fails a policy check shows the error indicator.
 * A card that has a progress value shows the percentage and no dot.
-* A card whose card type has the field "Assessment" (`base/fieldTypes/assessment`) shows a dot from the assessment. Open is grey, Not OK is yellow, and OK and Not applicable are green.
+* A card whose card type has the field "Assessment" (`base/fieldTypes/assessment`) shows a dot from the assessment. Open and Not started are grey, In progress and Not OK are yellow, and OK and Not applicable are green.
 * A checklist item shows a dot from its result. See xref:base_zorcdobw.adoc[Checklists].
 
 A module can turn off the default status indicator and set its own, for the whole project or for one card. See `base_disableDefaultStatusIndicator` in xref:base_27whrn4n.adoc[Shared predicates].

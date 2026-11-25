@@ -6,6 +6,7 @@ The assertion tests are in the folder `tests` of the module repository:
 * `tests/tasks.lp`: tasks and adoption steps.
 * `tests/document-control.lp`: controlled documents and review tasks.
 * `tests/module-documentation.lp`: the rule that hides the test content in exports.
+* `tests/assessment-status.lp`: the status indicator of each assessment value. Its fixtures are facts in the test file, because base has no card type with the field "Assessment".
 
 Go to the root of the repository and run a test, for example:
 
