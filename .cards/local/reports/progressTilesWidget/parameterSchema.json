@@ -43,7 +43,7 @@
             "enum": ["blue", "green", "yellow", "red", "orange", "purple"]
           },
           "cardKey": {
-            "description": "Key of the card that opens when the user clicks the tile (optional). The link works in the app. In exported sites and documents the tile is not a link.",
+            "description": "Key of the card that opens when the user clicks the tile (optional). The link works in the app and in exported sites. In exported documents (AsciiDoc and PDF), the widget is an image, so the tile is not a link.",
             "type": "string"
           }
         },

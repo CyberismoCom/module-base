@@ -19,7 +19,7 @@ A vertical path of numbered steps, for example the first steps of a new project.
 * `steps` (required): the steps, from first to last. The widget numbers them. Each step has:
 ** `label` (required): the text of the step.
 ** `status` (required): `done`, `next`, or `open`. More than one step can be next.
-** `cardKey`: the key of the card that opens when the user clicks the step. The link works in the app. In exported sites and documents the widget is an image, so the step is not a link.
+** `cardKey`: the key of the card that opens when the user clicks the step. The link works in the app and in exported sites. In exported documents (AsciiDoc and PDF), the widget is an image, so the step is not a link.
 * `title`: the title above the steps.
 * `legend`: the text under the title.
 * `nextLabel`: the text after each next step, for example "your next step".
