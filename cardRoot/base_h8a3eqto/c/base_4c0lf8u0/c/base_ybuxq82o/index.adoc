@@ -48,6 +48,49 @@ The fill is half transparent, so the text has the normal text colour at every va
   ]
 {{/report}}
 
+== Eight tiles with long labels
+
+The tiles get narrower so that the row fits the content column of the app at 1280 pixels. A long label breaks into two lines and gets smaller when it does not fit.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Eight areas of work",
+  "tiles": [
+    {"label": "Governance", "value": 100},
+    {"label": "Assets and risks", "value": 64},
+    {"label": "Security operations", "value": 30},
+    {"label": "Suppliers", "value": 0},
+    {"label": "Incidents", "value": 12},
+    {"label": "Business continuity", "value": null},
+    {"label": "AI use", "value": 100},
+    {"label": "NIS2 requirements", "value": 45, "text": "Not started"}
+  ]
+{{/report}}
+
+== Twelve tiles
+
+More than eight tiles wrap into rows of the same length.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Twelve tiles",
+  "legend": "Two rows of six tiles",
+  "tiles": [
+    {"label": "January", "value": 100},
+    {"label": "February", "value": 100},
+    {"label": "March", "value": 90},
+    {"label": "April", "value": 80},
+    {"label": "May", "value": 70},
+    {"label": "June", "value": 60},
+    {"label": "July", "value": 50},
+    {"label": "August", "value": 40},
+    {"label": "September", "value": 30},
+    {"label": "October", "value": 20},
+    {"label": "November", "value": 10},
+    {"label": "December", "value": 0}
+  ]
+{{/report}}
+
 == One tile
 
 {{#report}}

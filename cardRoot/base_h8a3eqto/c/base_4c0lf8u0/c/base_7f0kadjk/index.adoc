@@ -35,6 +35,22 @@ The fifth step opens the progress tiles test page.
   ]
 {{/report}}
 
+== Long labels
+
+The widget fits the content column of the app at 1280 pixels. A long label breaks into two lines. A label that is longer than two lines ends with an ellipsis, and the tooltip shows the full label.
+
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "title": "Set up the home of the information security management system",
+  "nextLabel": "your next step",
+  "steps": [
+    {"label": "Give the home a title that names the scope, for example the organisation, a business unit, or one team", "status": "done"},
+    {"label": "Set the owner of the home and answer the questions about the scope of the information security management system", "status": "next"},
+    {"label": "Add the libraries that the answers need", "status": "open"},
+    {"label": "Read the guidance of each library, assign the owners of the registers, and plan the first reviews of the controls together with the security team and the management of the organisation", "status": "open"}
+  ]
+{{/report}}
+
 == One step, and text with quotes
 
 {{#report}}
