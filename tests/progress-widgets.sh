@@ -36,10 +36,20 @@ check() {
   fi
   local file="$OUT/$key/index.adoc"
   if [ ! -f "$file" ]; then
-    file="$(find "$OUT/$key" -name '*.adoc' | head -1)"
+    file="$(find "$OUT/$key" -name '*.adoc' 2>/dev/null | head -1)"
+  fi
+  if [ -z "$file" ] || [ ! -r "$file" ]; then
+    fail "$title: the export made no readable AsciiDoc file"
+    return
   fi
   local images
+  # grep -c prints 0 and exits with 1 when nothing matches. A read error
+  # prints nothing and exits with 2, and fails the test.
   images="$(grep -c 'image::data:image/svg+xml' "$file")"
+  if [ $? -gt 1 ] || [ -z "$images" ]; then
+    fail "$title: cannot read $file"
+    return
+  fi
   if [ "$images" -ne "$expected" ]; then
     fail "$title: $images SVG images, expected $expected"
   fi
