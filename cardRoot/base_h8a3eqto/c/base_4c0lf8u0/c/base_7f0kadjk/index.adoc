@@ -1,0 +1,47 @@
+= Steps widget
+
+The widget numbers the steps. A done step has a tick, the next step is highlighted, and an open step is dimmed. A step with a card key opens that card in the app.
+
+== First steps of a project, with links
+
+The fifth step opens the progress tiles test page.
+
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "title": "First steps",
+  "legend": "Four of eight steps done",
+  "nextLabel": "your next step",
+  "steps": [
+    {"label": "Describe the product and set the owner", "status": "done"},
+    {"label": "Assign people to security roles", "status": "done"},
+    {"label": "Check the competence of the team", "status": "done"},
+    {"label": "Document the security context", "status": "done"},
+    {"label": "Make a threat model", "status": "next", "cardKey": "base_ybuxq82o"},
+    {"label": "List the high-level risks", "status": "open"},
+    {"label": "Write security requirements", "status": "open"},
+    {"label": "Choose the practices that you need", "status": "open"}
+  ]
+{{/report}}
+
+== No title, no next label, two next steps
+
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "steps": [
+    {"label": "Plan the release", "status": "done"},
+    {"label": "Test the release", "status": "next"},
+    {"label": "Write the release notes", "status": "next"},
+    {"label": "Publish the release", "status": "open"}
+  ]
+{{/report}}
+
+== One step, and text with quotes
+
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "title": "One step",
+  "nextLabel": "the team's \"next\" step",
+  "steps": [
+    {"label": "Read the \"Getting started\" page", "status": "next"}
+  ]
+{{/report}}

@@ -23,14 +23,16 @@ cyberismo calc run tests/module-documentation.lp -c exportedSite
 cyberismo calc run tests/module-documentation.lp -c exportedDocument
 ----
 
-Two shell tests check what the logic programs cannot see. Run them from the root of the repository:
+Three shell tests check what the logic programs cannot see. Run them from the root of the repository:
 
 * `tests/checklist-report.sh` exports a checklist fixture as AsciiDoc and PDF, and checks the output of the checklist report.
 * `tests/module-documentation-links.sh` checks that the content of the documentation cards refers only to documentation cards, and not to the test content.
+* `tests/progress-widgets.sh` exports the test pages of the progress tiles widget and the steps widget as AsciiDoc, and checks that each widget renders without warnings.
 
 ----
 tests/checklist-report.sh
 tests/module-documentation-links.sh
+tests/progress-widgets.sh
 ----
 
 Each test passes when it prints "PASS".
