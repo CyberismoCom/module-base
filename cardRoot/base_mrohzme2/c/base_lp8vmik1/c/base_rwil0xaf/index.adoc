@@ -1,0 +1,19 @@
+== General
+
+Reports for pages and dashboards, and the widgets. The page xref:base_a8486kg9.adoc[Widgets] shows each widget with an example.
+
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "reports",
+  "category": "General"
+{{/report}}
+
+== Documentation
+
+Reports for the documentation of logic programs and modules.
+
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "reports",
+  "category": "Documentation"
+{{/report}}

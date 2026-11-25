@@ -1,0 +1,8 @@
+== Parameters
+
+* `Document`: the key of a controlled document
+* `ReviewTask`: the key of a review task under it
+
+== Description
+
+`ReviewTask` is a review task (`base/cardTypes/reviewTask`) under the controlled document `Document`.

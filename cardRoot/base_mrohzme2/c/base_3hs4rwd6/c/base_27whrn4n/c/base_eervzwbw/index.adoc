@@ -1,0 +1,7 @@
+== Parameters
+
+* `Item`: the key of a checklist item
+
+== Description
+
+The result of the item is not `"open"`. If the result is `"deviation"` or `"notApplicable"`, the item also has a comment.

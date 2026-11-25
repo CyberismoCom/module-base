@@ -1,0 +1,5 @@
+Widgets are reports that draw one number or one chart. Use them on a dashboard or on any page. Each widget takes its values as parameters of the report macro. A module can make the values in a report of its own, and pass them to the widget.
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}

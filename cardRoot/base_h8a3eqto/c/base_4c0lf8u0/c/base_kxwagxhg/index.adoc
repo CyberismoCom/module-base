@@ -4,26 +4,6 @@ By default, cell colour is the risk level, derived from the position in the two 
 using the fixed status palette. Your own risk levels can replace it; see the last sections. The number in a cell is how many risks sit there. Cells with no
 risks still show their risk colour.
 
-== Five by five
-
-{{#report}}
-  "name": "base/reports/riskMatrixWidget",
-  "title": "Risk matrix",
-  "legend": "open risks by likelihood and impact",
-  "likelihood": ["Rare", "Unlikely", "Possible", "Likely", "Almost certain"],
-  "impact": ["Negligible", "Minor", "Moderate", "Major", "Severe"],
-  "cells": [
-      {"likelihood": 5, "impact": 5, "count": 1},
-      {"likelihood": 4, "impact": 5, "count": 2},
-      {"likelihood": 3, "impact": 3, "count": 6},
-      {"likelihood": 2, "impact": 2, "count": 4},
-      {"likelihood": 1, "impact": 1, "count": 9},
-      {"likelihood": 3, "impact": 5, "count": 2},
-      {"likelihood": 5, "impact": 1, "count": 1},
-      {"likelihood": 2, "impact": 4, "count": 3}
-  ]
-{{/report}}
-
 == Four by four
 
 {{#report}}

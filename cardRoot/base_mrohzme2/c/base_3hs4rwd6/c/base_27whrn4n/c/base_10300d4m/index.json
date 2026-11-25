@@ -1,0 +1,13 @@
+{
+    "rank": "0|o",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:13.240Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_documentReviewed(Document)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.493Z",
+    "base/fieldTypes/category": "Document control",
+    "base/fieldTypes/briefDescription": "A controlled document has a completed review",
+    "lastTransitioned": "2026-11-19T22:36:09.493Z"
+}

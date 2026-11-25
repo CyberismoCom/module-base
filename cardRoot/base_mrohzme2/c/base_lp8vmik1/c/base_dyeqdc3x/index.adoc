@@ -1,0 +1,6 @@
+Dynamic skills guide AI assistants that work in a project.
+
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "skills"
+{{/report}}

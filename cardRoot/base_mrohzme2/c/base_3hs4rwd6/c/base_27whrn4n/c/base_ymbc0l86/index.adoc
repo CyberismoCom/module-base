@@ -1,0 +1,7 @@
+== Parameters
+
+* `Task`: the key of a card in the project
+
+== Description
+
+`Task` is a one-time task (`base/cardTypes/task`) or a recurring task.

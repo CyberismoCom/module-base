@@ -4,8 +4,11 @@
     "workflowState": "Draft",
     "base/fieldTypes/informationClassification": "internal",
     "rank": "0|c",
-    "lastUpdated": "2026-08-16T20:12:38.403Z",
+    "lastUpdated": "2026-11-23T10:51:31.005Z",
     "links": [],
     "templateCardKey": "base_2",
-    "createdAt": "2026-07-31T10:39:31.013Z"
+    "createdAt": "2026-07-31T10:39:31.013Z",
+    "labels": [
+        "test-content"
+    ]
 }

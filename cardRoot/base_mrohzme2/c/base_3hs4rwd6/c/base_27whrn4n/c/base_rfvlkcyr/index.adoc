@@ -1,0 +1,7 @@
+== Parameters
+
+* `Checklist`: the key of a card
+
+== Description
+
+`Checklist` has at least one checklist item that is not archived.

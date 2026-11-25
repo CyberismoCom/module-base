@@ -1,0 +1,16 @@
+One headline number on a card, with an optional title, unit, and legend.
+
+{{#report}}
+  "name": "base/reports/scoreCardWidget",
+  "title": "Mean time to remediate",
+  "value": 12.5,
+  "unit": "days",
+  "legend": "over the last quarter"
+{{/report}}
+
+== Parameters
+
+* `value` (required): the number.
+* `title`: the title above the number.
+* `unit`: the unit after the number, in the same size. The widget puts a space before the unit, except before a percent sign.
+* `legend`: the text below the number.

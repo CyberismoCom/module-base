@@ -1,0 +1,20 @@
+A horizontal bar chart that compares values across categories. The length of a bar shows its value, so all bars have the same colour by default. There is no limit on the number of bars.
+
+{{#report}}
+  "name": "base/reports/barWidget",
+  "title": "Open tasks by owner",
+  "legend": "across all active projects",
+  "bars": [
+      {"label": "Alice", "value": 12},
+      {"label": "Bruno", "value": 9},
+      {"label": "Chandra", "value": 7},
+      {"label": "Dmitri", "value": 4},
+      {"label": "Eva", "value": 2}
+  ]
+{{/report}}
+
+== Parameters
+
+* `title` (required): the title above the chart.
+* `legend`: the text below the chart.
+* `bars` (required): the categories. Each bar has a `label`, a `value`, and an optional `colour`: blue, green, yellow, red, orange, or purple. Give a colour to one bar to pick it out from the others.

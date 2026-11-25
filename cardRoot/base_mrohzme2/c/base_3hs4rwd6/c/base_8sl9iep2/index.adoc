@@ -1,0 +1,8 @@
+Base has no extension points of its own: it has no predicate that registers an extension, as some other modules do. Other modules build on base in these ways:
+
+* They use the shared predicates in their own rules. For example, a module can add rules for its own reviews over `base_checklistReview` and `base_checklistComplete`, or over `base_documentReviewed`.
+* They turn off the default status indicator with `base_disableDefaultStatusIndicator`, and set their own.
+* They use the field types of base in their own card types, for example Owner, Identifier, Assessment, and Adoption step.
+* They put the label `test-content` on the root of their test content, so that exported sites and documents leave it out.
+
+See xref:base_27whrn4n.adoc[Shared predicates].

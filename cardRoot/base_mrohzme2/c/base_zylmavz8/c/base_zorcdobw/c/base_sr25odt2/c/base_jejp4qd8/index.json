@@ -1,0 +1,11 @@
+{
+    "rank": "0|b",
+    "workflowState": "Active",
+    "createdAt": "2026-11-19T22:34:02.718Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "The scope is documented",
+    "templateCardKey": "base_32gn8phx",
+    "base/fieldTypes/checklistResult": "ok",
+    "lastUpdated": "2026-11-19T22:34:06.503Z"
+}

@@ -1,0 +1,57 @@
+The changes in each version, newest first.
+
+== Unreleased
+
+* Module documentation: the template "Module documentation" (`base/templates/moduleDocumentation`), the reports "Module resources" (`base/reports/moduleResources`) and "Module dependencies" (`base/reports/moduleDependencies`), the parameter `module` of the report "All workflows", and the parameter `descendants` of the report "Predicates", which lists only the predicates under a card.
+* The label `test-content` and the calculation `base/calculations/moduleDocumentation`. Exported sites and documents leave out the cards that have the label, and their descendants. The app still shows them.
+* The documentation of base is in the card root, and the README has only the copyright, the licence, how to contribute, and how to install.
+* The shared predicates of base are documented as predicate cards.
+* The report "Predicates" sorts the predicates by title within the order that `orderBy` gives.
+
+No migration is needed.
+
+== 1.8.0
+
+* The checklist report shows the text of each item. In exported sites and documents, the titles of the items are text, not links.
+* The project schema is version 7.
+* An export test for the checklist report.
+
+== 1.7.0
+
+* Checklists: the card type "Checklist item", the field types "Result" and "Comment", the templates "Checklist" and "Checklist item", the report "Checklist", and the shared checklist predicates. Checklist items are hidden in the navigation tree. A review with a checklist shows the progress of the checklist, and it can pass only when the checklist is complete.
+* Document control: the rules over the review tasks of a controlled document are fixed. A document without review tasks now gets the message "Add a review task before approving". An approved document whose reviews are all open no longer fails "Review has expired". An approved document without review tasks now fails "Review task missing".
+* A typo in a message of the review task is fixed.
+* The project schema is version 6.
+* Assertion tests for checklists, tasks, and document control.
+
+== 1.6.0
+
+* The risk matrix widget can use the risk levels of your own method (the parameters `levels` and `levelGrid`).
+
+== 1.5.0
+
+* The widgets: bar, pie, percentage, score card, trend, and risk matrix.
+
+== 1.4.0
+
+* Faster rules. The predicate `base_projectCardType` keeps template cards out of the rules about the cards of a project.
+
+== 1.3.0 and 1.3.1
+
+* Changes for the new structure of the secure development essentials module: identifiers on controlled documents and reviews, a default status indicator that a module can turn off for one card, and a status indicator for cards that have an assessment (1.3.0).
+* Empty values are removed (1.3.1).
+
+== 1.2.0 to 1.2.5
+
+* "Approve" sets the approval date of a controlled document, and an approved document fails a policy check when its review has expired (1.2.0).
+* Improvements to the review task, the task workflow, and the report "Role assignments" (1.2.1 to 1.2.5).
+
+== 1.1.0 to 1.1.3
+
+* The field types "Assessment" and "Assessment explanation" (1.1.0).
+* The template for review tasks is now "Document review" (1.1.1).
+* Improvements to the workflow of the document review task (1.1.3).
+
+== 1.0.0 and 1.0.1
+
+* The first versions.

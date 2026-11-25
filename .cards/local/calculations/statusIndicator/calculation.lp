@@ -1,3 +1,7 @@
+% Shared predicates: base_disableDefaultStatusIndicator/0 and
+% base_disableDefaultStatusIndicator/1. Each one has a predicate card in the
+% base documentation, under "For module authors" > "Shared predicates".
+
 % The default indicator based on workflow state
 
 field(Card, "statusIndicator", "error") :-

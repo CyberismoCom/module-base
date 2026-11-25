@@ -1,0 +1,23 @@
+The base module has the building blocks that most Cyberismo modules use: pages, tasks, controlled documents with an approval workflow, decisions, meeting memos, role assignments, checklists, and dashboard widgets. It also has card types and templates for documentation: predicates and external functions of logic programs, and the documentation of a module.
+
+Other modules build on base. The ISMS essentials module and the secure development essentials module use it, so most projects get base as a dependency of one of them.
+
+== Status
+
+Base is open content. You can use it under the Creative Commons Attribution-ShareAlike 4.0 International Public License. The source is in the repository https://github.com/CyberismoCom/module-base[module-base] on GitHub.
+
+== Dependencies
+
+{{#report}}
+  "name": "base/reports/moduleDependencies"
+{{/report}}
+
+== Start here
+
+* xref:base_na1rt1sr.adoc[Getting started]: install base and create your first cards.
+* xref:base_zorcdobw.adoc[Checklists]: check a review, a delivery, or a release item by item.
+* xref:base_u6nkfjxl.adoc[Tasks]: one-time and recurring tasks.
+* xref:base_2cixiz28.adoc[Document control]: review and approve documents.
+* xref:base_a8486kg9.adoc[Widgets]: show numbers and charts on a dashboard.
+* xref:base_lp8vmik1.adoc[Reference]: all card types, templates, reports, and workflows of base.
+* xref:base_3hs4rwd6.adoc[For module authors]: the predicates that other modules can use.

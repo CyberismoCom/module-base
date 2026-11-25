@@ -1,0 +1,17 @@
+== Decisions
+
+A decision (`base/cardTypes/decision`, template "Decision") records a decision, its context, and its consequences. It has an owner and a decision date. Its workflow states are Draft, Approved, and Deprecated. The link type "Supersedes" links a decision to the decision that it replaces.
+
+== Meeting memos
+
+A meeting memo (template "Meeting memo") is a page with sections for the meeting details, the goals, the notes, and the action points. A button under "Action points" makes a task under the memo, and a table lists the tasks. When you create a meeting memo, base adds the current date to the start of its title.
+
+== Role assignments
+
+A role assignment (`base/cardTypes/roleAssignment`, template "Role assignment") assigns a person to a role. The title is the name of the role, and the owner is the person. Its workflow states are Draft, Assigned, and Archived.
+
+The report "Role assignments" (`base/reports/roleAssignments`) shows the role assignments under a card in a table. Archived assignments are in a separate table.
+
+== Pages
+
+A page (`base/cardTypes/page`, template "Page") is a general content page. Its workflow states are Draft, Ready, and Deprecated. The reports "Children list" (`base/reports/childrenList`) and "Table of child cards" (`base/reports/childrenTable`) list the cards under a page.

@@ -1,0 +1,13 @@
+{
+    "rank": "0|k",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:11.675Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_task(Task)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:08.327Z",
+    "base/fieldTypes/category": "Tasks",
+    "base/fieldTypes/briefDescription": "A card is a task",
+    "lastTransitioned": "2026-11-19T22:36:08.327Z"
+}

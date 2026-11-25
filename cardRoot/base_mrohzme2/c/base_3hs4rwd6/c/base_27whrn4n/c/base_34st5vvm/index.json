@@ -1,0 +1,13 @@
+{
+    "rank": "0|c",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:08.565Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_checklistItem(Item, Checklist)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.670Z",
+    "base/fieldTypes/category": "Checklists",
+    "base/fieldTypes/briefDescription": "A card is a checklist item of a checklist",
+    "lastTransitioned": "2026-11-19T22:36:09.670Z"
+}

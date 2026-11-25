@@ -1,0 +1,11 @@
+{
+    "rank": "0|e",
+    "workflowState": "Active",
+    "createdAt": "2026-11-19T22:34:02.718Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "The owner has approved the result",
+    "templateCardKey": "base_7uvd6ogr",
+    "base/fieldTypes/checklistResult": "open",
+    "lastUpdated": "2026-11-19T22:34:02.727Z"
+}

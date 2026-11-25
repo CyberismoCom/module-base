@@ -1,0 +1,13 @@
+{
+    "rank": "0|q",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:14.021Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_disableDefaultStatusIndicator",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:08.414Z",
+    "base/fieldTypes/category": "Status",
+    "base/fieldTypes/briefDescription": "Turns off the default status indicator in the project",
+    "lastTransitioned": "2026-11-19T22:36:08.414Z"
+}

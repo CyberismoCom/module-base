@@ -1,0 +1,9 @@
+== Parameters
+
+* `Checklist`: the key of a checklist
+* `Result`: `"open"`, `"ok"`, `"deviation"`, or `"notApplicable"`
+* `Count`: the number of items of the checklist that have the result
+
+== Description
+
+There is a fact for each result, also when the count is zero.

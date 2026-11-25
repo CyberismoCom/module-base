@@ -1,0 +1,7 @@
+== Parameters
+
+* `Checklist`: the key of a checklist
+
+== Description
+
+All checklist items of `Checklist` are complete. A complete checklist can have deviations.

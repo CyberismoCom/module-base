@@ -1,0 +1,5 @@
+The pages under this page list the resources of base. Reports make the tables from the resources, so the tables change when a resource changes.
+
+{{#report}}
+  "name": "base/reports/childrenList"
+{{/report}}

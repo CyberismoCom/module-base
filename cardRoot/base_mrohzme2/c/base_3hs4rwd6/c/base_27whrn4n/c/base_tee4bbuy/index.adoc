@@ -1,0 +1,13 @@
+== Parameters
+
+* `Checklist`: the key of a checklist
+* `Result`: `"deviation"`, `"open"`, `"notApplicable"`, or `"ok"`
+
+== Description
+
+The result of the checklist is the first of these that applies:
+
+. `"deviation"` if one or more items are deviations, also when some items are not complete.
+. `"open"` if one or more items are not complete.
+. `"notApplicable"` if all items are not applicable.
+. `"ok"` in other cases.

@@ -1,0 +1,44 @@
+A checklist is a card that has checklist items as its children. Any card can be a checklist, for example a review, a delivery, or a release gate.
+
+== How the cards work together
+
+Each checklist item (`base/cardTypes/checklistItem`) has a result and a comment. The result is one of these:
+
+* Open: the item is not checked yet. An item without a result is open.
+* OK: the item meets the requirement.
+* Deviation: the item does not meet the requirement.
+* Not applicable: the item does not apply.
+
+A Deviation or Not applicable result needs a comment. Put references to the evidence in the comment too.
+
+An item is complete when its result is not Open and it has the comment that its result needs. A checklist is complete when all its items are complete. A complete checklist can have deviations. Archived checklist items are not part of the checklist.
+
+To add a checklist to a card, create the template "Checklist" under the card. To add one item, create the template "Checklist item" under the card. The report "Checklist" (`base/reports/checklist`) shows the items of a card as a table, with the text of each item. In the app, you can set the result and the comment of each item in the table.
+
+== Reviews with a checklist
+
+A review (`base/cardTypes/review`) that has checklist items follows these rules:
+
+* The progress of the review is the percentage of complete items.
+* The review shows the policy check failures of its items as its own. The message names the item.
+* The review can pass only when its checklist is complete. Until then, "Mark as passed" is denied, and the message gives the number of open items and missing comments.
+* The review can pass with deviations. That is a judgement of the reviewer. The review then shows the notification "Passed with deviations".
+* If an item of a passed review is set back to Open, the review fails the policy check "Open checklist items after the review passed".
+* A review can fail at any time.
+
+Other checklists do not get these rules, so that the failures of items do not change the status of other card types.
+
+== What you see
+
+Checklist items are hidden in the navigation tree. In the app, the checklist table links to each item. Exported sites and documents do not have the hidden items, so there the title of each item is text.
+
+The status indicator of an item follows its result. Open is grey, Deviation is yellow, and OK and Not applicable are green. An item with a Deviation or Not applicable result and no comment fails the policy check "Comment missing", and shows the error indicator.
+
+== Example
+
+The checklist below was made from the template "Checklist". Two items are OK, one has a deviation, and one is open, so the result of the checklist is Deviation.
+
+{{#report}}
+  "name": "base/reports/checklist",
+  "cardKey": "base_sr25odt2"
+{{/report}}
