@@ -1,6 +1,6 @@
 The changes in each version, newest first.
 
-== Unreleased
+== 1.9.0
 
 * Module documentation: the template "Module documentation" (`base/templates/moduleDocumentation`), the reports "Module resources" (`base/reports/moduleResources`) and "Module dependencies" (`base/reports/moduleDependencies`), the parameter `module` of the report "All workflows", and the parameter `descendants` of the report "Predicates", which lists only the predicates under a card.
 * The label `test-content` and the calculation `base/calculations/moduleDocumentation`. Exported sites and documents leave out the cards that have the label, and their descendants. The app still shows them.
