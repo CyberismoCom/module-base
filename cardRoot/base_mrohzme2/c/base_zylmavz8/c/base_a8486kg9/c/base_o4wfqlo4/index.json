@@ -1,0 +1,12 @@
+{
+    "rank": "0|i",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-25T10:14:17.830Z",
+    "links": [],
+    "cardType": "base/cardTypes/page",
+    "title": "Steps widget",
+    "templateCardKey": "base_2",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-25T10:14:44.064Z",
+    "lastTransitioned": "2026-11-25T10:14:44.063Z"
+}

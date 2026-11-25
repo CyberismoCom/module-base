@@ -1,0 +1,12 @@
+{
+    "rank": "0|h",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-25T10:14:16.976Z",
+    "links": [],
+    "cardType": "base/cardTypes/page",
+    "title": "Progress tiles widget",
+    "templateCardKey": "base_2",
+    "base/fieldTypes/informationClassification": "internal",
+    "lastUpdated": "2026-11-25T10:14:43.299Z",
+    "lastTransitioned": "2026-11-25T10:14:43.299Z"
+}

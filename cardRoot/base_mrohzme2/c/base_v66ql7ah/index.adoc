@@ -7,6 +7,8 @@ The changes in each version, newest first.
 * The documentation of base is in the card root, and the README has only the copyright, the licence, how to contribute, and how to install.
 * The shared predicates of base are documented as predicate cards.
 * The report "Predicates" sorts the predicates by title within the order that `orderBy` gives.
+* The widgets "Progress tiles" (`base/reports/progressTilesWidget`) and "Steps" (`base/reports/stepsWidget`). A tile or a step can open a card in the app.
+* An export test for the two new widgets.
 
 No migration is needed.
 
