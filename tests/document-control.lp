@@ -34,6 +34,11 @@ base_test_expectPolicy("base_test_doc_approved_failing_review_review2", "Reviewe
 % A field-level (5-arity) failure, made by the test rule at the end of this file.
 base_test_expectPolicy("base_test_doc_review_field_failure_review", "Test field failure").
 base_test_expectPolicy("base_test_doc_reopened_no_date_review", "Last reviewed is a required field").
+% An approved document whose latest done review has no review date fails, so
+% that the expiry of its review can be checked.
+base_test_expectPolicy("base_test_doc_approved_no_date_review", "Last reviewed is a required field").
+base_test_expectPolicy("base_test_doc_approved_no_date", "Failing policy checks in a review task").
+base_test_expectStatus("base_test_doc_approved_no_date", "error").
 
 % Status indicators: base_test_expectStatus(Identifier, Indicator).
 base_test_expectStatus("base_test_doc_draft_empty", "initial").
