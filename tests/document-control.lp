@@ -74,17 +74,21 @@ base_test_expectDenied("base_test_doc_reviewer_is_owner", "Approve", "Fix the po
 base_test_expectDenied("base_test_doc_no_reviews", "Approve", "Add a review task before approving").
 base_test_expectNotDenied("base_test_doc_no_reviews", "Approve", "Fix the policy failures of the review tasks before approving").
 base_test_expectAllowed("base_test_doc_ready", "Approve").
-% A draft needs a review closed after its last change. A reopen is a change.
-base_test_expectDenied("base_test_doc_reopened_stale", "Approve", "Complete a new review after the last change to the document").
+% A reopened draft needs a review closed after the reopen.
+base_test_expectDenied("base_test_doc_reopened_stale", "Approve", "Complete a new review after reopening the document").
 base_test_expectNotDenied("base_test_doc_reopened_stale", "Approve", "Complete the review task(s) before approving").
-base_test_expectNotDenied("base_test_doc_ready", "Approve", "Complete a new review after the last change to the document").
+base_test_expectNotDenied("base_test_doc_ready", "Approve", "Complete a new review after reopening the document").
 base_test_expectAllowed("base_test_doc_reopened_current", "Approve").
 % A current review without a review date fails a policy check, and that blocks
 % approval.
 base_test_expectDenied("base_test_doc_reopened_no_date", "Approve", "Fix the policy failures of the review tasks before approving").
-base_test_expectNotDenied("base_test_doc_reopened_no_date", "Approve", "Complete a new review after the last change to the document").
-% A change later on the day of the review needs a new review.
-base_test_expectDenied("base_test_doc_edited_after_review", "Approve", "Complete a new review after the last change to the document").
+base_test_expectNotDenied("base_test_doc_reopened_no_date", "Approve", "Complete a new review after reopening the document").
+% A change after the review, also later on the same day, does not block
+% approval. It shows a notification, and the approver decides.
+base_test_expectAllowed("base_test_doc_edited_after_review", "Approve").
+base_test_expectNotification("base_test_doc_edited_after_review", "Changed after the review").
+base_test_expectNoNotification("base_test_doc_reopened_current").
+base_test_expectNoNotification("base_test_doc_ready").
 % Earlier reviews do not count, and their failures do not block approval.
 base_test_expectAllowed("base_test_doc_earlier_failing_review", "Approve").
 % A review closed as not applicable does not count, and does not block.
@@ -117,9 +121,14 @@ base_test_relaxed("base_test_doc_relaxed_edited_after_review").
 base_test_relaxed("base_test_doc_relaxed_review_field_failure").
 base_test_relaxed("base_test_doc_relaxed_approved_changed").
 base_test_relaxed("base_test_doc_relaxed_approved_same_day").
+base_test_relaxed("base_test_doc_relaxed_reopened_earlier_failing").
 
 % A relaxed draft can be approved after a change, and with a failing review.
+% A reopened relaxed draft needs no new review, and its earlier reviews do not
+% count.
 base_test_expectAllowed("base_test_doc_relaxed_edited_after_review", "Approve").
+base_test_expectNotification("base_test_doc_relaxed_edited_after_review", "Changed after the review").
+base_test_expectAllowed("base_test_doc_relaxed_reopened_earlier_failing", "Approve").
 base_test_expectAllowed("base_test_doc_relaxed_review_field_failure", "Approve").
 base_test_expectPolicy("base_test_doc_relaxed_review_field_failure_review", "Test field failure").
 % A relaxed approved document can be edited, and a change on a later day than

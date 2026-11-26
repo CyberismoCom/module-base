@@ -23,8 +23,8 @@ base_document(Document) :-
 %         base_projectCardType(Document, "base/cardTypes/controlledDocument").
 %
 % For a relaxed document, approved and archived documents can be edited, a
-% change after the review does not need a new review, and a failing review
-% task does not block approval. A change after approval shows a notification.
+% reopened document does not need a new review, and a failing review task
+% does not block approval. A change after approval shows a notification.
 #defined base_relaxedDocumentControl/1.
 
 base_documentStrict(Document) :-
@@ -61,20 +61,24 @@ base_documentClosedReview(Document, ReviewTask, Closed) :-
     field(ReviewTask, "workflowState", "Closed as done"),
     field(ReviewTask, "lastTransitioned", Closed).
 
-% A review of the current version of a draft: closed after the last change of
-% the document. Any change of the document, also a reopen, stamps
-% lastUpdated. Reviews closed before the last change are earlier reviews, and
-% the rules for approval ignore them. For a relaxed document, every closed
-% review is current.
-base_documentCurrentReview(Document, ReviewTask) :-
-    base_documentClosedReview(Document, ReviewTask, Closed),
-    base_documentStrict(Document),
-    field(Document, "lastUpdated", LastUpdated),
-    Closed >= LastUpdated.
+% A draft that was reopened, and when. A new draft has no transitions.
+base_documentReopened(Document, Reopened) :-
+    base_document(Document),
+    field(Document, "workflowState", "Draft"),
+    field(Document, "lastTransitioned", Reopened).
 
+% A review of the current approval cycle: for a new draft any closed review,
+% and for a reopened draft a review closed after the reopen. Reviews closed
+% before the reopen are earlier reviews, and the rules for approval ignore
+% them.
 base_documentCurrentReview(Document, ReviewTask) :-
     base_documentClosedReview(Document, ReviewTask, _),
-    base_documentRelaxed(Document).
+    not base_documentReopened(Document, _).
+
+base_documentCurrentReview(Document, ReviewTask) :-
+    base_documentClosedReview(Document, ReviewTask, Closed),
+    base_documentReopened(Document, Reopened),
+    Closed >= Reopened.
 
 base_documentHasCurrentReview(Document) :-
     base_documentCurrentReview(Document, _).
@@ -121,10 +125,25 @@ transitionDenied(Document, "Approve", "Add a review task before approving") :-
 transitionDenied(Document, "Approve", "Complete the review task(s) before approving") :-
     base_documentHasPendingReview(Document).
 
-transitionDenied(Document, "Approve", "Complete a new review after the last change to the document") :-
+transitionDenied(Document, "Approve", "Complete a new review after reopening the document") :-
+    base_documentStrict(Document),
     base_documentHasReview(Document),
     not base_documentHasPendingReview(Document),
     not base_documentHasCurrentReview(Document).
+
+% A draft that was changed after its last current review. The approver decides
+% whether the change needs a new review.
+base_documentReviewedAfter(Document, LastUpdated) :-
+    base_documentCurrentReview(Document, ReviewTask),
+    base_documentClosedReview(Document, ReviewTask, Closed),
+    field(Document, "lastUpdated", LastUpdated),
+    Closed >= LastUpdated.
+
+notification(Document, "Document control", "Changed after the review", "This document was changed after its last review. Check whether the change needs a new review before approving.") :-
+    base_documentHasCurrentReview(Document),
+    field(Document, "workflowState", "Draft"),
+    field(Document, "lastUpdated", LastUpdated),
+    not base_documentReviewedAfter(Document, LastUpdated).
 
 transitionDenied(Document, "Approve", "Fix policy failures before approving") :-
     base_document(Document),
