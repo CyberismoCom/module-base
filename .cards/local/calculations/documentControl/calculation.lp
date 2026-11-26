@@ -264,6 +264,24 @@ notification(Document, "Document control", "Changed after approval", "This docum
     field(Document, "lastUpdated", LastUpdated),
     LastUpdated > @concatenate(ApprovalDate, "T23:59:59.999Z").
 
+% A checked review that is closed as done and has no review date. Without the
+% date, "Review has expired" cannot be checked. A relaxed document also fails
+% on it, because the relaxed rules do not include the failures of its review
+% tasks.
+base_documentUndatedReview(Document) :-
+    base_documentCheckedReview(Document, ReviewTask),
+    field(ReviewTask, "workflowState", "Closed as done"),
+    not field(ReviewTask, "base/fieldTypes/lastReviewed", _).
+
+transitionDenied(Document, "Approve", "Fill in the review date of the review task before approving") :-
+    base_documentRelaxed(Document),
+    base_documentUndatedReview(Document).
+
+policyCheckFailure(Document, "Document control", "Review date missing", "The last review of this document has no review date. Fill in the last reviewed field of the review task.") :-
+    base_documentRelaxed(Document),
+    field(Document, "workflowState", "Approved"),
+    base_documentUndatedReview(Document).
+
 % Policy checks on the review tasks that the rules check
 
 policyCheckFailure(ReviewTask, "Document control", "Last reviewed is a required field", "Fill in the last reviewed field.", "base/fieldTypes/lastReviewed") :-

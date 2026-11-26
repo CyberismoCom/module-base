@@ -48,4 +48,4 @@ Document control is strict by default. A project or module can relax it for some
 * A reopened document does not need a new review before "Approve".
 * A failing review task does not block "Approve".
 
-The other rules stay. An approved document that was changed on a later day than its approval date shows the notification "Changed after approval".
+The other rules stay. The last review of a relaxed document must have a review date: without it, "Approve" is denied, and an approved document fails the policy check "Review date missing". An approved document that was changed on a later day than its approval date shows the notification "Changed after approval".

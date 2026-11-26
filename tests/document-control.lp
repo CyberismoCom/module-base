@@ -127,6 +127,16 @@ base_test_relaxed("base_test_doc_relaxed_review_field_failure").
 base_test_relaxed("base_test_doc_relaxed_approved_changed").
 base_test_relaxed("base_test_doc_relaxed_approved_same_day").
 base_test_relaxed("base_test_doc_relaxed_reopened_earlier_failing").
+base_test_relaxed("base_test_doc_relaxed_approved_no_date").
+base_test_relaxed("base_test_doc_relaxed_draft_no_date").
+
+% A relaxed document also needs a review date on its last review, so that the
+% expiry of the review can be checked.
+base_test_expectPolicy("base_test_doc_relaxed_approved_no_date", "Review date missing").
+base_test_expectPolicy("base_test_doc_relaxed_approved_no_date_review", "Last reviewed is a required field").
+base_test_expectStatus("base_test_doc_relaxed_approved_no_date", "error").
+base_test_expectDenied("base_test_doc_relaxed_draft_no_date", "Approve", "Fill in the review date of the review task before approving").
+base_test_expectPolicy("base_test_doc_relaxed_draft_no_date_review", "Last reviewed is a required field").
 
 % A relaxed draft can be approved after a change, and with a failing review.
 % A reopened relaxed draft needs no new review, and its earlier reviews do not

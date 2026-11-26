@@ -10,7 +10,7 @@ Document control is strict by default. When this fact holds, base relaxes the ru
 * A reopened document does not need a new review before "Approve".
 * A failing review task does not block "Approve".
 
-The other rules stay. An approved document that was changed on a later day than its approval date shows the notification "Changed after approval".
+The other rules stay. The last review must have a review date: without it, "Approve" is denied, and an approved document fails the policy check "Review date missing". An approved document that was changed on a later day than its approval date shows the notification "Changed after approval".
 
 Base does not add this fact. A project or module adds it with a rule, for example for all controlled documents:
 
