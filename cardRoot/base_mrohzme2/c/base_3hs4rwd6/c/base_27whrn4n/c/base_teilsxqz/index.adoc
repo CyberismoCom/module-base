@@ -1,0 +1,20 @@
+== Parameters
+
+* `Document`: the key of a controlled document, or of a card of a type that is registered with `base_controlledDocumentCardType`
+
+== Description
+
+Document control is strict by default. When this fact holds, base relaxes the rules for `Document`:
+
+* An approved or archived document can be edited.
+* A reopened document does not need a new review before "Approve".
+* A failing review task does not block "Approve".
+
+The other rules stay. The last review must have a review date: without it, "Approve" is denied, and an approved document fails the policy check "Review date missing". An approved document that was changed on a later day than its approval date shows the notification "Changed after approval".
+
+Base does not add this fact. A project or module adds it with a rule, for example for all controlled documents:
+
+----
+base_relaxedDocumentControl(Document) :-
+    base_projectCardType(Document, "base/cardTypes/controlledDocument").
+----

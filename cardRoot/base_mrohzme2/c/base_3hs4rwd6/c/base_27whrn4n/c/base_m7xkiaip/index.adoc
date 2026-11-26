@@ -1,8 +1,8 @@
 == Parameters
 
-* `Document`: the key of a controlled document
+* `Document`: the key of a controlled document, or of a card of a type that is registered with `base_controlledDocumentCardType`
 * `ReviewTask`: the key of a review task under it
 
 == Description
 
-`ReviewTask` is a review task (`base/cardTypes/reviewTask`) under the controlled document `Document`.
+`ReviewTask` is a review task (`base/cardTypes/reviewTask`) under the controlled document `Document`. A review task that is closed as not applicable is left out.

@@ -2,31 +2,50 @@ A controlled document (`base/cardTypes/controlledDocument`) is a formal document
 
 The template "Controlled document" makes a document and one review task ("Document review", `base/cardTypes/reviewTask`) under it. The template "Process description" makes a controlled document for a process. To add more review tasks, use the button "Add a new review task" in the document, or the template "Document review".
 
+A module can apply these rules to its own document card types with `base_controlledDocumentCardType`. A project or module can relax them with `base_relaxedDocumentControl`. See "Strict and relaxed document control" below.
+
 == Approve a document
 
 "Approve" is denied until all of these are true:
 
-* The document has a review task.
+* The document has a review task. A review task that is closed as not applicable does not count.
 * All its review tasks are closed as done.
-* At least one of its review tasks has no policy check failures.
+* If the document was reopened, a review task was closed after the reopen. Reviews closed before the reopen are earlier reviews, and the rules for approval ignore them.
+* None of the review tasks of the current approval cycle has a policy check failure.
 * The owner, the approver, and the information classification are set.
 * The document has no policy check failures.
 
-"Approve" sets the approval date to the current date. An approved or archived document cannot be edited. To change it, reopen it. "Reopen" sets it back to Draft.
+A draft that was changed after its last review shows the notification "Changed after the review". The change does not block "Approve". The approver decides whether the change needs a new review.
+
+"Approve" sets the approval date to the current date. An approved or archived document cannot be edited: its content, its title, and its fields are locked. The approval date stays editable, because "Approve" sets it. To change the document, reopen it. "Reopen" sets it back to Draft, and the document then needs a new review.
 
 == Review tasks
 
-The owner of a review task is the reviewer. A review task needs an owner before "Start progress" and "Done". The reviewer must not be the owner of the document. When they are the same person, both cards fail the policy check "Reviewer cannot be the same as document owner".
+The owner of a review task is the reviewer. A review task needs an owner before "Start progress" and "Done". The reviewer must not be the owner or the approver of the document. When they are the same person, both cards fail the policy check "Reviewer cannot be the same as document owner" or "Reviewer cannot be the same as document approver".
 
-The transitions that close a review task set its "Last reviewed" date to the current date.
+The transitions that close a review task set its "Last reviewed" date to the current date. A review task that is closed as done needs this date. Without it, the review task fails the policy check "Last reviewed is a required field".
+
+For minor comments, the reviewer can use "Require changes". The owner updates the document, and "Changes implemented" closes the review task after the change.
 
 == What the rules check
 
-A document that is not a draft fails a policy check when its owner, approver, approval date, or review period is missing.
+The rules check the open review tasks and the review tasks of the current approval cycle. For an approved or archived document, that is the review task that was closed last.
+
+A document that is not a draft fails a policy check when its owner or approver is missing. An approved document fails a policy check when its approval date is missing. A document of a card type that has the field "Review period" fails a policy check when the review period is missing and the document is not a draft.
 
 An approved document also fails a policy check in these cases:
 
 * It has no review task: "Review task missing".
 * One of its review tasks is not closed as done: "The review subtasks of approved documents must be closed".
-* All its review tasks fail a policy check: "Failing policy checks in all review tasks".
+* A review task that the rules check has a policy check failure: "Failing policy checks in a review task".
 * All its closed reviews are older than the review period: "Review has expired". Complete a new review to fix it.
+
+== Strict and relaxed document control
+
+Document control is strict by default. A project or module can relax it for some documents with `base_relaxedDocumentControl(Document)`. For a relaxed document:
+
+* An approved or archived document can be edited.
+* A reopened document does not need a new review before "Approve".
+* A failing review task does not block "Approve".
+
+The other rules stay. The last review of a relaxed document must have a review date: without it, "Approve" is denied, and an approved document fails the policy check "Review date missing". An approved document that was changed on a later day than its approval date shows the notification "Changed after approval".

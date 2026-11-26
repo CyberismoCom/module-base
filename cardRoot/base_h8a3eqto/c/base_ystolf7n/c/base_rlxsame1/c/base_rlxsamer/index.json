@@ -1,0 +1,14 @@
+{
+    "rank": "0|b",
+    "workflowState": "Closed as done",
+    "createdAt": "2026-11-01T08:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/reviewTask",
+    "title": "Document review",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/identifier": "base_test_doc_relaxed_approved_same_day_review",
+    "base/fieldTypes/owner": "reviewer@example.com",
+    "lastTransitioned": "2026-11-01T12:00:00.000Z",
+    "base/fieldTypes/lastReviewed": "2026-11-01",
+    "lastUpdated": "2026-11-01T12:00:00.000Z"
+}

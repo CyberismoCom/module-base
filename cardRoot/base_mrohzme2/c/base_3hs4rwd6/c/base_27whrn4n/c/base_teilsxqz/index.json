@@ -1,0 +1,13 @@
+{
+    "rank": "0|ln",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-26T10:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_relaxedDocumentControl(Document)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-26T10:00:00.000Z",
+    "base/fieldTypes/category": "Document control",
+    "base/fieldTypes/briefDescription": "Relaxes the document control rules for one document",
+    "lastTransitioned": "2026-11-26T10:00:00.000Z"
+}

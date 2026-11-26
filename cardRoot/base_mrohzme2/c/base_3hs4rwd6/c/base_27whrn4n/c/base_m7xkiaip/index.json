@@ -6,7 +6,7 @@
     "cardType": "base/cardTypes/predicate",
     "title": "base_documentReview(Document, ReviewTask)",
     "templateCardKey": "base_weu9g7lz",
-    "lastUpdated": "2026-11-19T22:36:09.846Z",
+    "lastUpdated": "2026-11-26T10:00:00.000Z",
     "base/fieldTypes/category": "Document control",
     "base/fieldTypes/briefDescription": "A review task of a controlled document",
     "lastTransitioned": "2026-11-19T22:36:09.846Z"

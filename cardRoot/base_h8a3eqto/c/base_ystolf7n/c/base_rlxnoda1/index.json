@@ -1,0 +1,16 @@
+{
+    "rank": "0|qm",
+    "workflowState": "Approved",
+    "createdAt": "2026-11-01T08:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Relaxed: approved with a done review that has no review date",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_relaxed_approved_no_date",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "base/fieldTypes/approvalDate": "2026-11-02",
+    "lastTransitioned": "2026-11-02T09:00:00.000Z",
+    "lastUpdated": "2026-11-02T09:00:00.000Z"
+}

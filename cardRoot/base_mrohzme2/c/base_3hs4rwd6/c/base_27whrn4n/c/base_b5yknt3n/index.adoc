@@ -1,7 +1,7 @@
 == Parameters
 
-* `Document`: the key of a controlled document
+* `Document`: the key of a controlled document, or of a card of a type that is registered with `base_controlledDocumentCardType`
 
 == Description
 
-`Document` has at least one review task. Rules about "all review tasks" of a document need this predicate, or they would also be true for a document without review tasks.
+`Document` has at least one review task that is not closed as not applicable. Rules about "all review tasks" of a document need this predicate, or they would also be true for a document without review tasks.

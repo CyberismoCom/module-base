@@ -1,0 +1,14 @@
+{
+    "rank": "0|qn",
+    "workflowState": "Draft",
+    "createdAt": "2026-11-01T08:00:00.000Z",
+    "links": [],
+    "cardType": "base/cardTypes/controlledDocument",
+    "title": "Relaxed: draft with a done review that has no review date",
+    "base/fieldTypes/informationClassification": "internal",
+    "base/fieldTypes/reviewPeriod": 36500,
+    "base/fieldTypes/identifier": "base_test_doc_relaxed_draft_no_date",
+    "base/fieldTypes/owner": "owner@example.com",
+    "base/fieldTypes/approver": "approver@example.com",
+    "lastUpdated": "2026-10-30T09:00:00.000Z"
+}

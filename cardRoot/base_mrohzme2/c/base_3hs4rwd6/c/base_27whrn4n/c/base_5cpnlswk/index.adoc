@@ -1,0 +1,13 @@
+== Parameters
+
+* `CardType`: the name of a card type, for example `"ismsa/cardTypes/statementOfApplicability"`
+
+== Description
+
+Base applies its document control rules to the cards of `CardType`, as it does to controlled documents. Base adds this fact for `base/cardTypes/controlledDocument`. A module adds it for its own document card types, so that it does not need a copy of the rules:
+
+----
+base_controlledDocumentCardType("ismsa/cardTypes/statementOfApplicability").
+----
+
+The card type must use the workflow `base/workflows/controlledDocument`, and it must have the fields "Owner", "Approver", "Information classification", and "Approval date". Without them, "Approve" is always denied. The review period is required only when the card type has the field "Review period".

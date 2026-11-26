@@ -1,7 +1,7 @@
 == Parameters
 
-* `Document`: the key of a controlled document
+* `Document`: the key of a controlled document, or of a card of a type that is registered with `base_controlledDocumentCardType`
 
 == Description
 
-`Document` has a review task that is closed as done and has a "Last reviewed" date.
+`Document` has a review task that is closed as done and has a "Last reviewed" date. The review can be from an earlier approval cycle.
