@@ -23,3 +23,9 @@ A vertical path of numbered steps, for example the first steps of a new project.
 * `title`: the title above the steps.
 * `legend`: the text under the title.
 * `nextLabel`: the text after each next step, for example "your next step".
+
+== Size
+
+The widget is 630 pixels wide, so it fits the content column of the app at a window width of 1280 pixels. A long step breaks into two lines at a space. A step that is longer than two lines ends with an ellipsis, and the next label stays at the end. In the app and in exported sites, the tooltip shows the full text of the step.
+
+Keep steps short, for example less than 70 characters.

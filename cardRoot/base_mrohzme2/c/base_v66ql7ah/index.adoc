@@ -1,5 +1,13 @@
 The changes in each version, newest first.
 
+== Unreleased
+
+* The widget "Progress tiles" (`base/reports/progressTilesWidget`) fits the content column of the app at a window width of 1280 pixels. It is at most 640 pixels wide. With six to eight tiles, the tiles get narrower, and more than eight tiles wrap into rows of the same length. Long labels break into two lines and get smaller when they do not fit. The widget is now a Vega chart, not a Vega-Lite chart.
+* The widget "Steps" (`base/reports/stepsWidget`) is 630 pixels wide, so it also fits the content column at 1280 pixels. A long step breaks into two lines, and the tooltip shows the full text.
+* The test pages of the two widgets have cases with eight and twelve tiles and with long steps.
+
+No migration is needed. The parameters of the widgets do not change.
+
 == 1.10.0
 
 * The field "Assessment" (`base/fieldTypes/assessment`) has two new values: "Not started" (`notStarted`) for work that is in scope but not started, and "In progress" (`inProgress`) for work that has started but is not ready. "Open" keeps its meaning: not scoped yet. A card with "Not started" shows the grey status indicator, and a card with "In progress" shows the yellow one. Each value has a description.
