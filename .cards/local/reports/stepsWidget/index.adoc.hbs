@@ -1,7 +1,9 @@
 {{!--
   The widget is 630 pixels wide with its padding, so that it fits the content
   column of the app at 1280 pixels. A long label breaks into two lines, after
-  a number of characters, because the widget cannot measure text.
+  a number of characters, because the widget cannot measure text. The break is
+  at the last space in the first line. If the first line has no space in its
+  second half (a URL or an identifier), the break is inside the word.
 
   "measured" is true in a browser (the app and exported sites) and false in
   exported documents. There, Vega has no canvas and estimates text much wider
@@ -53,7 +55,8 @@
       {"calculate": "datum.status == 'next' && datum.nextLabel ? '  ← ' + datum.nextLabel : ''", "as": "suffix"},
       {"calculate": "datum.label + datum.suffix", "as": "text"},
       {"calculate": "datum.status == 'next' ? 62 : 74", "as": "lineChars"},
-      {"calculate": "length(datum.text) <= datum.lineChars ? -1 : (length(datum.label) <= datum.lineChars ? length(datum.label) : lastindexof(datum.label, ' ', datum.lineChars))", "as": "cut"},
+      {"calculate": "lastindexof(datum.label, ' ', datum.lineChars)", "as": "space"},
+      {"calculate": "length(datum.text) <= datum.lineChars ? -1 : (length(datum.label) <= datum.lineChars ? length(datum.label) : (datum.space > datum.lineChars / 2 ? datum.space : datum.lineChars))", "as": "cut"},
       {"calculate": "datum.cut < 0 ? '' : trim(substring(datum.label, datum.cut))", "as": "rest"},
       {"calculate": "length(datum.rest) + length(datum.suffix) <= datum.lineChars ? trim(datum.rest + datum.suffix) : substring(datum.rest, 0, datum.lineChars - length(datum.suffix) - 1) + '…' + datum.suffix", "as": "secondLine"},
       {"calculate": "datum.cut < 0 ? [datum.text] : [substring(datum.label, 0, datum.cut), datum.secondLine]", "as": "lines"},

@@ -64,7 +64,7 @@ check() {
 
 cd "$ROOT" || exit 1
 check base_ybuxq82o "Progress tiles widget" 6
-check base_7f0kadjk "Steps widget" 4
+check base_7f0kadjk "Steps widget" 5
 
 if [ "$failed" -eq 0 ]; then
   echo "PASS"

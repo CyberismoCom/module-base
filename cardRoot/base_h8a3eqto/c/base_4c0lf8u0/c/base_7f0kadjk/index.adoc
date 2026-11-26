@@ -51,6 +51,21 @@ The widget fits the content column of the app at 1280 pixels. A long label break
   ]
 {{/report}}
 
+== Labels with no spaces
+
+A label can have no space in its first line, for example a URL or an identifier. Then the label breaks inside the word. The second line ends with an ellipsis if it is too long, and the next step keeps its label.
+
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "title": "Labels with no spaces",
+  "nextLabel": "your next step",
+  "steps": [
+    {"label": "Read https://www.example.com/information-security/management-system/getting-started/first-steps-for-the-home-of-the-organisation", "status": "done"},
+    {"label": "https://www.example.com/information-security/management-system/getting-started/first-steps-for-the-home-of-the-organisation/owners", "status": "next"},
+    {"label": "urn:example:isms:controls:organisational:access-control:identity-management:authentication-information:review", "status": "open"}
+  ]
+{{/report}}
+
 == One step, and text with quotes
 
 {{#report}}
