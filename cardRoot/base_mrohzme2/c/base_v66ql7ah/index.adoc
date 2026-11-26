@@ -1,9 +1,9 @@
 The changes in each version, newest first.
 
-== Unreleased
+== 1.11.0
 
 * The widget "Progress tiles" (`base/reports/progressTilesWidget`) fits the content column of the app at a window width of 1280 pixels. It is at most 640 pixels wide. With six to eight tiles, the tiles get narrower, and more than eight tiles wrap into rows of the same length. Long labels break into two lines and get smaller when they do not fit. The widget is now a Vega chart, not a Vega-Lite chart.
-* The widget "Steps" (`base/reports/stepsWidget`) is 630 pixels wide, so it also fits the content column at 1280 pixels. A long step breaks into two lines, and the tooltip shows the full text.
+* The widget "Steps" (`base/reports/stepsWidget`) is 630 pixels wide, so it also fits the content column at 1280 pixels. A long step breaks into two lines, also when it has no spaces (a URL or an identifier), and the tooltip shows the full text.
 * The test pages of the two widgets have cases with eight and twelve tiles and with long steps.
 
 No migration is needed. The parameters of the widgets do not change.
