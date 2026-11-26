@@ -1,0 +1,7 @@
+== Parameters
+
+* `Task`: the key of a card in the project
+
+== Description
+
+`Task` is a monthly, quarterly, or annual task (`base/cardTypes/monthlyTask`, `base/cardTypes/quarterlyTask`, or `base/cardTypes/annualTask`).

@@ -1,0 +1,19 @@
+== General
+
+Templates for the cards of a project.
+
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "templates",
+  "category": "General"
+{{/report}}
+
+== Documentation
+
+Templates for the documentation of logic programs and modules.
+
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "templates",
+  "category": "Documentation"
+{{/report}}

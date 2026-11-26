@@ -1,0 +1,32 @@
+A row of tiles that fill up from the bottom with progress, for example one tile for each phase of a project. Each tile shows its label and its percentage. A tile can open a card when the user clicks it.
+
+By default, a tile at 100 is green, a tile between 0 and 100 is yellow, and a tile at 0 has no fill. A tile without a value has no fill and shows "-", or the text that you give. The fill is half transparent, so the text is easy to read at every value, in the light and the dark theme.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Product security: 45% of level 1",
+  "legend": "Click a tile to open a widget page",
+  "tiles": [
+    {"label": "Foundation", "value": 100, "cardKey": "base_7xmdsjrf"},
+    {"label": "Design", "value": 45, "cardKey": "base_ck146fzj"},
+    {"label": "Verification", "value": 0, "cardKey": "base_1pxmwk7t"},
+    {"label": "Releases", "value": null, "text": "Later"}
+  ]
+{{/report}}
+
+== Parameters
+
+* `tiles` (required): the tiles, from left to right. Up to eight tiles are in one row. More tiles wrap into rows of the same length. Each tile has:
+** `label` (required): the name at the top of the tile.
+** `value`: the progress, from 0 to 100. Leave it out, or use `null`, when the item has nothing to measure.
+** `text`: the text in the middle of the tile, in place of the percentage.
+** `colour`: the colour of the fill: blue, green, yellow, red, orange, or purple. Leave it out for the default colours.
+** `cardKey`: the key of the card that opens when the user clicks the tile. The link works in the app and in exported sites. In exported documents (AsciiDoc and PDF), the widget is an image, so the tile is not a link.
+* `title`: the title above the tiles.
+* `legend`: the text under the title.
+
+== Size
+
+The widget is at most 640 pixels wide, so it fits the content column of the app at a window width of 1280 pixels. With up to five tiles, each tile is 107 pixels wide. With six to eight tiles, the tiles get narrower. A long label breaks into two lines at a space, and its text gets smaller when it does not fit. The same applies to the text in the middle of the tile. In the app and in exported sites, text that still does not fit ends with an ellipsis, and the tooltip shows the full label.
+
+Keep labels short, for example one or two words. Use the title or the legend for longer text.

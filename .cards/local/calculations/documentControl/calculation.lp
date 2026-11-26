@@ -1,3 +1,9 @@
+% Shared predicates: base_controlledDocumentCardType/1,
+% base_relaxedDocumentControl/1, base_documentReview/2,
+% base_documentHasReview/1, and base_documentReviewed/1. Each one has a
+% predicate card in the base documentation, under "For module authors" >
+% "Shared predicates".
+
 % Document control for controlled documents and for the document card types
 % of other modules. A module adds its own card type with a fact, for example:
 %

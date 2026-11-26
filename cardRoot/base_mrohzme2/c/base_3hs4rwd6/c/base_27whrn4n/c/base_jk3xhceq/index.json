@@ -1,0 +1,13 @@
+{
+    "rank": "0|t",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:15.213Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_testContent(Card)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.310Z",
+    "base/fieldTypes/category": "Module documentation",
+    "base/fieldTypes/briefDescription": "A card is the root of test content",
+    "lastTransitioned": "2026-11-19T22:36:09.310Z"
+}

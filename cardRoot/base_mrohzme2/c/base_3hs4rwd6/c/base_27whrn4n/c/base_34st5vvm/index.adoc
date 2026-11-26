@@ -1,0 +1,8 @@
+== Parameters
+
+* `Item`: the key of a checklist item
+* `Checklist`: the key of its parent card
+
+== Description
+
+`Item` is a checklist item (`base/cardTypes/checklistItem`) under `Checklist`, and it is not archived. Any card can be a checklist.

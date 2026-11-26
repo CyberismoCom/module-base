@@ -1,4 +1,4 @@
-Test cards for widget reports.
+Test pages for the widget reports, with edge cases: colours, empty and zero values, long texts, quotes, and values that do not fit. The documentation shows a typical example of each widget, under "Using the base module" > "Widgets".
 
 {{#report}}
   "name": "base/reports/childrenList"

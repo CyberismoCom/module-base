@@ -1,0 +1,12 @@
+{
+    "rank": "0|d",
+    "workflowState": "Active",
+    "createdAt": "2026-11-19T22:34:02.718Z",
+    "links": [],
+    "cardType": "base/cardTypes/checklistItem",
+    "title": "The known issues are recorded",
+    "templateCardKey": "base_wvgbb7tg",
+    "base/fieldTypes/checklistResult": "deviation",
+    "lastUpdated": "2026-11-19T22:34:06.733Z",
+    "base/fieldTypes/comment": "Two of the known issues have no owner yet."
+}

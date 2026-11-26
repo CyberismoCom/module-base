@@ -1,0 +1,13 @@
+{
+    "rank": "0|s",
+    "workflowState": "Ready",
+    "createdAt": "2026-11-19T22:34:14.815Z",
+    "links": [],
+    "cardType": "base/cardTypes/predicate",
+    "title": "base_greaterAdoptionStep(Card1, Card2)",
+    "templateCardKey": "base_weu9g7lz",
+    "lastUpdated": "2026-11-19T22:36:09.403Z",
+    "base/fieldTypes/category": "Adoption steps",
+    "base/fieldTypes/briefDescription": "A card is on a higher adoption step than another card",
+    "lastTransitioned": "2026-11-19T22:36:09.403Z"
+}

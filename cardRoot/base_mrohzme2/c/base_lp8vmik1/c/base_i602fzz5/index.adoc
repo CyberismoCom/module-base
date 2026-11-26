@@ -1,0 +1,11 @@
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "workflows"
+{{/report}}
+
+== Diagrams
+
+{{#report}}
+  "name": "base/reports/allWorkflows",
+  "module": "base"
+{{/report}}

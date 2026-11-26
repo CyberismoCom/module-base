@@ -1,0 +1,7 @@
+The card types of base, with their workflows and their visible fields in order.
+
+{{#report}}
+  "name": "base/reports/moduleResources",
+  "type": "cardTypes",
+  "fields": true
+{{/report}}

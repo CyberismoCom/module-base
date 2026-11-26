@@ -1,0 +1,122 @@
+{{!--
+  The widget is 630 pixels wide with its padding, so that it fits the content
+  column of the app at 1280 pixels. A long label breaks into two lines, after
+  a number of characters, because the widget cannot measure text. The break is
+  at the last space in the first line. If the first line has no space in its
+  second half (a URL or an identifier), the break is inside the word.
+
+  "measured" is true in a browser (the app and exported sites) and false in
+  exported documents. There, Vega has no canvas and estimates text much wider
+  than it is, so the "limit" of text would cut most labels.
+--}}
+{{#vegaLite}}
+  "spec": {
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "{{#if title}}{{{jsonEscape title}}}{{else}}Steps{{/if}}",
+    "width": 620,
+    "height": {"step": 44},
+    "background": "transparent",
+    "params": [{"name": "measured", "expr": "isFinite(containerSize()[0])"}],
+    "view": {"stroke": null},
+{{#if title}}
+    "title": {
+      "text": "{{{jsonEscape title}}}",{{#if legend}}
+      "subtitle": "{{{jsonEscape legend}}}",
+      "subtitleFontSize": 14,
+      "subtitleColor": "currentColor",{{/if}}
+      "fontSize": 22,
+      "fontWeight": "bold",
+      "color": "currentColor",
+      "anchor": "start",
+      "offset": 14,
+      "limit": {"expr": "measured ? 620 : 0"}
+    },
+{{else}}{{#if legend}}
+    "title": {
+      "text": "{{{jsonEscape legend}}}",
+      "fontSize": 14,
+      "fontWeight": "normal",
+      "color": "currentColor",
+      "anchor": "start",
+      "offset": 14,
+      "limit": {"expr": "measured ? 620 : 0"}
+    },
+{{/if}}{{/if}}
+    "data": {
+      "values": [
+        {{#each steps}}
+        {"n": {{@index}}, "label": "{{{jsonEscape this.label}}}", "status": "{{this.status}}"{{#if ../nextLabel}}, "nextLabel": "{{{jsonEscape ../nextLabel}}}"{{/if}}{{#if this.cardKey}}, "cardKey": "{{{jsonEscape this.cardKey}}}"{{/if}} }{{#unless @last}},{{/unless}}
+        {{/each}}
+      ]
+    },
+    "transform": [
+      {"calculate": "datum.n + 1", "as": "number"},
+      {"calculate": "datum.status == 'done' ? '✓' : toString(datum.number)", "as": "symbol"},
+      {"calculate": "datum.status == 'next' && datum.nextLabel ? '  ← ' + datum.nextLabel : ''", "as": "suffix"},
+      {"calculate": "datum.label + datum.suffix", "as": "text"},
+      {"calculate": "datum.status == 'next' ? 62 : 74", "as": "lineChars"},
+      {"calculate": "lastindexof(datum.label, ' ', datum.lineChars)", "as": "space"},
+      {"calculate": "length(datum.text) <= datum.lineChars ? -1 : (length(datum.label) <= datum.lineChars ? length(datum.label) : (datum.space > datum.lineChars / 2 ? datum.space : datum.lineChars))", "as": "cut"},
+      {"calculate": "datum.cut < 0 ? '' : trim(substring(datum.label, datum.cut))", "as": "rest"},
+      {"calculate": "length(datum.rest) + length(datum.suffix) <= datum.lineChars ? trim(datum.rest + datum.suffix) : substring(datum.rest, 0, datum.lineChars - length(datum.suffix) - 1) + '…' + datum.suffix", "as": "secondLine"},
+      {"calculate": "datum.cut < 0 ? [datum.text] : [substring(datum.label, 0, datum.cut), datum.secondLine]", "as": "lines"},
+      {"calculate": "{done:'light-dark(#008300,#008300)',next:'light-dark(#eda100,#c98500)',open:'light-dark(#d4d7dc,#454b54)'}[datum.status]", "as": "circleColour"},
+      {"calculate": "{done:'#ffffff',next:'#1a1a1a',open:'currentColor'}[datum.status]", "as": "symbolColour"},
+      {"calculate": "datum.cardKey ? datum.cardKey : null", "as": "link"},
+      {"calculate": "'Step ' + datum.number + ', ' + datum.status + ': ' + datum.label", "as": "ariaText"}
+    ],
+    "encoding": {
+      "y": {"field": "n", "type": "ordinal", "axis": null},
+      "x": {"value": 18}
+    },
+    "layer": [
+      {
+        "transform": [
+          {"aggregate": [{"op": "min", "field": "n", "as": "first"}, {"op": "max", "field": "n", "as": "last"}]}
+        ],
+        "mark": {"type": "rule", "strokeWidth": 3, "color": "currentColor", "opacity": 0.2, "aria": false},
+        "encoding": {
+          "y": {"field": "first", "type": "ordinal"},
+          "y2": {"field": "last"}
+        }
+      },
+      {
+        "mark": {"type": "circle", "opacity": 1, "cursor": {"expr": "datum.link ? 'pointer' : 'default'"}},
+        "encoding": {
+          "description": {"field": "ariaText"},
+          "size": {"condition": {"test": "datum.status == 'next'", "value": 1000}, "value": 700},
+          "color": {"field": "circleColour", "type": "nominal", "scale": null, "legend": null},
+          "href": {"field": "link"},
+          "tooltip": {"field": "label"}
+        }
+      },
+      {
+        "mark": {"type": "text", "fontSize": 15, "fontWeight": "bold", "aria": false, "cursor": {"expr": "datum.link ? 'pointer' : 'default'"}},
+        "encoding": {
+          "text": {"field": "symbol"},
+          "color": {"field": "symbolColour", "type": "nominal", "scale": null, "legend": null},
+          "href": {"field": "link"}
+        }
+      },
+      {
+        "transform": [{"filter": "datum.status != 'next'"}],
+        "mark": {"type": "text", "align": "left", "dx": 28, "fontSize": 16, "lineHeight": 18, "limit": {"expr": "measured ? 574 : 0"}, "color": "currentColor", "aria": false, "cursor": {"expr": "datum.link ? 'pointer' : 'default'"}},
+        "encoding": {
+          "text": {"field": "lines"},
+          "tooltip": {"field": "label"},
+          "opacity": {"condition": {"test": "datum.status == 'open'", "value": 0.65}, "value": 1},
+          "href": {"field": "link"}
+        }
+      },
+      {
+        "transform": [{"filter": "datum.status == 'next'"}],
+        "mark": {"type": "text", "align": "left", "dx": 28, "fontSize": 17, "lineHeight": 19, "limit": {"expr": "measured ? 574 : 0"}, "fontWeight": "bold", "color": "currentColor", "aria": false, "cursor": {"expr": "datum.link ? 'pointer' : 'default'"}},
+        "encoding": {
+          "text": {"field": "lines"},
+          "tooltip": {"field": "label"},
+          "href": {"field": "link"}
+        }
+      }
+    ]
+  }
+{{/vegaLite}}

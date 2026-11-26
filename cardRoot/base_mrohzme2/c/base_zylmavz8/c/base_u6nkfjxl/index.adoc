@@ -1,0 +1,19 @@
+Base has one-time tasks and recurring tasks.
+
+* A task (`base/cardTypes/task`, template "Task") is done once. It can have a due date.
+* A monthly, quarterly, or annual task recurs. Make it from the template "Monthly task", "Quarterly task", or "Annual task". It has the field "Last reviewed". The template sets the review period: 30 days for a monthly task, 90 days for a quarterly task, and 365 days for an annual task.
+
+The workflow states of a one-time task are Open, In progress, Closed as done, and Closed as not applicable. A recurring task also has the state To do. Its transition "Review as OK" records a new review of a task that is closed as done.
+
+== What the rules check
+
+* A task that is not closed fails the policy check "Due date passed" when its due date has passed.
+* To close a task as not applicable ("Review as not applicable"), fill in the field "Justification" first. Without a justification, the transition is denied.
+* A closed recurring task without a "Last reviewed" date fails the policy check "Date of latest review missing".
+* A closed task fails the policy check "Review expired" when more days have passed since "Last reviewed" than its review period allows.
+
+The transitions "Done", "Review as OK", "Review as applicable", and "Review as not applicable" of a recurring task set "Last reviewed" to the current date.
+
+== Adoption steps
+
+The field "Adoption step" (`base/fieldTypes/adoptionStep`) puts the work of a module in order. Its values are Step 1, Step 2, and Step 3. The predicate `base_greaterAdoptionStep` compares a card with its ancestors and descendants. A card on a higher step is greater, and a card with a step is greater than a card without one. See xref:base_27whrn4n.adoc[Shared predicates].

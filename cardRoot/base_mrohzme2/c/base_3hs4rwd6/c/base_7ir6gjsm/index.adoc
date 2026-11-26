@@ -1,0 +1,1 @@
+Base has no well-known identifiers. It has the field type "Identifier" (`base/fieldTypes/identifier`), which other modules use for their own identifiers.

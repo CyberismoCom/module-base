@@ -1,0 +1,102 @@
+= Progress tiles widget
+
+Each tile fills up from the bottom with its value. By default, 100 is green, a value between 0 and 100 is yellow, and 0 has no fill. A tile without a value is empty and shows "-" or its text. A tile with a card key opens that card in the app.
+
+== Phases of a project, with links
+
+The tiles open the other widget test pages.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "IoT device: 28% of level 1",
+  "legend": "Click a tile to open it",
+  "tiles": [
+    {"label": "Foundation", "value": 100, "cardKey": "base_e0e1hvzl"},
+    {"label": "Design", "value": 28, "cardKey": "base_4hf6xouo"},
+    {"label": "Implementation", "value": 0, "cardKey": "base_40klvxli"},
+    {"label": "Verification", "value": 0},
+    {"label": "Releases", "value": null},
+    {"label": "Operations", "value": 0}
+  ]
+{{/report}}
+
+== Without a title
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "tiles": [
+    {"label": "Step 1", "value": 75},
+    {"label": "Step 2", "value": 10},
+    {"label": "Step 3", "text": "Later"}
+  ]
+{{/report}}
+
+== Colours set by hand, and edge values
+
+The fill is half transparent, so the text has the normal text colour at every value. Check that the text is easy to read on each colour, in the light and the dark theme.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Colours",
+  "tiles": [
+    {"label": "Blue", "value": 60, "colour": "blue"},
+    {"label": "Red", "value": 100, "colour": "red"},
+    {"label": "Orange", "value": 54, "colour": "orange"},
+    {"label": "Purple", "value": 1, "colour": "purple"},
+    {"label": "Yellow", "value": 55},
+    {"label": "Text \"quoted\"", "value": 100, "text": "Done"}
+  ]
+{{/report}}
+
+== Eight tiles with long labels
+
+The tiles get narrower so that the row fits the content column of the app at 1280 pixels. A long label breaks into two lines and gets smaller when it does not fit.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Eight areas of work",
+  "tiles": [
+    {"label": "Governance", "value": 100},
+    {"label": "Assets and risks", "value": 64},
+    {"label": "Security operations", "value": 30},
+    {"label": "Suppliers", "value": 0},
+    {"label": "Incidents", "value": 12},
+    {"label": "Business continuity", "value": null},
+    {"label": "AI use", "value": 100},
+    {"label": "NIS2 requirements", "value": 45, "text": "Not started"}
+  ]
+{{/report}}
+
+== Twelve tiles
+
+More than eight tiles wrap into rows of the same length.
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "Twelve tiles",
+  "legend": "Two rows of six tiles",
+  "tiles": [
+    {"label": "January", "value": 100},
+    {"label": "February", "value": 100},
+    {"label": "March", "value": 90},
+    {"label": "April", "value": 80},
+    {"label": "May", "value": 70},
+    {"label": "June", "value": 60},
+    {"label": "July", "value": 50},
+    {"label": "August", "value": 40},
+    {"label": "September", "value": 30},
+    {"label": "October", "value": 20},
+    {"label": "November", "value": 10},
+    {"label": "December", "value": 0}
+  ]
+{{/report}}
+
+== One tile
+
+{{#report}}
+  "name": "base/reports/progressTilesWidget",
+  "title": "One tile",
+  "tiles": [
+    {"label": "Only", "value": 33}
+  ]
+{{/report}}

@@ -1,0 +1,30 @@
+== Install
+
+Most projects get base as a dependency. When you install the ISMS essentials module or the secure development essentials module, base comes with it.
+
+To install base on its own, go to the folder of your project and run:
+
+----
+cyberismo module install https://github.com/CyberismoCom/module-base.git
+----
+
+== Create your first card
+
+Base has templates for common cards. Create a card from one of them:
+
+* Page: a general content page.
+* Task: a one-time task. The templates "Monthly task", "Quarterly task", and "Annual task" make tasks that recur.
+* Controlled document: a document with an owner, an approver, and a review task. The template "Process description" makes a controlled document for a process.
+* Decision: a record of a decision, its context, and its consequences.
+* Meeting memo: the notes of a meeting, with action points as tasks.
+* Role assignment: a person in a role.
+* Checklist: a list of items to check, with a result and a comment for each item.
+
+The page xref:base_xx7jn1ws.adoc[Templates] lists all templates of base.
+
+== Next steps
+
+. Add a checklist to a card that needs one, for example a review. See xref:base_zorcdobw.adoc[Checklists].
+. Make the recurring tasks of your team. See xref:base_u6nkfjxl.adoc[Tasks].
+. Put your policies and procedures in controlled documents, and review and approve them. See xref:base_2cixiz28.adoc[Document control].
+. Show the state of your project on a dashboard. See xref:base_a8486kg9.adoc[Widgets].

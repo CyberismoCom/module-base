@@ -1,0 +1,31 @@
+A vertical path of numbered steps, for example the first steps of a new project. A done step has a tick, a next step is highlighted, and an open step is dimmed. A step can open a card when the user clicks it.
+
+{{#report}}
+  "name": "base/reports/stepsWidget",
+  "title": "First steps",
+  "legend": "The next step opens the score card widget page",
+  "nextLabel": "your next step",
+  "steps": [
+    {"label": "Describe the product and set the owner", "status": "done"},
+    {"label": "Assign people to security roles", "status": "done"},
+    {"label": "Make a threat model", "status": "next", "cardKey": "base_as3gzq8v"},
+    {"label": "List the high-level risks", "status": "open"},
+    {"label": "Write security requirements", "status": "open"}
+  ]
+{{/report}}
+
+== Parameters
+
+* `steps` (required): the steps, from first to last. The widget numbers them. Each step has:
+** `label` (required): the text of the step.
+** `status` (required): `done`, `next`, or `open`. More than one step can be next.
+** `cardKey`: the key of the card that opens when the user clicks the step. The link works in the app and in exported sites. In exported documents (AsciiDoc and PDF), the widget is an image, so the step is not a link.
+* `title`: the title above the steps.
+* `legend`: the text under the title.
+* `nextLabel`: the text after each next step, for example "your next step".
+
+== Size
+
+The widget is 630 pixels wide, so it fits the content column of the app at a window width of 1280 pixels. A long step breaks into two lines at a space. A step that is longer than two lines ends with an ellipsis, and the next label stays at the end. In the app and in exported sites, the tooltip shows the full text of the step.
+
+Keep steps short, for example less than 70 characters.
